@@ -8,9 +8,10 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help','!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal'];
+var commandes = ['!help', '!forum', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
+	forum: ['www.kirov-meta.forumactif.org'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?'],
 	Maelg: ['Miou !'],
 	Mackay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay"],
