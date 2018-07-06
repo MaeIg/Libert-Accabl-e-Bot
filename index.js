@@ -8,13 +8,14 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help','!Golgoth', '!Maelg', '!Mackay', '!Roventa'];
+var commandes = ['!help','!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?'],
 	Maelg: ['Miou !'],
 	Mackay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay"],
-	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner"]
+	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner"],
+	Sibaal: ['Et en plus tu m\'traîte de Golgoth.']
 };
 var mat100 = 0;
 
