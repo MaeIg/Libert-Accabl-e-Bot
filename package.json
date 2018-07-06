@@ -1,0 +1,31 @@
+{
+  "name": "discord.js-heroku",
+  "version": "1.0.0",
+  "description": "Miou !",
+  "main": "index.js",
+  "engines": {
+      "node": "8.11.3",
+      "npm": "5.6.0"
+  },
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaeIg/Discord-Bot.git"
+  },
+  "keywords": [
+    "heroku",
+    "discord.js"
+  ],
+  "author": "Maelg",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/MaeIg/Discord-Bot"
+}
