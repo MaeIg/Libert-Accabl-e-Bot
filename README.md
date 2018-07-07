@@ -8,9 +8,9 @@
      
      1/ Ecrire dans la liste nommée 'commandes' le nom de sa commande (ex : '!newCommande')
      
-     2/ Ecrire dans l'objet nommé 'asw' : newCommande: ['message1', 'message2', etc.]  (une infinité de message est autorisée :D)
+     2/ Ecrire dans l'objet nommé 'asw' : newCommande: ['message1', 'message2', etc.]  (une infinité de messages est autorisée :D)
      
-     3/ Penser à mettre une virgule à la ligne d'avant parce qu'on a rajouté une ligne (voir avec les commandes déjà mise, la synthaxe est toujours la même)
+     3/ Penser à mettre une virgule à la ligne d'avant parce qu'on a rajouté une ligne (voir avec les commandes déjà mises, la synthaxe est toujours la même)
      
      4/ C'est tout !
  
