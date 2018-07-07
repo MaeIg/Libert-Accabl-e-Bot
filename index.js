@@ -42,5 +42,21 @@ bot.on('message', function (msg) {
 	}
 });
 
+// Test 
+
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+
+
 // Login
 bot.login('NDY0ODM1NjA5Mzg3NTk3ODI0.DiEw5w.45GzHLql2jAuxBU3ADc4pEHsoIM');
+
