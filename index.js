@@ -37,7 +37,7 @@ bot.on('message', function (msg) {
 			embed: {
 				title: 'www.kirov-meta.forumactif.org',
 				url: 'www.kirov-meta.forumactif.org'
-			});
+			}});
 	} else if (commandes.indexOf(txt) != -1) {
 		if (txt.substr(1) === msg.author.username) {
 			msg.channel.send('Bah c\'est toi idiot :calim:');
