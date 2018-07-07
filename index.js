@@ -8,7 +8,7 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!everyone'];
+var commandes = ['!help', '!forum', '!everyone', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
