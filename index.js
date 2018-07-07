@@ -13,7 +13,7 @@ var commandes = ['!help', '!forum', '!trombi', '!everyone', '!echo', '!Bernard',
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
-	trombi: ['Pour accéeder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
+	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
 	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
 	echo: ['Tu t\'es cru dans une caverne ?!'],
 	Bernard: ['C\'est moi !'],
