@@ -12,6 +12,7 @@ var commandes = ['!help', '!forum', '!everyone', '!Golgoth', '!Maelg', '!Mackay'
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
+	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?'],
 	Maelg: ['Miou !'],
 	Mackay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay"],
