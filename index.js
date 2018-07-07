@@ -8,7 +8,7 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac'];
+var commandes = ['!help', '!forum', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!everyone'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
@@ -26,21 +26,25 @@ var mat100 = 0;
 bot.on('message', function (msg) {
 	var txt = msg.content;
 	
-	if (commandes.indexOf(txt) != -1) {
-		if (txt.substr(1) === msg.author.username) {
-			msg.channel.send('Bah c\'est toi idiot :calim:');
-		} else {
-			var L = asw[txt.substr(1)];
-			msg.channel.send(L[randInt(L.length)]);
-		}
+	if (txt === '!everyone') {
+		msg.reply('Et non tu seras le seul mentionné !');
 	}
 	
-	if (txt === ':mat100:') {
+	else if (txt === ':mat100:') {
 		if (mat100 == 2) {
 			mat100 = -1;
 			msg.channel.send(':mat100:');
 		} else {
 			mat100 ++;
+		}
+	}
+	
+	else if (commandes.indexOf(txt) != -1) {
+		if (txt.substr(1) === msg.author.username) {
+			msg.channel.send('Bah c\'est toi idiot :calim:');
+		} else {
+			var L = asw[txt.substr(1)];
+			msg.channel.send(L[randInt(L.length)]);
 		}
 	}
 });
