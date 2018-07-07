@@ -9,7 +9,7 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!everyone', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac'];
+var commandes = ['!help', '!forum', '!everyone', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
@@ -21,7 +21,8 @@ var asw = {
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
 	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai"],
 	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
-	Drac: ['+37 !']
+	Drac: ['+37 !'],
+	Dragon: ['Coup critique !', 'Je traquerai Quentin !']
 };
 var mat100 = 0;
 
