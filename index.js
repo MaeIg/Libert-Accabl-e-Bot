@@ -36,7 +36,7 @@ bot.on('message', function (msg) {
 	
 	else if (txt === '!echo') {
 		msg.channel.send('echo', {
-			tts=true
+			tts: true
 		});
 	}
 	
