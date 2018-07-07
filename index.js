@@ -8,7 +8,7 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran'];
+var commandes = ['!help', '!forum', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
@@ -18,7 +18,8 @@ var asw = {
 	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner"],
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
 	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris"],
-	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !"]
+	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !"],
+	Drac: ['+37 !']
 };
 var mat100 = 0;
 
