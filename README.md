@@ -3,6 +3,7 @@
 
 # Comment modifier le bot
  -> Les seules lignes à modifier se trouvent dans la partie '// Commandes'
+ 
  -> Pour ajouter une commande personnalisée :
      1/ Ecrire dans la liste nommée 'commandes' le nom de sa commande (ex : '!newCommande')
      2/ Ecrire dans l'objet nommé 'asw' : newCommande: ['message1', 'message2', etc.]  (une infinité de message est autorisée :D)
