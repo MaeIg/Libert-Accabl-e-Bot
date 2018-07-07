@@ -35,7 +35,9 @@ bot.on('message', function (msg) {
 	}
 	
 	else if (txt === '!echo') {
-		msg.channel.send('echo', tts=true);
+		msg.channel.send('echo', {
+			tts=true
+		});
 	}
 	
 	else if (txt === ':mat100:') {
