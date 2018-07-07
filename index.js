@@ -1,6 +1,7 @@
 // Initialisation
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+var patate = require("./hordes.json");
 
 // Fonctions utiles
 function randInt(max) {
@@ -18,8 +19,8 @@ var asw = {
 	Mackay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay"],
 	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner"],
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
-	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris"],
-	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !"],
+	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai"],
+	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
 	Drac: ['+37 !']
 };
 var mat100 = 0;
@@ -51,4 +52,4 @@ bot.on('message', function (msg) {
 });
 
 // Login
-bot.login('NDY0ODM1NjA5Mzg3NTk3ODI0.DiEw5w.45GzHLql2jAuxBU3ADc4pEHsoIM');
+bot.login(patate.carotte);
