@@ -9,12 +9,13 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!everyone', '!echo', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon'];
+var commandes = ['!help', '!forum', '!everyone', '!echo', '!Bernard', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
 	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
 	echo: ['Tu t\'es cru dans une caverne ?!'],
+	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?'],
 	Maelg: ['Miou !'],
 	Mackay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay"],
