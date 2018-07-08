@@ -27,7 +27,7 @@ var asw = {
 	Drac: ['+37 !'],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
 	Matsam: ['Hartychou <3', 'Paint <3', 'Ragots <3'],
-	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"]
+	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"]
 };
 var mat100 = 0;
 
