@@ -6,7 +6,7 @@
  
  -> Pour ajouter une commande personnalisée :
      
-     1/ Ecrire dans la liste nommée 'commandes' le nom de sa commande (ex : '!newCommande')
+     1/ Ecrire dans le tableau nommé 'commandes' le nom de sa commande (ex : '!newCommande')
      
      2/ Ecrire dans l'objet nommé 'asw' : newCommande: ['message1', 'message2', etc.]  (une infinité de messages est autorisée :D)
      
