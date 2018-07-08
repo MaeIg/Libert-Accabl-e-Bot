@@ -25,7 +25,7 @@ var asw = {
 	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai"],
 	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
 	Drac: ['+37 !'],
-	Dragon: ['Coup critique !', 'Je te traquerai Quentin !'],
+	Dragon: ['Coup critique !'],
 	Matsam: ['Hartychou <3']
 };
 var mat100 = 0;
