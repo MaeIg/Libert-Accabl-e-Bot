@@ -9,7 +9,7 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!everyone', '!echo', '!Bernard', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam'];
+var commandes = ['!help', '!forum', '!trombi', '!everyone', '!echo', '!Bernard', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
@@ -26,7 +26,8 @@ var asw = {
 	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
 	Drac: ['+37 !'],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
-	Matsam: ['Hartychou <3', 'Paint <3', 'Ragots <3']
+	Matsam: ['Hartychou <3', 'Paint <3', 'Ragots <3'],
+	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"]
 };
 var mat100 = 0;
 
