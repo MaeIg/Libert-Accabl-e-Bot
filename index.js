@@ -9,7 +9,7 @@ function randInt(max) {
 }
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!everyone', '!echo', '!Bernard', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz'];
+var commandes = ['!help', '!forum', '!trombi', '!everyone', '!echo', '!Bernard', '!Golgoth', '!Maelg', '!Mackay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!d100'];
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n')],
 	forum: ['www.kirov-meta.forumactif.org'],
@@ -51,6 +51,11 @@ bot.on('message', function (msg) {
 		} else {
 			mat100 ++;
 		}
+	}
+	
+	else if(txt === '!d100') {
+		var des100 = randInt(100);
+		msg.channel.send(des100);
 	}
 	
 	else if (commandes.indexOf(txt) != -1) {
