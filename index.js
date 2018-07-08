@@ -26,7 +26,7 @@ var asw = {
 	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
 	Drac: ['+37 !'],
 	Dragon: ['Coup critique !'],
-	Matsam: ['Hartychou <3']
+	Matsam: ['Hartychou <3', 'Paint <3', 'Ragots <3']
 };
 var mat100 = 0;
 
