@@ -1,7 +1,8 @@
 // Initialisation
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-var auth = require("./auth.json");
+const key = process.env.token;
+console.log(key);
 
 // Fonctions utiles
 function randInt(max) {
@@ -81,4 +82,4 @@ bot.on('message', function (msg) {
 });
 
 // Login
-bot.login(auth.key);
+bot.login(key);
