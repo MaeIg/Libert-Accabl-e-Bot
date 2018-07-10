@@ -15,9 +15,12 @@ const sheart = '❤';
 
 // Commandes
 var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear'],
-    cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff'];
+    cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff'],
+    cinvis = ['!help1', '!help2'];
 var asw = {
-	help: ['Commandes disponibles :\n' + commandes.join('\n')],
+	help: ['Commandes disponibles :\n' + commandes.join('\n') + '\n!help2 pour plus de commandes'],
+	help1: ['Commandes disponibles :\n' + commandes.join('\n') + '\n!help2 pour plus de commandes'],
+	help2: ['Commandes disponibles :\n' + cpseudo.join('\n') + '\n!help1 pour plus de commandes'],
 	forum: ['http://kirov-meta.forumactif.org/'],
 	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
 	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
@@ -72,7 +75,7 @@ bot.on('message', function (msg) {
 		}
 	}
 	
-	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1)) {
+	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
 		if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine')) {
 			msg.channel.send('Bah c\'est toi idiot ' + scalim);
 		} else {
