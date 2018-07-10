@@ -1,7 +1,7 @@
 // Initialisation
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-var auth = require("./config/auth.json");
+var auth = require("config/auth.json");
 
 // Fonctions utiles
 function randInt(max) {
