@@ -57,7 +57,7 @@ bot.on('message', function (msg) {
 	}
 	
 	else if (txt === smat100) {
-		if (mat100 == 2) {
+		if (mat100 == 1) {
 			mat100 = -1;
 			msg.channel.send(smat100);
 		} else {
