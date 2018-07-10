@@ -16,12 +16,11 @@ const sheart = '❤';
 // Commandes
 var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff'],
-    cinvis = ['!help1', '!help2'];
+    cinvis = ['!membres'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 var asw = {
-	help: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!help2_ pour plus de commandes'],
-	help1: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!help2_ pour plus de commandes'],
-	help2: ['**Commandes disponibles :**\n```' + cpseudo.join('\n') + '```\n_!help1_ pour plus de commandes'],
+	help: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes'],
+	membres: ['**Commandes disponibles :**\n```' + cpseudo.join('\n') + '```\n_!help_ pour plus de commandes'],
 	forum: ['http://kirov-meta.forumactif.org/'],
 	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
 	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
