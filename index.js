@@ -19,9 +19,9 @@ var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!ech
     cinvis = ['!help1', '!help2'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 var asw = {
-	help: ['Commandes disponibles :\n' + commandes.join('\n') + '\n!help2 pour plus de commandes'],
-	help1: ['Commandes disponibles :\n' + commandes.join('\n') + '\n!help2 pour plus de commandes'],
-	help2: ['Commandes disponibles :\n' + cpseudo.join('\n') + '\n!help1 pour plus de commandes'],
+	help: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n\n_!help2 pour plus de commandes_'],
+	help1: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n\n_!help2 pour plus de commandes_'],
+	help2: ['**Commandes disponibles :**\n```' + cpseudo.join('\n') + '```\n\n_!help1 pour plus de commandes_'],
 	forum: ['http://kirov-meta.forumactif.org/'],
 	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
 	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
