@@ -17,6 +17,7 @@ const sheart = '❤';
 var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff'],
     cinvis = ['!help1', '!help2'];
+// commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 var asw = {
 	help: ['Commandes disponibles :\n' + commandes.join('\n') + '\n!help2 pour plus de commandes'],
 	help1: ['Commandes disponibles :\n' + commandes.join('\n') + '\n!help2 pour plus de commandes'],
