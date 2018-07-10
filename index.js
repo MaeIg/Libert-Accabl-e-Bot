@@ -37,7 +37,7 @@ var asw = {
 	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
 	Drac: ['+37 !'],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
-	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart],
+	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart, 'Maelg le dieu de l\'anti-picto'],
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"],
 	Uff: ['Force et honneur !']
 };
@@ -76,7 +76,7 @@ bot.on('message', function (msg) {
 	}
 	
 	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
-		if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine')) {
+		if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x')) {
 			msg.channel.send('Bah c\'est toi idiot ' + scalim);
 		} else {
 			var L = asw[txt.substr(1)];
