@@ -71,7 +71,3 @@ typings/
 
 # Serverless directories
 .serverless
-
-# calim
-config/
-/auth.json
