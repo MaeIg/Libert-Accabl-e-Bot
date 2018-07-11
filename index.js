@@ -29,7 +29,7 @@ var asw = {
 	nuclear: ['Alex The Autist vous détruira tous !'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
-	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3"],
+	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3", "Tu veux voir mon babobab ?"],
 	MacKay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay", "Et si on abandonnait Matsang pour la quinzième fois ?", "Les éclaireurs : poules mouillées ou tafioles?"],
 	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner", "t'habite ou ?", "T'as du style, épouse-moi !", "Cool un RP ! Jump antipictoquoi ?"],
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
