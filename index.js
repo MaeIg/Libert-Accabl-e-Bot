@@ -40,7 +40,7 @@ var asw = {
 	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim],
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"],
 	Uff: ['Force et honneur !'],
-	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim scalim scalim]
+	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim]
 };
 var mat100 = 0;
 
