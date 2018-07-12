@@ -34,13 +34,13 @@ var asw = {
 	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner", "t'habite ou ?", "T'as du style, épouse-moi !", "Cool un RP ! Jump antipictoquoi ?","Ça m énerve pcq je ne suis pas à la hauteur de tout ce que tu nous apporte"],
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
 	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai"],
-	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !", "Meurt dans le désert"],
+	Khran: ["Un vrai ETListe abandonne son stuff dans le désert !",
 	Drac: ['+37 !', "J'ai disparu en 1937 !"],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
 	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim, "Je vais en faire un meme"+smat100],
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"],
 	Uff: ['Force et honneur !'],
-	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y\'a moyen de pécho dans la méta alors ?'],
+	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y'a moyen de pécho dans la méta alors ? Ptain c'est de mieux en mieux'],
 };
 var mat100 = 0;
 
