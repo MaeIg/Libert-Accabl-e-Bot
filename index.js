@@ -35,7 +35,7 @@ var asw = {
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
 	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai"],
 	Khran: ['Un vrai ETListe abandonne son stuff dans le désert !'],
-	Drac: ['+37 !', "J'ai disparu en 1937 !'],
+	Drac: ['+37 !', "J'ai disparu en 1937 !"],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
 	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim, "Je vais en faire un meme"+smat100],
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"],
