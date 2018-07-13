@@ -39,13 +39,13 @@ var newMessage = function (user) {
 				});
 			} else {
 				console.log(user.username + ' est dans la bdd');
-				client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
+				client.query('SELECT messages, xp, lvl FROM members WHERE id=$1', [user.id], (err, res) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
 					} else {
-						var nbrMsg = res.rows[0].messages;
-						console.log(nbrMsg);
+						var nbrMsg = res.rows[0].messages + 1;
+						console.log(res);
 					}
 				});
 			}
