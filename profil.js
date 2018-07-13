@@ -36,8 +36,9 @@ function inBase (client, id) {
 	});
 }
 
-var newMessage = function (user) {	
-	if (inBase(client, user.id)) {
+var newMessage = function (user) {
+	var bool = inBase(client, user.id);
+	if (bool === 1) {
 		console.log(user.username + ' est déjà dans la bdd');
 		client.query('SELECT messages FROM members WHERE id='+user.id, (err, res) => {
 			if (err) {
