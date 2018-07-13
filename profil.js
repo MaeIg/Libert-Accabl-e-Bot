@@ -2,6 +2,17 @@
 const pg = require('pg');
 const connection = process.env.DATABASE_URL;
 
+var client = new pg.Client(connection);
+client.connect((err) => {
+	if (err) {
+		console.log('connection error : ' + err.stack);
+		client.end();
+		return 0;
+	} else {
+		console.log('connected');
+	}
+});
+
 // Fonctions
 function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id='+id, (err, res) => {
@@ -13,19 +24,7 @@ function inBase (client, id) {
 	});
 }
 
-var newMessage = function (user) {
-	var client = new pg.Client(connection);
-	console.log(client);
-	client.connect((err) => {
-		if (err) {
-			console.log('connection error : ' + err.stack);
-			client.end();
-			return 0;
-		} else {
-			console.log('connected');
-		}
-	});
-	
+var newMessage = function (user) {	
 	client.query('SELECT * FROM membres', (err, res) => {
 		if (err) {
 			console.log(err.stack);
@@ -39,7 +38,7 @@ var newMessage = function (user) {
 		client.query('SELECT messages FROM members WHERE id='+user.id, (err, res) => {
 			if (err) {
 				console.log(err.stack);
-				client.end();
+				//client.end();
 				return 0;
 			} else {
 				console.log(res);
@@ -50,7 +49,7 @@ var newMessage = function (user) {
 		client.query('INSERT INTO members(id, name, lvl, xp, messages, money) VALUES($1, $2, 1, 0, 1, 1000)', [user.id, user.username], (err) => {
 			if (err) {
 				console.log(err.stack);
-				client.end();
+				//client.end();
 				return 0;
 			} else {
 				console.log(name + ' a été ajouté à la table members');
@@ -58,7 +57,7 @@ var newMessage = function (user) {
 		});
 	}
 	
-	client.end();
+	//client.end();
 };
 
 
