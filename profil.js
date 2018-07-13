@@ -50,7 +50,7 @@ var newMessage = function (msg) {
 						    xp = res.rows[0].xp + 1,
 						    lvl = res.rows[0].lvl;
 						// On incrémente le nombre de messages
-						client.query('UPDATE membres SET nbrMsg=nbrMsg+1 WHERE id=$1', [user.id], (err) => {
+						client.query('UPDATE members SET nbrMsg=nbrMsg+1 WHERE id=$1', [user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
@@ -63,12 +63,12 @@ var newMessage = function (msg) {
 							lvlUp(msg, lvl);
 						}
 						// On met tout dans la bdd
-						client.query('UPDATE membres SET lvl=$1 WHERE id=$2', [lvl, user.id], (err) => {
+						client.query('UPDATE members SET lvl=$1 WHERE id=$2', [lvl, user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
 						});
-						client.query('UPDATE membres SET xp=$1 WHERE id=$2', [xp, user.id], (err) => {
+						client.query('UPDATE members SET xp=$1 WHERE id=$2', [xp, user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
