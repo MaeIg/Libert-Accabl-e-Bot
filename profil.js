@@ -1,4 +1,5 @@
 // Init
+const Discord = require('discord.js');
 const pg = require('pg');
 const connection = process.env.DATABASE_URL;
 
@@ -11,6 +12,24 @@ client.connect((err) => {
 		return 0;
 	} else {
 		console.log('connected');
+	}
+});
+
+client.query('UPDATE members SET lvl=1, xp=0, messages=1 WHERE id=\'131771591452393472\'', (err) => {
+	if (err) {
+		console.log(err.stack);
+	}
+});
+client.query('UPDATE members SET lvl=1, xp=0, messages=1 WHERE id=\'464835609387597824\'', (err) => {
+	if (err) {
+		console.log(err.stack);
+	}
+});
+client.query('SELECT * FROM members', (err,res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
 	}
 });
 
