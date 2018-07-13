@@ -40,13 +40,12 @@ function inBase (client, id) {
 			return true;
 		}
 	});
+	await timeOut(200);
 }
 
 var newMessage = async function (user) {
 	var bool = inBase(client, user.id);
 	console.log('Valeur de la variable : ' + bool);
-	
-	await timeOut(200);
 	
 	if (bool) {
 		console.log(user.username + ' est déjà dans la bdd');
