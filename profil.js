@@ -28,7 +28,7 @@ function timeOut(ms) {
 	});
 }
 
-function inBase (client, id) {
+async function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
 		if (err) {
 			console.log(err.stack);
@@ -43,7 +43,7 @@ function inBase (client, id) {
 	await timeOut(200);
 }
 
-var newMessage = async function (user) {
+var newMessage = function (user) {
 	var bool = inBase(client, user.id);
 	console.log('Valeur de la variable : ' + bool);
 	
