@@ -25,6 +25,16 @@ var newMessage = function (user) {
 		}
 	});
 	
+	client.query('SELECT * FROM members', (err, res) => {
+		if (err) {
+			console.log(err.stack);
+			client.end();
+			return 0;
+		} else {
+			console.log(res);
+		}
+	});
+	
 	if (inBase(client, user.id)) {
 		console.log(user.username + ' est déjà dans la bdd');
 		client.query('SELECT messages FROM members WHERE id='+user.id, (err, res) => {
