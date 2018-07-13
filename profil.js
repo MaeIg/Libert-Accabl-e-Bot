@@ -36,9 +36,12 @@ function inBase (client, id) {
 	});
 }
 
-var newMessage = function (user) {
+var newMessage = async function (user) {
 	var bool = inBase(client, user.id);
 	console.log('Valeur de la variable : ' + bool);
+	
+	await setTimeout(function(){},200);
+	
 	if (bool) {
 		console.log(user.username + ' est déjà dans la bdd');
 		client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
