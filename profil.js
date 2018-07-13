@@ -27,14 +27,14 @@ function inBase (client, id) {
 		if (err) {
 			console.log(err.stack);
 			console.log('Je renvoie false');
-			return 0;
+			return false;
 		} else {
 			console.log(res);
 			console.log('Je renvoie true');
-			return 1;
+			return true;
 		}
 	});
-	return 2;
+	while(true){}
 }
 
 var newMessage = function (user) {
