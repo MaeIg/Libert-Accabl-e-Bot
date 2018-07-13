@@ -1,8 +1,9 @@
+// Init
 const pg = require('pg');
 const connection = process.env.DATABASE_URL;
 const client = new pg.Client(connection);
 
-
+// Fonctions
 function inBase (id) {
 	client.query('SELECT id FROM members WHERE id='+id, (err, res) => {
 		if (err) {
@@ -13,7 +14,7 @@ function inBase (id) {
 	});
 }
 
-function newMessage (user) {
+var newMessage = function (user) {
 	client.connect((err) => {
 		if (err) {
 			console.log('connection error : ' + err.stack);
@@ -47,4 +48,10 @@ function newMessage (user) {
 	}
 	
 	client.end()
+}
+
+
+// Export
+module.exports = {
+  newMessage: newMessage
 }
