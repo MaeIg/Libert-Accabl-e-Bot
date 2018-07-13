@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const key = process.env.token;
-const profil = require(profil.js);
+const profil = require('profil.js');
 
 // Fonctions utiles
 function randInt(max) {
