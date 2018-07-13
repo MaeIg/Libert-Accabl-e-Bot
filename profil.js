@@ -13,6 +13,14 @@ client.connect((err) => {
 	}
 });
 
+client.query('ALTER TABLE members ALTER COLUMN id TYPE text', (err, res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
+	}
+});
+
 // Fonctions
 function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id='+id, (err, res) => {
