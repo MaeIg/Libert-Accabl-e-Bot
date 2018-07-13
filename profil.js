@@ -22,6 +22,12 @@ client.query('SELECT * FROM members', (err, res) => {
 });
 
 // Fonctions
+function timeOut(ms) {
+	return new Promise((fulfill) => {
+		setTimeout(fulfill, ms);
+	});
+}
+
 function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
 		if (err) {
@@ -40,7 +46,7 @@ var newMessage = async function (user) {
 	var bool = inBase(client, user.id);
 	console.log('Valeur de la variable : ' + bool);
 	
-	await setTimeout(function(){},200);
+	await timeOut(200);
 	
 	if (bool) {
 		console.log(user.username + ' est déjà dans la bdd');
