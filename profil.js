@@ -25,7 +25,7 @@ var newMessage = function (user) {
 		}
 	});
 	
-	client.query('SELECT * FROM members', (err, res) => {
+	client.query('SELECT * FROM membres', (err, res) => {
 		if (err) {
 			console.log(err.stack);
 			client.end();
