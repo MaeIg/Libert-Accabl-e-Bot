@@ -23,7 +23,7 @@ client.query('SELECT * FROM members', (err, res) => {
 
 // Fonctions
 var newMessage = function (user) {
-	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
+	client.query('SELECT id FROM members WHERE id=$1', [user.id], (err, res) => {
 		if (err) {
 			console.log(user.username + ' est déjà dans la bdd');
 			client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
