@@ -9,7 +9,7 @@ client.connect((err) => {
 		console.log('connected')
 	}
 });
-client.query('SELECT * from members', (err, res) => {
+client.query('SELECT id FROM members WHERE name LIKE "Maelg"', (err, res) => {
 	if (err) {
 		console.log(err.stack);
 	} else {
