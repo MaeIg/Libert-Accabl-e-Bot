@@ -15,24 +15,6 @@ client.connect((err) => {
 	}
 });
 
-client.query('UPDATE members SET lvl=1, xp=0, messages=1 WHERE id=\'131771591452393472\'', (err) => {
-	if (err) {
-		console.log(err.stack);
-	}
-});
-client.query('UPDATE members SET lvl=1, xp=0, messages=1 WHERE id=\'464835609387597824\'', (err) => {
-	if (err) {
-		console.log(err.stack);
-	}
-});
-client.query('SELECT * FROM members', (err,res) => {
-	if (err) {
-		console.log(err.stack);
-	} else {
-		console.log(res);
-	}
-});
-
 // Fonctions
 function lvlUp (msg, lvl) {
 	var user = msg.author;
