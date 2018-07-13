@@ -38,7 +38,7 @@ var newMessage = function (user) {
 		});
 	} else {
 		console.log(user.username + ' n\'est pas dans la bdd');
-		client.query('INSERT INTO members VALUES (' + user.id + ', ' + user.username + ', 1, 0, 1, 1000)', (err) => {
+		client.query('INSERT INTO members VALUES(' + user.id + ', ' + user.username + ', 1, 0, 1, 1000)', (err) => {
 			if (err) {
 				console.log(err.stack);
 				client.end();
