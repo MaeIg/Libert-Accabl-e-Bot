@@ -1,6 +1,6 @@
 // Init
+const pg = require('pg');
 const connection = process.env.DATABASE_URL;
-console.log(connection);
 
 // Fonctions
 function inBase (client, id) {
