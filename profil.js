@@ -2,6 +2,7 @@
 const pg = require('pg');
 const connection = process.env.DATABASE_URL;
 
+// On connecte le bot à la bdd
 var client = new pg.Client(connection);
 client.connect((err) => {
 	if (err) {
@@ -14,12 +15,20 @@ client.connect((err) => {
 });
 
 // Fonctions
-var newMessage = function (user) {
+function lvlUp (msg, lvl) {
+	var user = msg.author;
+	msg.channel.send(user.username + ' passe niveau ' + lvl + ' !!');
+}
+
+var newMessage = function (msg) {
+	var user = msg.author;
 	client.query('SELECT id FROM members WHERE id=$1', [user.id], (err, res) => {
 		if (err) {
 			console.log(err.stack);
 		} else {
+			// On teste si le membre est dans la bdd
 			if (res.rowCount === 0) {
+				// Si non, on l'ajoute
 				console.log(user.username + ' n\'est pas dans la bdd');
 				client.query('INSERT INTO members(id, name, lvl, xp, messages, money) VALUES($1, $2, 1, 0, 1, 1000)', [user.id, user.username], (err) => {
 					if (err) {
@@ -30,14 +39,40 @@ var newMessage = function (user) {
 					}
 				});
 			} else {
+				// Si oui, on gère tout le bazard
 				console.log(user.username + ' est dans la bdd');
 				client.query('SELECT messages, xp, lvl FROM members WHERE id=$1', [user.id], (err, res) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
 					} else {
-						var nbrMsg = res.rows[0].messages + 1;
-						console.log(res);
+						var nbrMsg = res.rows[0].messages + 1,
+						    xp = res.rows[0].xp + 1,
+						    lvl = res.rows[0].lvl;
+						// On incrémente le nombre de messages
+						client.query('UPDATE membres SET nbrMsg=nbrMsg+1 WHERE id=$1', [user.id], (err) => {
+							if (err) {
+								console.log(err.stack);
+							}
+						});
+						// On lvl up si besoin
+						var forLvl = Math.round((4*(Math.pow(lvl, 2)))/5);
+						if (xp >= forLvl) {
+							xp -= forLvl;
+							lvl++;
+							lvlUp(msg, lvl);
+						}
+						// On met tout dans la bdd
+						client.query('UPDATE membres SET lvl=$1 WHERE id=$2', [lvl, user.id], (err) => {
+							if (err) {
+								console.log(err.stack);
+							}
+						});
+						client.query('UPDATE membres SET xp=$1 WHERE id=$2', [xp, user.id], (err) => {
+							if (err) {
+								console.log(err.stack);
+							}
+						});
 					}
 				});
 			}
