@@ -3,7 +3,7 @@ const pg = require('pg');
 const connection = process.env.DATABASE_URL;
 
 // Fonctions
-function inBase (id) {
+function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id='+id, (err, res) => {
 		if (err) {
 			return false;
@@ -25,7 +25,7 @@ var newMessage = function (user) {
 		}
 	});
 	
-	if (inBase(user.id)) {
+	if (inBase(client, user.id)) {
 		client.query('SELECT messages FROM members WHERE id='+user.id, (err, res) => {
 			if (err) {
 				console.log(err.stack);
