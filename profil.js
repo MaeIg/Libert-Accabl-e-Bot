@@ -1,7 +1,6 @@
 // Init
 const pg = require('pg');
 const connection = process.env.DATABASE_URL;
-const client = new pg.Client(connection);
 
 // Fonctions
 function inBase (id) {
@@ -15,6 +14,7 @@ function inBase (id) {
 }
 
 var newMessage = function (user) {
+	const client = new pg.Client(connection);
 	client.connect((err) => {
 		if (err) {
 			console.log('connection error : ' + err.stack);
