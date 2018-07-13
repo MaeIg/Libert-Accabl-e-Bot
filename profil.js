@@ -34,6 +34,7 @@ function inBase (client, id) {
 			return 1;
 		}
 	});
+	return 2;
 }
 
 var newMessage = function (user) {
