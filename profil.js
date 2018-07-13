@@ -28,8 +28,6 @@ var newMessage = function (user) {
 	client.query('SELECT * FROM membres', (err, res) => {
 		if (err) {
 			console.log(err.stack);
-			client.end();
-			return 0;
 		} else {
 			console.log(res);
 		}
