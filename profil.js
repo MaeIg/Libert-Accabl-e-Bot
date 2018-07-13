@@ -40,7 +40,7 @@ async function inBase (client, id) {
 			return true;
 		}
 	});
-	await timeOut(200);
+	await timeOut(2000000);
 }
 
 var newMessage = function (user) {
