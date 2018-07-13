@@ -13,7 +13,7 @@ client.connect((err) => {
 	}
 });
 
-client.query('ALTER TABLE members ALTER COLUMN id TYPE text', (err, res) => {
+client.query('SELECT * FROM members', (err, res) => {
 	if (err) {
 		console.log(err.stack);
 	} else {
@@ -23,7 +23,7 @@ client.query('ALTER TABLE members ALTER COLUMN id TYPE text', (err, res) => {
 
 // Fonctions
 function inBase (client, id) {
-	client.query('SELECT id FROM members WHERE id='+id, (err, res) => {
+	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
 		if (err) {
 			return false;
 		} else {
@@ -38,7 +38,6 @@ var newMessage = function (user) {
 		client.query('SELECT messages FROM members WHERE id='+user.id, (err, res) => {
 			if (err) {
 				console.log(err.stack);
-				//client.end();
 				return 0;
 			} else {
 				console.log(res);
@@ -49,15 +48,12 @@ var newMessage = function (user) {
 		client.query('INSERT INTO members(id, name, lvl, xp, messages, money) VALUES($1, $2, 1, 0, 1, 1000)', [user.id, user.username], (err) => {
 			if (err) {
 				console.log(err.stack);
-				//client.end();
 				return 0;
 			} else {
-				console.log(name + ' a été ajouté à la table members');
+				console.log(user.username + ' a été ajouté à la table members');
 			}
 		});
 	}
-	
-	//client.end();
 };
 
 
