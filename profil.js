@@ -26,9 +26,11 @@ function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
 		if (err) {
 			console.log(err.stack);
+			console.log('Je renvois false');
 			return false;
 		} else {
 			console.log(res);
+			console.log('Je renvois true');
 			return true;
 		}
 	});
