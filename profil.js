@@ -23,7 +23,7 @@ client.query('SELECT * FROM members', (err, res) => {
 
 // Fonctions
 function inBase (client, id) {
-	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
+	client.query('SELECT id FROM members WHERE id=\'$1\'', [id], (err, res) => {
 		if (err) {
 			return false;
 		} else {
