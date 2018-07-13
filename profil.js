@@ -11,7 +11,7 @@ client.connect((err) => {
 });
 client.query('SELECT id FROM members WHERE name LIKE "Maelg"', (err, res) => {
 	if (err) {
-		console.log('test');
+		console.log(error);
 	} else {
 		console.log(res)
 	}
