@@ -1,19 +1,50 @@
 const pg = require('pg');
 const connection = process.env.DATABASE_URL;
-
 const client = new pg.Client(connection);
-client.connect((err) => {
-	if (err) {
-		console.log('connection error : ' + err.stack)
+
+
+function inBase (id) {
+	client.query('SELECT id FROM members WHERE id='+id, (err, res) => {
+		if (err) {
+			return false;
+		} else {
+			return true;
+		}
+	});
+}
+
+function newMessage (id, name) {
+	client.connect((err) => {
+		if (err) {
+			console.log('connection error : ' + err.stack);
+			client.end()
+			return 0;
+		} else {
+			console.log('connected');
+		}
+	});
+	
+	if (inBase(id)) {
+		client.query('SELECT messages FROM members WHERE id='+id, (err, res) => {
+			if (err) {
+				console.log(err.stack);
+				client.end()
+				return 0;
+			} else {
+				console.log(res);
+			}
+		});
 	} else {
-		console.log('connected')
+		client.query('INSERT INTO members VALUES (' + id + ', \'' + name + '\', 1, 0, 1, 1000)', (err) => {
+			if (err) {
+				console.log(err.stack);
+				client.end()
+				return 0;
+			} else {
+				console.log(name + ' a été ajouté à la table members');
+			}
+		});
 	}
-});
-client.query('SELECT id FROM members WHERE name LIKE "Maelg"', (err, res) => {
-	if (err) {
-		console.log(err.stack);
-	} else {
-		console.log(res)
-	}
+	
 	client.end()
-});
+}
