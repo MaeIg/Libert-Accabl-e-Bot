@@ -17,7 +17,14 @@ client.connect((err) => {
 // Fonctions
 function lvlUp (msg, lvl) {
 	var user = msg.author;
-	msg.channel.send(user.username + ' passe niveau ' + lvl + ' !!');
+	
+	const embed = new Discord.RichEmbed()
+	  .setAuthor("LVL UP", "https://www.dbarj.com.br/wp-content/uploads/2017/08/large1.png")
+	  .setColor(0xFF9900)
+	  .setDescription(user.username + ' passe niveau ' + lvl + ' !!')
+	  .setThumbnail(user.avatarURL);
+
+	msg.channel.send({embed});
 }
 
 var newMessage = function (msg) {
