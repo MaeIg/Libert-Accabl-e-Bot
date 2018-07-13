@@ -13,7 +13,7 @@ function inBase (id) {
 	});
 }
 
-function newMessage (id, name) {
+function newMessage (user) {
 	client.connect((err) => {
 		if (err) {
 			console.log('connection error : ' + err.stack);
@@ -24,8 +24,8 @@ function newMessage (id, name) {
 		}
 	});
 	
-	if (inBase(id)) {
-		client.query('SELECT messages FROM members WHERE id='+id, (err, res) => {
+	if (inBase(user.id)) {
+		client.query('SELECT messages FROM members WHERE id='+user.id, (err, res) => {
 			if (err) {
 				console.log(err.stack);
 				client.end()
@@ -35,7 +35,7 @@ function newMessage (id, name) {
 			}
 		});
 	} else {
-		client.query('INSERT INTO members VALUES (' + id + ', \'' + name + '\', 1, 0, 1, 1000)', (err) => {
+		client.query('INSERT INTO members VALUES (' + user.id + ', \'' + user.username + '\', 1, 0, 1, 1000)', (err) => {
 			if (err) {
 				console.log(err.stack);
 				client.end()
