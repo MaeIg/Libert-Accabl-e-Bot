@@ -38,13 +38,14 @@ var newMessage = function (user) {
 					}
 				});
 			} else {
-				console.log(user.username + ' est déjà dans la bdd');
+				console.log(user.username + ' est dans la bdd');
 				client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
 					} else {
-						console.log(res);
+						var nbrMsg = res.rows[0].messages;
+						console.log(nbrMsg);
 					}
 				});
 			}
