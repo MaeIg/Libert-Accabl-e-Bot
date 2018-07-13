@@ -50,7 +50,7 @@ var newMessage = function (msg) {
 						    xp = res.rows[0].xp + 1,
 						    lvl = res.rows[0].lvl;
 						// On incrémente le nombre de messages
-						client.query('UPDATE members SET nbrMsg=nbrMsg+1 WHERE id=$1', [user.id], (err) => {
+						client.query('UPDATE members SET messages=messages+1 WHERE id=$1', [user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
