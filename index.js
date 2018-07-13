@@ -46,6 +46,8 @@ var asw = {
 var mat100 = 0;
 
 bot.on('message', function (msg) {
+	profil.newMessage(msg.author);
+	
 	var txt = msg.content;
 	
 	if (txt === '!everyone') {
