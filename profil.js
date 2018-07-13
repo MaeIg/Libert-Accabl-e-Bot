@@ -22,14 +22,8 @@ client.query('SELECT * FROM members', (err, res) => {
 });
 
 // Fonctions
-function timeOut(ms) {
-	return new Promise((fulfill) => {
-		setTimeout(fulfill, ms);
-	});
-}
-
 async function inBase (client, id) {
-	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
+	await client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
 		if (err) {
 			console.log(err.stack);
 			console.log('Je renvoie false');
@@ -40,7 +34,6 @@ async function inBase (client, id) {
 			return true;
 		}
 	});
-	await timeOut(2000000);
 }
 
 var newMessage = function (user) {
