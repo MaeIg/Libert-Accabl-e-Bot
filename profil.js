@@ -38,7 +38,7 @@ function inBase (client, id) {
 
 var newMessage = function (user) {
 	var bool = inBase(client, user.id);
-	console.log(bool);
+	console.log('Valeur de la variable : ' + bool);
 	if (bool === 1) {
 		console.log(user.username + ' est déjà dans la bdd');
 		client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
