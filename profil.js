@@ -34,9 +34,6 @@ function inBase (client, id) {
 			return true;
 		}
 	});
-	while (true) {
-		console.log('hum');
-	}
 }
 
 var newMessage = function (user) {
