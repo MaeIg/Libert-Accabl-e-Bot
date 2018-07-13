@@ -25,8 +25,10 @@ client.query('SELECT * FROM members', (err, res) => {
 function inBase (client, id) {
 	client.query('SELECT id FROM members WHERE id=\'$1\'', [id], (err, res) => {
 		if (err) {
+			console.log(err.stack);
 			return false;
 		} else {
+			console.log(res);
 			return true;
 		}
 	});
