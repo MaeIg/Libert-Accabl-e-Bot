@@ -15,6 +15,14 @@ client.connect((err) => {
 	}
 });
 
+client.query('SELECT * FROM members', (err,res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
+	}
+});
+
 // Fonctions
 function lvlUp (msg, lvl) {
 	var user = msg.author;
