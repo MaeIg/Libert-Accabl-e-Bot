@@ -9,7 +9,6 @@ client.connect((err) => {
 		console.log('connected')
 	}
 });
-client.query('CREATE TABLE members(id SERIAL PRIMARY KEY, name text, lvl int, xp int, messages int, money int)');
 client.query('SELECT * from members', (err, res) => {
 	if (err) {
 		console.log(err.stack);
