@@ -15,6 +15,7 @@ function inBase (client, id) {
 
 var newMessage = function (user) {
 	var client = new pg.Client(connection);
+	console.log(client);
 	client.connect((err) => {
 		if (err) {
 			console.log('connection error : ' + err.stack);
