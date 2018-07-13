@@ -22,45 +22,30 @@ client.query('SELECT * FROM members', (err, res) => {
 });
 
 // Fonctions
-async function inBase (client, id) {
-	await client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
+var newMessage = function (user) {
+	client.query('SELECT id FROM members WHERE id=$1', [id], (err, res) => {
 		if (err) {
-			console.log(err.stack);
-			console.log('Je renvoie false');
-			return false;
+			console.log(user.username + ' est déjà dans la bdd');
+			client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
+				if (err) {
+					console.log(err.stack);
+					return 0;
+				} else {
+					console.log(res);
+				}
+			});
 		} else {
-			console.log(res);
-			console.log('Je renvoie true');
-			return true;
+			console.log(user.username + ' n\'est pas dans la bdd');
+			client.query('INSERT INTO members(id, name, lvl, xp, messages, money) VALUES($1, $2, 1, 0, 1, 1000)', [user.id, user.username], (err) => {
+				if (err) {
+					console.log(err.stack);
+					return 0;
+				} else {
+					console.log(user.username + ' a été ajouté à la table members');
+				}
+			});
 		}
 	});
-}
-
-var newMessage = function (user) {
-	var bool = inBase(client, user.id);
-	console.log('Valeur de la variable : ' + bool);
-	
-	if (bool) {
-		console.log(user.username + ' est déjà dans la bdd');
-		client.query('SELECT messages FROM members WHERE id=$1', [user.id], (err, res) => {
-			if (err) {
-				console.log(err.stack);
-				return 0;
-			} else {
-				console.log(res);
-			}
-		});
-	} else {
-		console.log(user.username + ' n\'est pas dans la bdd');
-		client.query('INSERT INTO members(id, name, lvl, xp, messages, money) VALUES($1, $2, 1, 0, 1, 1000)', [user.id, user.username], (err) => {
-			if (err) {
-				console.log(err.stack);
-				return 0;
-			} else {
-				console.log(user.username + ' a été ajouté à la table members');
-			}
-		});
-	}
 };
 
 
