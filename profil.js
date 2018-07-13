@@ -36,8 +36,8 @@ function inBase (client, id) {
 	});
 }
 
-var newMessage = function (user) {
-	var bool = inBase(client, user.id);
+var newMessage = async function (user) {
+	var bool = await inBase(client, user.id);
 	console.log('Valeur de la variable : ' + bool);
 	if (bool) {
 		console.log(user.username + ' est déjà dans la bdd');
