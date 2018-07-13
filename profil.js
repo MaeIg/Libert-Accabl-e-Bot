@@ -18,7 +18,7 @@ client.query('SELECT * FROM members', (err, res) => {
 	if (err) {
 		console.log(err.stack);
 	} else {
-		consoler.log(res);
+		console.log(res);
 	}
 });
 
