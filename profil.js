@@ -13,14 +13,6 @@ client.connect((err) => {
 	}
 });
 
-client.query('SELECT * FROM members', (err, res) => {
-	if (err) {
-		console.log(err.stack);
-	} else {
-		console.log(res);
-	}
-});
-
 // Fonctions
 var newMessage = function (user) {
 	client.query('SELECT id FROM members WHERE id=$1', [user.id], (err, res) => {
