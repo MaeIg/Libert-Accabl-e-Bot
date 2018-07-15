@@ -16,7 +16,7 @@ const smat100 = '<:mat100:458140489485385780>';
 const sheart = '❤';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!Bleus', '!Actualité'],
+var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!bleus', '!actualité'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom'],
     cinvis = ['!membres'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -29,6 +29,8 @@ var asw = {
 	echo: ['Tu t\'es cru dans une caverne ?!', "Syncope générale provoquée par tts imminente."],
 	cui: ['Cui !', 'Tu me prends pour un vulgaire moineau?'],
 	nuclear: ['Alex The Autist vous détruira tous !'],
+	bleus: ['On est en finale ! On est en finale ! On est... on est... on est en finale ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3-0 !'],
+	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
 	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3", "Tu veux voir mon babobab ?"],
@@ -42,9 +44,7 @@ var asw = {
 	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim, "Je vais en faire un meme"+smat100],
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"],
 	Uff: ['Force et honneur !'],
-	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y\'a moyen de pécho dans la méta alors ? Ptain c\'est de mieux en mieux'],
-	Bleus: ['On est en finale ! On est en finale ! On est... on est... on est en finale ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3-0 !'],
-	Actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal']
+	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y\'a moyen de pécho dans la méta alors ? Ptain c\'est de mieux en mieux']
 };
 var mat100 = 0;
 
