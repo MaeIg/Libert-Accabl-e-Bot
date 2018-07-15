@@ -29,7 +29,7 @@ var asw = {
 	echo: ['Tu t\'es cru dans une caverne ?!', "Syncope générale provoquée par tts imminente."],
 	cui: ['Cui !', 'Tu me prends pour un vulgaire moineau?'],
 	nuclear: ['Alex The Autist vous détruira tous !'],
-	bleus: ['On est en finale ! On est en finale ! On est... on est... on est en finale ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3-0 !'],
+	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
