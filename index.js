@@ -42,7 +42,7 @@ var asw = {
 	Drac: ['+37 !', "J'ai disparu en 1937 !"],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
 	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim, "Je vais en faire un meme"+smat100],
-	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine"],
+	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine", "Je suis mort dehors mais c'est pas ma faute c'était la finale"],
 	Uff: ['Force et honneur !'],
 	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y\'a moyen de pécho dans la méta alors ? Ptain c\'est de mieux en mieux']
 };
