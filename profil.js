@@ -69,9 +69,9 @@ var newMessage = function (msg) {
 						if (xp >= forLvl) {
 							xp -= forLvl;
 							lvl++;
-							if (lvl > 5 && lvl != 7) {
-								//lvlUp(msg, lvl);
-							}
+							/*if (lvl > 5 && lvl != 7) {
+								lvlUp(msg, lvl);
+							}*/
 						}
 						// On met tout dans la bdd
 						client.query('UPDATE members SET lvl=$1 WHERE id=$2', [lvl, user.id], (err) => {
