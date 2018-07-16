@@ -17,7 +17,7 @@ client.connect((err) => {
 
 
 // Fonctions
-function lvlUp (msg, lvl) {
+/*function lvlUp (msg, lvl) {
 	var user = msg.author;
 	
 	const embed = new Discord.RichEmbed()
@@ -27,7 +27,7 @@ function lvlUp (msg, lvl) {
 	  .setThumbnail(user.avatarURL);
 
 	msg.channel.send({embed});
-}
+}*/
 
 var newMessage = function (msg) {
 	var user = msg.author;
