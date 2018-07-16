@@ -17,7 +17,7 @@ client.connect((err) => {
 
 
 // Fonctions
-/*function lvlUp (msg, lvl) {
+function lvlUp (msg, lvl) {
 	var user = msg.author;
 	
 	const embed = new Discord.RichEmbed()
@@ -27,7 +27,7 @@ client.connect((err) => {
 	  .setThumbnail(user.avatarURL);
 
 	msg.channel.send({embed});
-}*/
+}
 
 var newMessage = function (msg) {
 	var user = msg.author;
@@ -70,7 +70,7 @@ var newMessage = function (msg) {
 							xp -= forLvl;
 							lvl++;
 							if (lvl > 5 && lvl != 7) {
-								lvlUp(msg, lvl);
+								//lvlUp(msg, lvl);
 							}
 						}
 						// On met tout dans la bdd
