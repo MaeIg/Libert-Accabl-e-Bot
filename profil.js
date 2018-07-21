@@ -15,6 +15,14 @@ client.connect((err) => {
 	}
 });
 
+// TEMP
+client.query('SELECT name, lvl, messages FROM members ORDER BY messages DESC LIMIT 10', (err, res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
+	}
+});
 
 // Fonctions
 function lvlUp (msg, lvl) {
