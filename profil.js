@@ -15,7 +15,22 @@ client.connect((err) => {
 	}
 });
 
-
+// Tempo
+client.query('CREATE TABLE commands(name text, nbrUses int, lastUse DATE(), userID text)', (err) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log('table created');
+	}
+});
+	     
+client.query('SELECT * from commands', (err,res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
+	}
+});
 
 // Fonctions
 function lvlUp (msg, lvl) {
