@@ -123,7 +123,8 @@ function printLadder (res, salon) {
 	var rank = '';
 	
 	for (var i = 0 ; i < res.length ; i++) {
-		rank += '#' + i+1 + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
+		var j = i+1;
+		rank += '#' + j + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
 	}
 	
 	salon.send('***Classement des membres***```' + rank + '```');
@@ -133,7 +134,8 @@ function printLadderCommandes (res, salon) {
 	var rank = '';
 	
 	for (var i = 0 ; i < res.length ; i++) {
-		rank += '#' + i+1 + ' ' + res[i].name + ' (' + res[i].nbruses + ')\n';
+		var j = i+1;
+		rank += '#' + j + ' ' + res[i].name + ' (' + res[i].nbruses + ')\n';
 	}
 	
 	salon.send('***Commandes les plus utilisées***```' + rank + '```');
