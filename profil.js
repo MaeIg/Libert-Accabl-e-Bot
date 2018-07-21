@@ -136,7 +136,7 @@ function printLadderCommandes (res, salon) {
 		rank += '#' + i+1 + ' ' + res[i].name + ' (' + res[i].nbruses + ')\n';
 	}
 	
-	salon.send('***Classement des membres***```' + rank + '```');
+	salon.send('***Commandes les plus utilisées***```' + rank + '```');
 }
 
 var classement = function (salon) {
