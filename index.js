@@ -16,7 +16,7 @@ const smat100 = '<:mat100:458140489485385780>';
 const sheart = '❤';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement'],
+var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom'],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -63,6 +63,11 @@ bot.on('message', function (msg) {
 	
 	else if (txt === '!classement') {
 		profil.classement(msg.channel);
+		profil.newCommand(msg.author, txt);
+	}
+	
+	else if (txt === '!commandes') {
+		profil.classementCommandes(msg.channel);
 		profil.newCommand(msg.author, txt);
 	}
 	
