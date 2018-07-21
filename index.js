@@ -16,7 +16,7 @@ const smat100 = '<:mat100:458140489485385780>';
 const sheart = '❤';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!bleus', '!actualité'],
+var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!bleus', '!actualité', '!log'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom'],
     cinvis = ['!membres'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -31,6 +31,7 @@ var asw = {
 	nuclear: ['Alex The Autist vous détruira tous !'],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
+	log: ['Last update : 21/07/2018 14h50\n-Ajout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
 	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3", "Tu veux voir mon babobab ?"],
