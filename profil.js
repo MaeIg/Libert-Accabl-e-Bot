@@ -197,6 +197,7 @@ var profil = function (salon, nom) {
 			
 			salon.send({embed});
 		}
+	});
 }
 
 
