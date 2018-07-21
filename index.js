@@ -31,7 +31,7 @@ var asw = {
 	nuclear: ['Alex The Autist vous détruira tous !'],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
-	log: ['Last update : 21/07/2018 14h50\n-Ajout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes'],
+	log: ['Last update : 21/07/2018 14h50\n-Ajout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\n_!logs_ pour plus de logs'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
 	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3", "Tu veux voir mon babobab ?"],
