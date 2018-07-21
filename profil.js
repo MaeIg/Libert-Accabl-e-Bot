@@ -16,6 +16,15 @@ client.connect((err) => {
 });
 
 
+// TEMP
+client.query('ALTER TABLE members ADD lastmsg TIMESTAMP', (err) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log('table members modifiée');
+	}
+});
+
 // Fonctions
 function lvlUp (msg, lvl) {
 	var user = msg.author;
