@@ -17,11 +17,11 @@ client.connect((err) => {
 
 
 // TEMP
-client.query('ALTER TABLE members ADD lastmsg TIMESTAMP', (err) => {
+client.query('SELECT * FROM members', (err, res) => {
 	if (err) {
 		console.log(err.stack);
 	} else {
-		console.log('table members modifiée');
+		console.log(res);
 	}
 });
 
@@ -48,7 +48,7 @@ var newMessage = function (msg) {
 			if (res.rowCount === 0) {
 				// Si non, on l'ajoute
 				console.log(user.username + ' n\'est pas dans la bdd');
-				client.query('INSERT INTO members(id, name, lvl, xp, messages, money) VALUES($1, $2, 1, 0, 1, 1000)', [user.id, user.username], (err) => {
+				client.query('INSERT INTO members(id, name, lvl, xp, messages, money, lastmsg) VALUES($1, $2, 1, 0, 1, 1000, CURRENT_TIMESTAMP)', [user.id, user.username], (err) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
@@ -67,7 +67,7 @@ var newMessage = function (msg) {
 						    xp = res.rows[0].xp + 1,
 						    lvl = res.rows[0].lvl;
 						// On incrémente le nombre de messages
-						client.query('UPDATE members SET messages=messages+1 WHERE id=$1', [user.id], (err) => {
+						client.query('UPDATE members SET messages=messages+1, lastmsg=CURRENT_TIMESTAMP WHERE id=$1', [user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
