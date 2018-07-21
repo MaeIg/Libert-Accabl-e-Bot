@@ -123,10 +123,20 @@ function printLadder (res, salon) {
 	var rank = '';
 	
 	for (var i = 0 ; i < res.length ; i++) {
-		rank += '#' + i + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
+		rank += '#' + i+1 + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
 	}
 	
-	salon.send('***Classement des membres***\n\n```' + rank + '```');
+	salon.send('***Classement des membres***```' + rank + '```');
+}
+
+function printLadderCommandes (res, salon) {
+	var rank = '';
+	
+	for (var i = 0 ; i < res.length ; i++) {
+		rank += '#' + i+1 + ' ' + res[i].name + ' (' + res[i].nbruses + ')\n';
+	}
+	
+	salon.send('***Classement des membres***```' + rank + '```');
 }
 
 var classement = function (salon) {
@@ -139,10 +149,21 @@ var classement = function (salon) {
 	});
 }
 
+var classementCommandes = function (salon) {
+	client.query('SELECT name, nbruses FROM commands ORDER BY nbruses DESC LIMIT 10', (err, res) => {
+		if (err) {
+			console.log(err.stack);
+		} else {
+			printLadderCommandes(res.rows, salon);
+		}
+	});
+}
+
 
 // Export
 module.exports = {
 	newMessage: newMessage,
 	newCommand: newCommand,
-	classement: classement
+	classement: classement,
+	classementCommandes: classementCommandes
 };
