@@ -99,8 +99,38 @@ var newMessage = function (msg) {
 	});
 };
 
+var newCommand = function (user, command) {
+	client.query('SELECT name FROM commands WHERE name=$1', [command], (err, res) => {
+		if (err) {
+			console.log(err.stack);
+		} else {
+			// On teste si la commande est dans la bdd
+			if (res.rowCount === 0) {
+				// Si non, on l'ajoute
+				console.log(command + ' n\'est pas dans la bdd');
+				client.query('INSERT INTO commands(name, nbruses, lastuse, userid) VALUES($1, 1, CURRENT_TIMESTAMP(), $2)', [command, user.id], (err) => {
+					if (err) {
+						console.log(err.stack);
+						return 0;
+					} else {
+						console.log(command + ' a été ajoutée à la table commands');
+					}
+				});
+			} else {
+				// Déjà dans la bdd, on l'update
+				console.log(command + ' est dans la bdd');
+				client.query('UPDATE commands SET nbruses=nbruses+1, lastuse=CURRENT_TIMESTAMP(), userid=$1 WHERE name=$2', [user.id, command], (err) => {
+					if (err) {
+						console.log(err.stack);
+					}
+				});
+			}
+		}
+}
+
 
 // Export
 module.exports = {
-  newMessage: newMessage
+	newMessage: newMessage,
+	newCommand: newCommand
 };
