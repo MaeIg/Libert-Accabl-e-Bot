@@ -134,7 +134,7 @@ var classement = function (salon) {
 		if (err) {
 			console.log(err.stack);
 		} else {
-			printLadder(res, salon);
+			printLadder(res.rows, salon);
 		}
 	});
 }
