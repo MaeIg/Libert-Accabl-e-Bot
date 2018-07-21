@@ -15,6 +15,15 @@ client.connect((err) => {
 	}
 });
 
+// TEMP
+client.query('SELECT * FROM members', (err,res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
+	}
+});
+
 
 // Fonctions
 function lvlUp (msg, lvl) {
@@ -166,19 +175,23 @@ var profil = function (salon, nom) {
 		if (err) {
 			console.log(err.stack);
 		} else {
-			var val = res.rows[0];
-			var lvlup = Math.round((4*(Math.pow(val.lvl, 2)))/5);
-			var avatar = val.avatar;
-			if (avatar === null) {
-				avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
+			if (res.rows.length === 0) {
+				salon.send('Cette personne n\'est pas dans la base de données.');
+			} else {
+				var val = res.rows[0];
+				var lvlup = Math.round((4*(Math.pow(val.lvl, 2)))/5);
+				var avatar = val.avatar;
+				if (avatar === null) {
+					avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
+				}
+				const embed = new Discord.RichEmbed()
+				  .setAuthor("Profil de " + nom, "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg")
+				  .setColor(0xFF9900)
+				  .setDescription('Niveau : ' + val.lvl + '\nXP : ' + val.xp + '/' + lvlup + '\nMessages : ' + val.messages + '\nLibCoins : ' + val.money + '\nDernier message le ' + val.lastmsg)
+				  .setThumbnail(avatar);
+				
+				salon.send({embed});
 			}
-			const embed = new Discord.RichEmbed()
-			  .setAuthor("Profil de " + nom, "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg")
-			  .setColor(0xFF9900)
-			  .setDescription('Niveau : ' + val.lvl + '\nXP : ' + val.xp + '/' + lvlup + '\nMessages : ' + val.messages + '\nLibCoins : ' + val.money + '\nDernier message le ' + val.lastmsg)
-			  .setThumbnail(avatar);
-			
-			salon.send({embed});
 		}
 	});
 }
