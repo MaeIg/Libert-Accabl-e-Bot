@@ -126,6 +126,7 @@ var newCommand = function (user, command) {
 				});
 			}
 		}
+	});
 }
 
 
