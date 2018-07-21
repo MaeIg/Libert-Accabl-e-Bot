@@ -14,9 +14,10 @@ function randInt(max) {
 const scalim = '<:calim:371258660489396225>';
 const smat100 = '<:mat100:458140489485385780>';
 const sheart = '❤';
+const ssob = '😭';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes'],
+var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom'],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -29,11 +30,11 @@ var asw = {
 	echo: ['Tu t\'es cru dans une caverne ?!', "Syncope générale provoquée par tts imminente."],
 	cui: ['Cui !', 'Tu me prends pour un vulgaire moineau?'],
 	nuclear: ['Alex The Autist vous détruira tous !'],
-	cyanure: ['On attend toujours que Matsam fasse cette commande ' + scalim],
+	cyanure: ['J\'attends toujours que Matsam me crée ' + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
-	log: ['***Last update : 21/07/2018 14h50***\n\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\n\n_!logs_ pour plus de logs'],
-	logs: ['**Màj du bot**\n\n*06/07/2018*\nCréation du bot\n\n*Jusqu\'au 13/07/2018*\nAjout de commandes diverses\n\n*13/07/2018*\nCréation d\'une base de données et de la table members pour créer des profils aux différents utilisateurs\n\n*21/07/2018*\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes'],
+	log: ['***Last update : 21/07/2018 20h15***\n\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\nAjout des commandes !classement, !commandes, !profil, et !cyanure\n\n_!logs_ pour plus de logs'],
+	logs: ['**Màj du bot**\n\n*06/07/2018*\nCréation du bot\n\n*Jusqu\'au 13/07/2018*\nAjout de commandes diverses\n\n*13/07/2018*\nCréation d\'une base de données et de la table members pour créer des profils aux différents utilisateurs\n\n*21/07/2018*\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\nAjout des commandes !classement, !commandes, !profil, et !cyanure'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
 	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3", "Tu veux voir mon babobab ?"],
@@ -69,6 +70,15 @@ bot.on('message', function (msg) {
 	else if (txt === '!commandes') {
 		profil.classementCommandes(msg.channel);
 		profil.newCommand(msg.author, txt);
+	}
+	
+	else if (txt.slice(7) === '!profil') {
+		if (txt.length > 8) {
+			profil.profil(msg.channel, txt.slice(8,txt.length));
+		} else {
+			profil.profil(msg.channel, msg.author);
+		}
+		profil.newCommand(msg.author, '!profil');
 	}
 	
 	else if (txt === '!echo') {
