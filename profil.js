@@ -16,14 +16,6 @@ client.connect((err) => {
 });
 
 // TEMP
-client.query('ALTER TABLE members ADD avatar text', (err) => {
-	if (err) {
-		console.log(err.stack);
-	} else {
-		console.log('La colonne avatar a été ajoutée à la table members');
-	}
-});
-
 client.query('SELECT * FROM members', (err,res) => {
 	if (err) {
 		console.log(err.stack);
