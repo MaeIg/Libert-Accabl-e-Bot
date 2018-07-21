@@ -108,7 +108,7 @@ var newCommand = function (user, command) {
 			if (res.rowCount === 0) {
 				// Si non, on l'ajoute
 				console.log(command + ' n\'est pas dans la bdd');
-				client.query('INSERT INTO commands(name, nbruses, lastuse, userid) VALUES($1, 1, CURRENT_TIMESTAMP(), $2)', [command, user.id], (err) => {
+				client.query('INSERT INTO commands(name, nbruses, lastuse, userid) VALUES($1, 1, CURRENT_TIMESTAMP, $2)', [command, user.id], (err) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
@@ -119,7 +119,7 @@ var newCommand = function (user, command) {
 			} else {
 				// Déjà dans la bdd, on l'update
 				console.log(command + ' est dans la bdd');
-				client.query('UPDATE commands SET nbruses=nbruses+1, lastuse=CURRENT_TIMESTAMP(), userid=$1 WHERE name=$2', [user.id, command], (err) => {
+				client.query('UPDATE commands SET nbruses=nbruses+1, lastuse=CURRENT_TIMESTAMP, userid=$1 WHERE name=$2', [user.id, command], (err) => {
 					if (err) {
 						console.log(err.stack);
 					}
