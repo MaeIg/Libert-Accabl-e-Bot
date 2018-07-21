@@ -15,14 +15,6 @@ client.connect((err) => {
 	}
 });
 
-// Tempo
-client.query('SELECT * from commands', (err,res) => {
-	if (err) {
-		console.log(err.stack);
-	} else {
-		console.log(res);
-	}
-});
 
 // Fonctions
 function lvlUp (msg, lvl) {
@@ -57,7 +49,6 @@ var newMessage = function (msg) {
 				});
 			} else {
 				// Si oui, on gère tout le bazard
-				console.log(user.username + ' est dans la bdd');
 				client.query('SELECT messages, xp, lvl FROM members WHERE id=$1', [user.id], (err, res) => {
 					if (err) {
 						console.log(err.stack);
@@ -118,7 +109,6 @@ var newCommand = function (user, command) {
 				});
 			} else {
 				// Déjà dans la bdd, on l'update
-				console.log(command + ' est dans la bdd');
 				client.query('UPDATE commands SET nbruses=nbruses+1, lastuse=CURRENT_TIMESTAMP, userid=$1 WHERE name=$2', [user.id, command], (err) => {
 					if (err) {
 						console.log(err.stack);
