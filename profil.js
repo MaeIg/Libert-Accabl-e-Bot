@@ -15,14 +15,6 @@ client.connect((err) => {
 	}
 });
 
-// TEMP
-client.query('SELECT name, lvl, messages FROM members ORDER BY messages DESC LIMIT 10', (err, res) => {
-	if (err) {
-		console.log(err.stack);
-	} else {
-		console.log(res);
-	}
-});
 
 // Fonctions
 function lvlUp (msg, lvl) {
@@ -127,9 +119,30 @@ var newCommand = function (user, command) {
 	});
 }
 
+function printLadder (res, salon) {
+	var rank = '';
+	
+	for (var i = 0 ; i < res.length ; i++) {
+		rank += res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
+	}
+	
+	salon.send('***Classement des membres***\n\n```' + rank + '```');
+}
+
+var classement = function (salon) {
+	client.query('SELECT name, lvl, messages FROM members ORDER BY messages DESC LIMIT 10', (err, res) => {
+		if (err) {
+			console.log(err.stack);
+		} else {
+			printLadder(res, salon);
+		}
+	});
+}
+
 
 // Export
 module.exports = {
 	newMessage: newMessage,
-	newCommand: newCommand
+	newCommand: newCommand,
+	classement: classement
 };
