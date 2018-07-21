@@ -15,6 +15,23 @@ client.connect((err) => {
 	}
 });
 
+// TEMP
+client.query('ALTER TABLE members ADD avatar text', (err) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log('La colonne avatar a été ajoutée à la table members');
+	}
+});
+
+client.query('SELECT * FROM members', (err,res) => {
+	if (err) {
+		console.log(err.stack);
+	} else {
+		console.log(res);
+	}
+});
+
 
 // Fonctions
 function lvlUp (msg, lvl) {
@@ -39,7 +56,7 @@ var newMessage = function (msg) {
 			if (res.rowCount === 0) {
 				// Si non, on l'ajoute
 				console.log(user.username + ' n\'est pas dans la bdd');
-				client.query('INSERT INTO members(id, name, lvl, xp, messages, money, lastmsg) VALUES($1, $2, 1, 0, 1, 1000, CURRENT_TIMESTAMP)', [user.id, user.username], (err) => {
+				client.query('INSERT INTO members(id, name, lvl, xp, messages, money, lastmsg, avatar) VALUES($1, $2, 1, 0, 1, 1000, CURRENT_TIMESTAMP, $3)', [user.id, user.username, user.avatarURL], (err) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
@@ -58,7 +75,7 @@ var newMessage = function (msg) {
 						    xp = res.rows[0].xp + 1,
 						    lvl = res.rows[0].lvl;
 						// On incrémente le nombre de messages
-						client.query('UPDATE members SET messages=messages+1, lastmsg=CURRENT_TIMESTAMP WHERE id=$1', [user.id], (err) => {
+						client.query('UPDATE members SET messages=messages+1, lastmsg=CURRENT_TIMESTAMP, avatar=$1 WHERE id=$2', [user.avatarURL, user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
@@ -161,11 +178,33 @@ var classementCommandes = function (salon) {
 	});
 }
 
+var profil = function (salon, nom) {
+	client.query('SELECT lvl, xp, messages, money, lastmsg FROM members WHERE name=$1', [nom], (err,res) => {
+		if (err) {
+			console.log(err.stack);
+		} else {
+			var val = res.rows[0];
+			var lvlup = Math.round((4*(Math.pow(val.lvl, 2)))/5);
+			var avatar = val.avatar;
+			if (avatar === null) {
+				avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
+			}
+			const embed = new Discord.RichEmbed()
+			  .setAuthor("Profil de " + nom, "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg")
+			  .setColor(0xFF9900)
+			  .setDescription('Niveau : ' + val.lvl + '\nXP : ' + val.xp + '/' + lvlup + '\nMessages : ' + val.messages + '\nLibCoins : ' + val.money + '\nDernier message le ' + val.lastmsg)
+			  .setThumbnail(avatar);
+			
+			salon.send({embed});
+		}
+}
+
 
 // Export
 module.exports = {
 	newMessage: newMessage,
 	newCommand: newCommand,
 	classement: classement,
-	classementCommandes: classementCommandes
+	classementCommandes: classementCommandes,
+	profil: profil
 };
