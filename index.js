@@ -16,7 +16,7 @@ const smat100 = '<:mat100:458140489485385780>';
 const sheart = '❤';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!bleus', '!actualité', '!log'],
+var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom'],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -29,6 +29,7 @@ var asw = {
 	echo: ['Tu t\'es cru dans une caverne ?!', "Syncope générale provoquée par tts imminente."],
 	cui: ['Cui !', 'Tu me prends pour un vulgaire moineau?'],
 	nuclear: ['Alex The Autist vous détruira tous !'],
+	cyanure: ['On attend toujours que Matsam fasse cette commande ' + scalim],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
 	log: ['***Last update : 21/07/2018 14h50***\n\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\n\n_!logs_ pour plus de logs'],
@@ -57,6 +58,11 @@ bot.on('message', function (msg) {
 	
 	if (txt === '!everyone') {
 		msg.reply('Et non tu seras le seul mentionné !');
+		profil.newCommand(msg.author, txt);
+	}
+	
+	else if (txt === '!classement') {
+		profil.classement(msg.channel);
 		profil.newCommand(msg.author, txt);
 	}
 	
