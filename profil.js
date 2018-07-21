@@ -16,7 +16,7 @@ client.connect((err) => {
 });
 
 // Tempo
-client.query('CREATE TABLE commands(name text, nbrUses int, lastUse DATETIME, userID text)', (err) => {
+client.query('CREATE TABLE commands(name text PRIMARY KEY, nbrUses int, lastUse DATETIME(), userID text)', (err) => {
 	if (err) {
 		console.log(err.stack);
 	} else {
