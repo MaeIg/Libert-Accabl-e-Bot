@@ -55,12 +55,14 @@ bot.on('message', function (msg) {
 	
 	if (txt === '!everyone') {
 		msg.reply('Et non tu seras le seul mentionné !');
+		profil.newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!echo') {
 		msg.channel.send('echo', {
 			tts: true
 		});
+		profil.newCommand(msg.author, txt);
 	}
 	
 	else if (txt === smat100) {
@@ -70,6 +72,7 @@ bot.on('message', function (msg) {
 		} else {
 			mat100 ++;
 		}
+		profil.newCommand(msg.author, txt);
 	}
 	
 	else if (txt.slice(0, 2) === '!d' && !isNaN(txt.substr(2))) {
@@ -80,6 +83,7 @@ bot.on('message', function (msg) {
 		var des = randInt(txt.substr(2)) + 1;
 		msg.channel.send("d" + txt.substr(2) + " : ***" + des + "***");
 		}
+		profil.newCommand(msg.author, '!d + nbr');
 	}
 	
 	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
@@ -89,6 +93,7 @@ bot.on('message', function (msg) {
 			var L = asw[txt.substr(1)];
 			msg.channel.send(L[randInt(L.length)]);
 		}
+		profil.newCommand(msg.author, txt);
 	}
 });
 
