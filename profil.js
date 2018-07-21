@@ -123,7 +123,7 @@ function printLadder (res, salon) {
 	var rank = '';
 	
 	for (var i = 0 ; i < res.length ; i++) {
-		rank += res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
+		rank += '#' + i + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].messages + '\n';
 	}
 	
 	salon.send('***Classement des membres***\n\n```' + rank + '```');
