@@ -76,7 +76,7 @@ bot.on('message', function (msg) {
 		if (txt.length > 8) {
 			profil.profil(msg.channel, txt.slice(8,txt.length));
 		} else {
-			profil.profil(msg.channel, msg.author);
+			profil.profil(msg.channel, msg.author.username);
 		}
 		profil.newCommand(msg.author, '!profil');
 	}
