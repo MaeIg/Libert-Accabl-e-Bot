@@ -30,7 +30,7 @@ var asw = {
 	echo: ['Tu t\'es cru dans une caverne ?!', "Syncope générale provoquée par tts imminente."],
 	cui: ['Cui !', 'Tu me prends pour un vulgaire moineau?'],
 	nuclear: ['Alex The Autist vous détruira tous !'],
-	cyanure: ['J\'attends toujours que Matsam me crée ' + ssob],
+	cyanure: ["Ca spamme beaucoup trop sur ce canal, " + msg.author.username + " a donc décidé d'en finir avec cette communauté oppressante."],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal'],
 	log: ['***Last update : 21/07/2018 20h15***\n\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\nAjout des commandes !classement, !commandes, !profil, et !cyanure\n\n_!logs_ pour plus de logs'],
