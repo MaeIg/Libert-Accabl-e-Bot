@@ -101,15 +101,15 @@ bot.on('message', function (msg) {
 		time = Math.floor((time-day)/30);
 		var month = time % 12;
 		day -= Math.floor(time/2);
-		if (day < 0) {
+		while (day < 0) {
 			month --;
-			day %= 24;
+			day += 30;
 		}
 		
 		time = Math.floor((time-month)/12);
 		var year = time;
-		if (month < 0) {
-			month %= 12;
+		while (month < 0) {
+			month += 12;
 			year --;
 		}
 		
