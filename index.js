@@ -100,10 +100,18 @@ bot.on('message', function (msg) {
 		
 		time = Math.floor((time-day)/30);
 		var month = time % 12;
-		month += Math.floor(month/2);
+		day -= Math.floor(time/2);
+		if (day < 0) {
+			month --;
+			day %= 24;
+		}
 		
 		time = Math.floor((time-month)/12);
 		var year = time;
+		if (month < 0) {
+			month %= 12;
+			year --;
+		}
 		
 		msg.channel.send('Notre ami Cerfpihier se vengera contre Shaggyz dans ' + year + ' ans, ' + month + ' mois, ' + day + ' jours, ' + hour + ' heures, ' + min + ' minutes, et ' + sec + ' secondes !\nBonne chance à lui dans sa croisade !');
 	}
