@@ -10,6 +10,9 @@ function randInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
 }
 
+// Variables globales
+var hll = new Date(2018,08,09,20,08,00);
+
 // Smileys
 const scalim = '<:calim:371258660489396225>';
 const smat100 = '<:mat100:458140489485385780>';
@@ -18,7 +21,7 @@ const ssob = '😭';
 
 // Commandes
 var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord'],
-    cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal'],
+    cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier'],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 var asw = {
@@ -49,7 +52,8 @@ var asw = {
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine", "Je suis mort dehors mais c'est pas ma faute c'était la finale"],
 	Uff: ['Force et honneur !'],
 	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y\'a moyen de pécho dans la méta alors ? Ptain c\'est de mieux en mieux', 'Il ne peut en rester AUCUN. Je ne laisserai aucune de ces racailles faire la loi dans cette ville. NOT UNDER MY WATCH'],
-	Tephal: ['tg','Les meilleurs articles pour pécho s\'achètent chez Moulinooooooooot.', 'VTFF', 'Ce sera répété, amplifié et déformé ou inversement réciproquement dans l\'autre sens, au choix']
+	Tephal: ['tg','Les meilleurs articles pour pécho s\'achètent chez Moulinooooooooot.', 'VTFF', 'Ce sera répété, amplifié et déformé ou inversement réciproquement dans l\'autre sens, au choix'],
+	Cerfpihier: ['Écoute petit...']
 };
 var mat100 = 0;
 
@@ -76,6 +80,31 @@ bot.on('message', function (msg) {
 	else if (txt === '!commandes') {
 		profil.classementCommandes(msg.channel);
 		profil.newCommand(msg.author, txt);
+	}
+	
+	else if (txt === '!Cerfpihier') {
+		var now = new Date();
+		var time = hll-now;
+		
+		time = Math.floor(time/1000);
+		var sec = time % 60;
+		
+		time = Math.floor((time-sec)/60);
+		var min = time % 60;
+		
+		time = Math.floor((time-min)/60);
+		var hour = time % 24;
+		
+		time = Math.floor((time-hour)/24);
+		var day = time % 30;
+		
+		time = Math.floor((time-day)/30);
+		var month = time % 12;
+		
+		time = Math.floor((time-month)/12);
+		var year = time;
+		
+		msg.channel.send('Notre ami Cerfpihier se vengera contre Shaggyz dans ' + year + ' ans, ' + month + ' mois, ' + day + ' jours, ' + hour + ' heures, ' + min + ' minutes, et ' + sec + ' secondes !\n Bonne chance à lui dans sa croisade !');
 	}
 	
 	else if (txt.slice(0,7) === '!profil') {
