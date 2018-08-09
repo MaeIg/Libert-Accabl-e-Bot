@@ -11,7 +11,7 @@ function randInt(max) {
 }
 
 // Variables globales
-var hll = new Date(2018,08,09,20,08,00);
+var hll = new Date(2022,08,09,20,08,00);
 
 // Smileys
 const scalim = '<:calim:371258660489396225>';
