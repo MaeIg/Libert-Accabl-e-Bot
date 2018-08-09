@@ -100,6 +100,7 @@ bot.on('message', function (msg) {
 		
 		time = Math.floor((time-day)/30);
 		var month = time % 12;
+		month += Math.floor(month/2);
 		
 		time = Math.floor((time-month)/12);
 		var year = time;
