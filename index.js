@@ -104,7 +104,7 @@ bot.on('message', function (msg) {
 		time = Math.floor((time-month)/12);
 		var year = time;
 		
-		msg.channel.send('Notre ami Cerfpihier se vengera contre Shaggyz dans ' + year + ' ans, ' + month + ' mois, ' + day + ' jours, ' + hour + ' heures, ' + min + ' minutes, et ' + sec + ' secondes !\n Bonne chance à lui dans sa croisade !');
+		msg.channel.send('Notre ami Cerfpihier se vengera contre Shaggyz dans ' + year + ' ans, ' + month + ' mois, ' + day + ' jours, ' + hour + ' heures, ' + min + ' minutes, et ' + sec + ' secondes !\nBonne chance à lui dans sa croisade !');
 	}
 	
 	else if (txt.slice(0,7) === '!profil') {
