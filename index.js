@@ -84,6 +84,7 @@ bot.on('message', function (msg) {
 	
 	else if (txt === '!Cerfpihier') {
 		var now = new Date();
+		console.log(now);
 		var time = hll-now;
 		
 		time = Math.floor(time/1000);
