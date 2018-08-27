@@ -57,7 +57,7 @@ var asw = {
 	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'Y\'a moyen de pécho dans la méta alors ? Ptain c\'est de mieux en mieux', 'Il ne peut en rester AUCUN. Je ne laisserai aucune de ces racailles faire la loi dans cette ville. NOT UNDER MY WATCH'],
 	Tephal: ['tg','Les meilleurs articles pour pécho s\'achètent chez Moulinooooooooot.', 'VTFF', 'Ce sera répété, amplifié et déformé ou inversement réciproquement dans l\'autre sens, au choix'],
 	Cerfpihier: ['Écoute petit...'],
-	Lilith: ["Je suis aussi douée avec ma langue, on peut bien s'entendre" + sfeu, "Je suis très flexible sur les horaires (pas que sur les horaires " + ssmile + " )", "J'étais bourrée xD", "Tephalou love love <3", "Un PMV de qualité s'utilise chez Moulinot."],
+	Lilith: ["Je suis aussi douée avec ma langue, on peut bien s'entendre" + sfeu, "Je suis très flexible sur les horaires (pas que sur les horaires " + ssmile + " )", "J'étais bourrée xD", "Tephalou love love <3", "Un PMV de qualité s'utilise chez Moulinot.", 'Là où je passe, les PMV trépassent'],
 	Loko: ['On est des gentils ou des mechants ?', 'Bravo Hartyom t\'es le plus fort de la ville', 'Ça freine mes débuts de serial killer','allez violé moi', "Je viens de recompter tu m'as deja sauvé 3 fois donc la prochaine c'est bon tu peux me laisser mourir", 'Manque plus qu\'on me viole dans le désert et je suis au top', 'Shaggyz Cleme je vous love ' + sheart + ' ' + sheart + ' coeur sur vous']
 };
 var mat100 = 0;
