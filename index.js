@@ -38,7 +38,7 @@ var asw = {
 	nuclear: ['Alex The Autist vous détruira tous !'],
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
-	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal', 'La méta a maintenant une coa de bannis dans son zoo', 'Gogoth est de retour et a trouvé une nouvelle baby-sitter : Lilith '+sfeu],
+	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal', 'La méta a maintenant une coa de bannis dans son zoo', 'Golgoth est de retour et a trouvé une nouvelle baby-sitter : Lilith '+sfeu],
 	log: ['***Last update : 09/08/2018 04h15***\n\nAjout de la commande !Tephal\n\n_!logs_ pour plus de logs'],
 	logs: ['**Màj du bot**\n\n*06/07/2018*\nCréation du bot\n\n*Jusqu\'au 13/07/2018*\nAjout de commandes diverses\n\n*13/07/2018*\nCréation d\'une base de données et de la table members pour créer des profils aux différents utilisateurs\n\n*21/07/2018*\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\nAjout des commandes !classement, !commandes, !profil, et !cyanure\n\n*06/08/2018*\nMàj du !cyanure par Matsam\n\n*09/08/2018*\nAjout de la commande !Tephal'],
 	Bernard: ['C\'est moi !'],
