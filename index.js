@@ -20,6 +20,7 @@ const sheart = '❤';
 const ssob = '😭';
 const sfeu = '🔥';
 const ssmile = '😄';
+const sokhand = '👌';
 const chanBeauf = '<#418751341519962113>';
 
 // Commandes
@@ -47,7 +48,7 @@ var asw = {
 	MacKay: ["L'humanité est pourrie l'amour est une illusion", "Je vous suis infiniment supérieur ", "Loué soit le grand MacKay", "Ma vie pour MacKay", "Et si on abandonnait Matsang pour la quinzième fois ?", "Les éclaireurs : poules mouillées ou tafioles?"],
 	Roventa: ["Je t'aime... mais lâche-moi bordel !", "Cool une vodka, je ne serais pas obligé de boire mon eau pour finir l'expé !", "Les russes ont triché l'Égypte devait gagner", "t'habite ou ?", "T'as du style, épouse-moi !", "Cool un RP ! Jump antipictoquoi ?","Ça m énerve pcq je ne suis pas à la hauteur de tout ce que tu nous apporte", "Une fille qui joue a hordes, ca ne peut pas etre qq'un de manipulateur et d' égocentrique", "Allez allez vous faites moins les malines quand vous nous mangez le sexe"],
 	Sibaal: ['Et en plus tu m\'traîte de Golgoth.'],
-	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai", chanBeauf],
+	Cleme: ['Et c\'est sur ces mots que toute envie révolutionnaire s\'éteint chez le peuple.','Le mandat de la présidente Cleme était incontestable et sa puissance sans limite.', "Île-de-France? Tu veux dire Paris", "Y a que Paint de vrai", chanBeauf, "Je préfère le gratin dauphinois à la bite "+sokhand],
 	Khran: ['Un vrai ETListe abandonne son stuff dans le désert !', "Meurt dans le désert"],
 	Drac: ['+37 !', "J'ai disparu en 1937 !"],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
