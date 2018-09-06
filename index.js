@@ -90,13 +90,17 @@ bot.on('message', function (msg) {
 	}
 	
 	else if (txt === '!penis') {
-		let nbr = randInt(10) + 1;
-		let penis = '8';
-		for (var i = 0 ; i < nbr ; i++) {
-			penis += '=';
+		if (msg.author === 'Maelg') {
+			msg.channel.send('8===============D');
+		} else {
+			let nbr = randInt(10) + 1;
+			let penis = '8';
+			for (var i = 0 ; i < nbr ; i++) {
+				penis += '=';
+			}
+			penis += 'D';
+			msg.channel.send(penis);
 		}
-		penis += 'D';
-		msg.channel.send(penis);
 		profil.newCommand(msg.author, txt);
 	}
 	
