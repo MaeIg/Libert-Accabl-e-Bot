@@ -90,7 +90,7 @@ bot.on('message', function (msg) {
 	}
 	
 	else if (txt === '!penis') {
-		if (msg.author === 'Maelg') {
+		if (msg.author.username === 'Maelg') {
 			msg.channel.send('8===============D');
 		} else {
 			let nbr = randInt(10) + 1;
