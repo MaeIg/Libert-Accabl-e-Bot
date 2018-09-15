@@ -96,7 +96,6 @@ bot.on('message', function (msg) {
 		else if(msg.author.username === 'MacKay')
 		{
 			msg.channel.send('8===========================================D');
-		}
 		} else {
 			let nbr = randInt(10) + 1;
 			let penis = '8';
