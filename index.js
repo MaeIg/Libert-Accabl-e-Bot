@@ -155,7 +155,7 @@ bot.on('message', function (msg) {
 		profil.newCommand(msg.author, txt);
 	}
 	
-	else if (txt == '!oreoplz') {
+	else if (txt === '!oreoplz') {
 		msg.channel.send(soreo);
 		profil.newCommand(msg.author, txt);
 	}
