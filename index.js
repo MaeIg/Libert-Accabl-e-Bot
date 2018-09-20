@@ -22,6 +22,7 @@ const sfeu = '🔥';
 const ssmile = '😄';
 const sokhand = '👌';
 const chanBeauf = '<#418751341519962113>';
+const soreo = 'https://cdn.discordapp.com/attachments/481899683275603973/492331931170766849/oreo_2.png';
 
 // Commandes
 var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord', '!penis'],
@@ -151,6 +152,11 @@ bot.on('message', function (msg) {
 		msg.channel.send('echo', {
 			tts: true
 		});
+		profil.newCommand(msg.author, txt);
+	}
+	
+	else if (txt == '!oreoplz') {
+		msg.channel.send(soreo);
 		profil.newCommand(msg.author, txt);
 	}
 	
