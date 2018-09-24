@@ -25,7 +25,7 @@ const chanBeauf = '<#418751341519962113>';
 const soreo = 'https://cdn.discordapp.com/attachments/481899683275603973/492331931170766849/oreo_2.png';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord', '!penis', '!oreoplz'],
+var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord', '!penis', '!oreoplz', '!license'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko'],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -45,6 +45,7 @@ var asw = {
 	logs: ['**Màj du bot**\n\n*06/07/2018*\nCréation du bot\n\n*Jusqu\'au 13/07/2018*\nAjout de commandes diverses\n\n*13/07/2018*\nCréation d\'une base de données et de la table members pour créer des profils aux différents utilisateurs\n\n*21/07/2018*\nAjout de la table commands dans la bdd pour pouvoir faire des stats sur les commandes\nAjout des commandes !classement, !commandes, !profil, et !cyanure\n\n*06/08/2018*\nMàj du !cyanure par Matsam\n\n*09/08/2018*\nAjout de la commande !Tephal'],
 	penis: ['8=D'],
 	oreoplz: [soreo],
+	license: ['https://github.com/MaeIg/Libert-Accabl-e-Bot/blob/master/LICENSE.md'],
 	Bernard: ['C\'est moi !'],
 	Golgoth: ['Tu parle à ki ?', 'tu me parle à moi?', "j'suis un gangster"],
 	Maelg: ['Miou !', "J'aime pas Despacito, je l'ai juste jouée 50 fois sur osu!", ":3", "Tu veux voir mon babobab ?"],
