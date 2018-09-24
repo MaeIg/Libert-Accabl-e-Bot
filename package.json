@@ -2,7 +2,7 @@
   "name": "discord.js-heroku",
   "version": "1.0.0",
   "description": "Miou !",
-  "main": "index.js",
+  "main": "./index.js",
   "engines": {
       "node": "8.11.3",
       "npm": "5.6.0"
@@ -21,10 +21,12 @@
   },
   "keywords": [
     "heroku",
-    "discord.js"
+    "discord.js",
+    "bot",
+    "node"
   ],
   "author": "Maelg",
-  "license": "",
+  "license": "MIT",
   "bugs": {
     "url": ""
   },
