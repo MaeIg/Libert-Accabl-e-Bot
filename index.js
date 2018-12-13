@@ -25,7 +25,7 @@ const chanBeauf = '<#418751341519962113>';
 const soreo = 'https://cdn.discordapp.com/attachments/481899683275603973/492331931170766849/oreo_2.png';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord', '!penis', '!oreoplz', '!license'],
+var commandes = ['!help', '!forum', '!trombi', '!site' '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord', '!penis', '!oreoplz', '!license'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko'],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -34,6 +34,7 @@ var asw = {
 	membres: ['**Commandes disponibles :**\n```' + cpseudo.join('\n') + '```\n_!help_ pour plus de commandes'],
 	forum: ['http://kirov-meta.forumactif.org/'],
 	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
+	site: ['https://bernard-site.herokuapp.com/'],
 	everyone: ['Normalement ce message n\'est pas censé apparaître :calim:'],
 	echo: ['Tu t\'es cru dans une caverne ?!', "Syncope générale provoquée par tts imminente."],
 	cui: ['Cui !', 'Tu me prends pour un vulgaire moineau?'],
@@ -41,7 +42,7 @@ var asw = {
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal', 'La méta a maintenant une coa de bannis dans son zoo', 'Golgoth est de retour et a trouvé une nouvelle baby-sitter : Lilith '+sfeu],
-	log: ['***Last update : 09/08/2018 04h15***\n\nAjout de la commande !Tephal\n\n_!logs_ pour plus de logs'],
+	log: ['***Last update : 13/12/2018 21h23***\n\nCréation d\'un site pour Bernard !\nCentralisation des logs sur ce site\n\n_!logs_ pour plus de logs'],
 	logs: ['https://bernard-site.herokuapp.com/logs'],
 	penis: ['8=D'],
 	oreoplz: [soreo],
