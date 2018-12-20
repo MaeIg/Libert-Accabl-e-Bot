@@ -65,7 +65,7 @@ var asw = {
 	Cerfpihier: ['Écoute petit...'],
 	Lilith: ["Je suis aussi douée avec ma langue, on peut bien s'entendre" + sfeu, "Je suis très flexible sur les horaires (pas que sur les horaires " + ssmile + " )", "J'étais bourrée xD", "Tephalou love love <3", "Un PMV de qualité s'utilise chez Moulinot.", 'Là où je passe, les PMV trépassent'],
 	Loko: ['On est des gentils ou des mechants ?', 'Bravo Hartyom t\'es le plus fort de la ville', 'Ça freine mes débuts de serial killer','allez violé moi', "Je viens de recompter tu m'as deja sauvé 3 fois donc la prochaine c'est bon tu peux me laisser mourir", 'Manque plus qu\'on me viole dans le désert et je suis au top', 'Shaggyz Cleme je vous love ' + sheart + ' ' + sheart + ' coeur sur vous'],
-	WassaW:['J AI LU PENDANT 72 HEURES NON STOP AVEC UN SOIR DANS LA NUIT BLANCHE', 'NEGATIF IL EST TOUJOURS SOUS PLASTIQUE ON Y TOUCHE PAS', 'AHAHAHAHAH']
+	WassaW: ['J AI LU PENDANT 72 HEURES NON STOP AVEC UN SOIR DANS LA NUIT BLANCHE', 'NEGATIF IL EST TOUJOURS SOUS PLASTIQUE ON Y TOUCHE PAS', 'AHAHAHAHAH']
 };
 var mat100 = 0;
 
@@ -95,7 +95,7 @@ bot.on('message', function (msg) {
 	}
 	
 	else if (txt === '!penis') {
-		if (msg.author.username === 'Maelg') {
+		if (msg.author.username === 'Clémentine') {
 			msg.channel.send('8-D');
 		} else {
 			let nbr = randInt(10) + 1;
