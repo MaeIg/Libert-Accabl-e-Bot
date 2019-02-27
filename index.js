@@ -29,7 +29,7 @@ const sumbrella = '☔';
 const sdrop = '💦';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!site', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!license'],
+var commandes = ['!help', '!forum', '!trombi', '!site', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!license'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko', "!WassaW"],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -96,6 +96,11 @@ bot.on('message', function (msg) {
 	
 	else if (txt === '!commandes') {
 		profil.classementCommandes(msg.channel);
+		profil.newCommand(msg.author, txt);
+	}
+	
+	else if (txt === '!rich') {
+		profil.classementRichesse(msg.channel);
 		profil.newCommand(msg.author, txt);
 	}
 	
