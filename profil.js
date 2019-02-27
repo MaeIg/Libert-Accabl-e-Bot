@@ -15,6 +15,25 @@ client.connect((err) => {
 	}
 });
 
+// On change la bdd 
+client.query('SELECT id, lvl  FROM members', (err,res) => {
+    if (err) {
+        console.log(err.stack);
+    } else {
+        for (var i = 0 ; i < res.rows.length ; i++) {
+            var val = res.rows[i];
+            var newMoney = 1000;
+            for (var j = 1 ; j <= val.lvl ; j++) {
+                newMoney += j*10;
+            }
+            client.query('UPDATE members SET money=$1 WHERE id=$2', [newMoney, val.id], (err) => {
+                if (err) {
+                    console.log(err.stack);
+                }
+            });
+        }
+    }
+});
 
 // Fonctions
 function lvlUp (msg, lvl) {
@@ -49,14 +68,15 @@ var newMessage = function (msg) {
 				});
 			} else {
 				// Si oui, on gère tout le bazard
-				client.query('SELECT messages, xp, lvl FROM members WHERE id=$1', [user.id], (err, res) => {
+				client.query('SELECT messages, xp, lvl, money FROM members WHERE id=$1', [user.id], (err, res) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
 					} else {
 						var nbrMsg = res.rows[0].messages + 1,
 						    xp = res.rows[0].xp + 1,
-						    lvl = res.rows[0].lvl;
+						    lvl = res.rows[0].lvl,
+						    money = res.rows[0].money;
 						// On incrémente le nombre de messages
 						client.query('UPDATE members SET messages=messages+1, lastmsg=CURRENT_TIMESTAMP, avatar=$1 WHERE id=$2', [user.avatarURL, user.id], (err) => {
 							if (err) {
@@ -68,6 +88,7 @@ var newMessage = function (msg) {
 						if (xp >= forLvl) {
 							xp -= forLvl;
 							lvl++;
+							money += lvl*10;
 							/*if (lvl > 5 && lvl != 7) {
 								lvlUp(msg, lvl);
 							}*/
@@ -79,6 +100,11 @@ var newMessage = function (msg) {
 							}
 						});
 						client.query('UPDATE members SET xp=$1 WHERE id=$2', [xp, user.id], (err) => {
+							if (err) {
+								console.log(err.stack);
+							}
+						});
+						client.query('UPDATE members SET money=$1 WHERE id=$2', [money, user.id], (err) => {
 							if (err) {
 								console.log(err.stack);
 							}
