@@ -15,26 +15,6 @@ client.connect((err) => {
 	}
 });
 
-// On change la bdd 
-client.query('SELECT id, lvl  FROM members', (err,res) => {
-    if (err) {
-        console.log(err.stack);
-    } else {
-        for (var i = 0 ; i < res.rows.length ; i++) {
-            var val = res.rows[i];
-            var newMoney = 1000;
-            for (var j = 1 ; j <= val.lvl ; j++) {
-                newMoney += j*10;
-            }
-            client.query('UPDATE members SET money=$1 WHERE id=$2', [newMoney, val.id], (err) => {
-                if (err) {
-                    console.log(err.stack);
-                }
-            });
-        }
-    }
-});
-
 // Fonctions
 function lvlUp (msg, lvl) {
 	var user = msg.author;
