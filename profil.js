@@ -147,6 +147,17 @@ function printLadderCommandes (res, salon) {
 	salon.send('***Commandes les plus utilisées***```' + rank + '```');
 }
 
+function printRichesse (res, salon) {
+	var rank = '';
+	
+	for (var i = 0 ; i < res.length ; i++) {
+		var j = i+1;
+		rank += '#' + j + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].money + '\n';
+	}
+	
+	salon.send('***Membres les plus riches***```' + rank + '```');
+}
+
 var classement = function (salon) {
 	client.query('SELECT name, lvl, messages FROM members ORDER BY messages DESC LIMIT 10', (err, res) => {
 		if (err) {
@@ -163,6 +174,16 @@ var classementCommandes = function (salon) {
 			console.log(err.stack);
 		} else {
 			printLadderCommandes(res.rows, salon);
+		}
+	});
+}
+
+var classementRichesse = function (salon) {
+	client.query('SELECT name, lvl, money FROM members ORDER BY money DESC LIMIT 10', (err, res) => {
+		if (err) {
+			console.log(err.stack);
+		} else {
+			printRichesse(res.rows, salon);
 		}
 	});
 }
@@ -200,5 +221,6 @@ module.exports = {
 	newCommand: newCommand,
 	classement: classement,
 	classementCommandes: classementCommandes,
+	classementRichesse: classementRichesse,
 	profil: profil
 };
