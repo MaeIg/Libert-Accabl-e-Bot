@@ -39,7 +39,7 @@ var newMessage = function (msg) {
 			if (res.rowCount === 0) {
 				// Si non, on l'ajoute
 				console.log(user.username + ' n\'est pas dans la bdd');
-				client.query('INSERT INTO members(id, name, lvl, xp, messages, money, lastmsg, avatar) VALUES($1, $2, 1, 0, 1, 1000, CURRENT_TIMESTAMP, $3)', [user.id, user.username, user.avatarURL], (err) => {
+				client.query('INSERT INTO members(id, name, lvl, xp, messages, money, lastmsg, avatar, firstmsg) VALUES($1, $2, 1, 0, 1, 1000, CURRENT_TIMESTAMP, $3, CURRENT_TIMESTAMP)', [user.id, user.username, user.avatarURL], (err) => {
 					if (err) {
 						console.log(err.stack);
 						return 0;
@@ -178,7 +178,7 @@ var profil = function (salon, nom) {
 				const embed = new Discord.RichEmbed()
 				  .setAuthor("Profil de " + nom, "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg")
 				  .setColor(0xFF9900)
-				  .setDescription('Niveau : ' + val.lvl + '\nXP : ' + val.xp + '/' + lvlup + '\nMessages : ' + val.messages + '\nLibCoins : ' + val.money + '\nDernier message le ' + val.lastmsg)
+				  .setDescription('Niveau : ' + val.lvl + '\nXP : ' + val.xp + '/' + lvlup + '\nMessages : ' + val.messages + '\nLibCoins : ' + val.money + '\nDernier message le ' + val.lastmsg + '\nPremier message le ' + val.firstmsg)
 				  .setThumbnail(avatar);
 				
 				salon.send({embed});
