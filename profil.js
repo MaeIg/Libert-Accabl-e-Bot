@@ -162,7 +162,7 @@ var classementCommandes = function (salon) {
 }
 
 var profil = function (salon, nom) {
-	client.query('SELECT lvl, xp, messages, money, lastmsg FROM members WHERE name=$1', [nom], (err,res) => {
+	client.query('SELECT lvl, xp, messages, money, lastmsg, firstmsg FROM members WHERE name=$1', [nom], (err,res) => {
 		if (err) {
 			console.log(err.stack);
 		} else {
