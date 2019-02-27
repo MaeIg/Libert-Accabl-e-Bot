@@ -152,7 +152,7 @@ function printRichesse (res, salon) {
 	
 	for (var i = 0 ; i < res.length ; i++) {
 		var j = i+1;
-		rank += '#' + j + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].money + 'Ł\n';
+		rank += '#' + j + ' ' + res[i].name + ' (lvl ' + res[i].lvl + ') ' + res[i].money + ' Ł\n';
 	}
 	
 	salon.send('***Membres les plus riches***```' + rank + '```');
