@@ -189,7 +189,7 @@ var classementRichesse = function (salon) {
 }
 
 var profil = function (salon, nom) {
-	client.query('SELECT lvl, xp, messages, money, lastmsg, firstmsg FROM members WHERE name=$1', [nom], (err,res) => {
+	client.query('SELECT lvl, xp, messages, money, lastmsg, firstmsg, avatar FROM members WHERE name=$1', [nom], (err,res) => {
 		if (err) {
 			console.log(err.stack);
 		} else {
@@ -199,10 +199,9 @@ var profil = function (salon, nom) {
 				var val = res.rows[0];
 				var lvlup = Math.round((4*(Math.pow(val.lvl, 2)))/5);
 				var avatar = val.avatar;
-				if (avatar === null) {
+				if (avatar === undefined) {
 					avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
 				}
-				console.log(res.rows[0]);
 				const embed = new Discord.RichEmbed()
 				  .setAuthor("Profil de " + nom, "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg")
 				  .setColor(0xFF9900)
