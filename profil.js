@@ -202,7 +202,7 @@ var profil = function (salon, nom) {
 				if (avatar === null) {
 					avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
 				}
-				console.log(avatar);
+				console.log(res.rows[0]);
 				const embed = new Discord.RichEmbed()
 				  .setAuthor("Profil de " + nom, "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg")
 				  .setColor(0xFF9900)
