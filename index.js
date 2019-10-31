@@ -96,7 +96,7 @@ const helpInfo = {
 	rich: "**Utilisation**\n```!rich```\n**Description**\n```Donne la liste des personnes ayant le plus de Libcoins sur le discord. Mais à quoi peut bien servir cette monnaie ?```",
 	commandes: "**Utilisation**\n```!commandes```\n**Description**\n```Donne la liste des commandes les plus utilisées sur ce discord.```",
 	classement: "**Utilisation**\n```!classement```\n**Description**\n```Donne la liste des personnes ayant le plus parlé sur ce discord. Qui arrivera à détrôner Cleme ?```",
-	requete: "**Utilisation**\n```!requete Nom Phrase```\n**Description**\n```Si vous voulez qu'une phrase dite par un joueur lui soit associée sur Bernard, vous pouvez utiliser cette commande. Si la communauté approuve, ces phrases seront ajoutées à Bernard. Comme ça les personnes qui ne sont pas dans les phrases de Bernard n'auront plus de raison de se plaindre !!```\n**Exemple**\n```!requete Khayrisill Tu me manques wawa"
+	requete: "**Utilisation**\n```!requete Nom Phrase```\n**Description**\n```Si vous voulez qu'une phrase dite par un joueur lui soit associée sur Bernard, vous pouvez utiliser cette commande. Si la communauté approuve, ces phrases seront ajoutées à Bernard. Comme ça les personnes qui ne sont pas dans les phrases de Bernard n'auront plus de raison de se plaindre !!```\n**Exemple**\n```!requete Khayrisill Tu me manques wawa```"
 };
 var mat100 = 0;
 
