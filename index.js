@@ -29,7 +29,7 @@ const sumbrella = '☔';
 const sdrop = '💦';
 
 // Commandes
-const commandes = ['!help', '!forum', '!trombi', '!site', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!license'],
+const commandes = ['!help', '!forum', '!trombi', '!site', '!requete', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!license'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko', "!WassaW"],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
@@ -117,6 +117,19 @@ bot.on('message', function (msg) {
 			msg.channel.send('**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d\'information sur une commande');
 		}
 		profil.newCommand(msg.author, '!help');
+	}
+	
+	else if (txt.slice(0,8) === '!requete') {
+		let mots = txt.split(' ');
+
+		if (mots.length < 3) {
+			msg.channel.send("**Utilisation**\n```!requete Nom message```");
+		} else {
+			profil.newRequest(msg.author, mots[1], mots.slice(2).join(' '));
+			msg.channel.send("Requête enregistrée !");
+		}
+
+		profil.newCommand(msg.author, '!requete');
 	}
 
 	else if (txt === '!everyone') {
