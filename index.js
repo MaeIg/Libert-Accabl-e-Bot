@@ -29,12 +29,12 @@ const sumbrella = '☔';
 const sdrop = '💦';
 
 // Commandes
-var commandes = ['!help', '!forum', '!trombi', '!site', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!license'],
+const commandes = ['!help', '!forum', '!trombi', '!site', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!license'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko', "!WassaW"],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
-var asw = {
-	help: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes'],
+const asw = {
+	help: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help commande_ pour plus d\'information sur une commande'],
 	membres: ['**Commandes disponibles :**\n```' + cpseudo.join('\n') + '```\n_!help_ pour plus de commandes'],
 	forum: ['http://kirov-meta.forumactif.org/'],
 	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme ou Khran et postez une photo !'],
@@ -46,7 +46,7 @@ var asw = {
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal', 'La méta a maintenant une coa de bannis dans son zoo', 'Golgoth est de retour et a trouvé une nouvelle baby-sitter : Lilith '+sfeu],
-	log: ['***Last update : 08/03/2019 18h56***\n\nCorrection du bug d\'avatar sur la commande !profil.\n\n_!logs_ pour plus de logs'],
+	log: ['***Last update : 31/10/2019 16h09***\n\nModification de la commande !help. Vous pouvez maintenant faire "!help commande" pour avoir plus d\'informations sur une commande.\n\n_!logs_ pour plus de logs'],
 	logs: ['https://bernard-site.herokuapp.com/logs'],
 	penis: ['8=D'],
 	oreoplz: [soreo],
@@ -72,6 +72,32 @@ var asw = {
 	Loko: ['On est des gentils ou des mechants ?', 'Bravo Hartyom t\'es le plus fort de la ville', 'Ça freine mes débuts de serial killer','allez violé moi', "Je viens de recompter tu m'as deja sauvé 3 fois donc la prochaine c'est bon tu peux me laisser mourir", 'Manque plus qu\'on me viole dans le désert et je suis au top', 'Shaggyz Cleme je vous love ' + sheart + ' ' + sheart + ' coeur sur vous'],
 	WassaW: ['J AI LU PENDANT 72 HEURES NON STOP AVEC UN SOIR DANS LA NUIT BLANCHE', 'Fais un pavé s\'il te plait', 'NEGATIF IL EST TOUJOURS SOUS PLASTIQUE ON Y TOUCHE PAS', 'AHAHAHAHAH']
 };
+const helpInfo = {
+	help: "**Utilisation**\n```!help _Commande```\n**Description**\n```La commande help donne des informations sur l'utilisation de la commande spécifiée. Si aucune commande n'est spécifiée, elle donne la liste des commandes disponibles.```",
+	membres: "**Utilisation**\n```!membres```\n**Description**\n```La commande membres donne la liste des commandes disponibles sur certains membres ou ex membres. Ces commandes permettront de connaître des phrases drôles ou typiques prononcées par ces membres.```\n**Exemple**\n```!WassaW pourra donner \"AHAHAHAHAH\".```",
+	forum: "**Utilisation**\n```!forum```\n**Description**\n```J'espère pour toi que tu sais à quoi sert le forum !```",
+	trombi: "**Utilisation**\n```!trombi```\n**Description**\n```Le trombi te permet de voir la tête des autres si tu es prêt à montrer la tienne !```",
+	everyone: "**Utilisation**\n```!everyone```\n**Description**\n```N'utilisez pas cette commande !!!```",
+	echo: "**Utilisation**\n```!echo```\n**Description**\n```Une commande tellement puissante que Cleme a dû en limiter l'effet...```",
+	cui: "**Utilisation**\n```!cui```\n**Description**\n```Un pile ou face créé par MacKay. Il y a donc deux réponses possibles : cui ou...```",
+	nuclear: "**Utilisation**\n```!nuclear```\n**Description**\n```Le saviez-vous ? Bernard s'est fait hacké et s'est fait contrôler par une méchante personne dans ses débuts. Maintenant sa protection a été revue à la hausse mais cette commande est là pour rappeler cet évennement plutôt spécial...```",
+	cyanure: "**Utilisation**\n```!cyanure```\n**Description**\n```A utiliser quand les gens spamment trop sur un canal.\n~ Commande créée par un poussin qui n'aime pas quand il y a trop de bruit```",
+	bleus: "**Utilisation**\n```!bleus```\n**Description**\n```Les plus grands suporters de l'équipe de France sont sur ce discord !```",
+	actualité: "**Utilisation**\n```!actualité```\n**Description**\n```Aussi à jour qu'internet explorer !```",
+	log: "**Utilisation**\n```!log```\n**Description**\n```Pour connaître les dernières nouveautés de Bernard.```",
+	logs: "**Utilisation**\n```!logs```\n**Description**\n```Historique des mises à jour de Bernard.```",
+	penis: "**Utilisation**\n```!penis```\n**Description**\n```Qui réussira à battre Cleme ?```",
+	oreoplz: "**Utilisation**\n```!oreoplz```\n**Description**\n```Je préfère ne pas en parler...```",
+	parapluie: "**Utilisation**\n```!parapluie```\n**Description**\n```Demandez à Harty !```",
+	license: "**Utilisation**\n```!license```\n**Description**\n```Si vous voulez copier Bernard, citez l'original !```",
+	d: "**Utilisation**\n```!d_nbPositif```\n**Description**\n```Donne un nombre aléatoire entre 1 et ce nombre.```\n**Exemple**\n```!d100 pourra donner \"69\".```",
+	peage: "**Utilisation**\n```Indisponible```\n**Description**\n```Un jour cette commande existera !```",
+	profil: "**Utilisation**\n```!profil _nomDiscord```\n**Description**\n```Affiche le profil de la personne donnée. Si aucune personne n'a été donnée, affiche votre profil.```",
+	rich: "**Utilisation**\n```!rich```\n**Description**\n```Donne la liste des personnes ayant le plus de Libcoins sur le discord. Mais à quoi peut bien servir cette monnaie ?```",
+	commandes: "**Utilisation**\n```!commandes```\n**Description**\n```Donne la liste des commandes les plus utilisées sur ce discord.```",
+	classement: "**Utilisation**\n```!classement```\n**Description**\n```Donne la liste des personnes ayant le plus parlé sur ce discord. Qui arrivera à détrôner Cleme ?```",
+	requete: "**Utilisation**\n```!requete Nom Phrase```\n**Description**\n```Si vous voulez qu'une phrase dite par un joueur lui soit associée sur Bernard, vous pouvez utiliser cette commande. Si la communauté approuve, ces phrases seront ajoutées à Bernard. Comme ça les personnes qui ne sont pas dans les phrases de Bernard n'auront plus de raison de se plaindre !!```\n**Exemple**\n```!requete Khayrisill Tu me manques wawa"
+};
 var mat100 = 0;
 
 bot.on('message', function (msg) {
@@ -79,7 +105,21 @@ bot.on('message', function (msg) {
 	
 	var txt = msg.content;
 	
-	if (txt === '!everyone') {
+	if (txt.slice(0,5) === '!help') {
+		if (txt.length > 6) {
+			let L = helpInfo[txt.slice(6,txt.length)];
+			if (L != undefined) {
+				msg.channel.send(L);
+			} else {
+				msg.channel.send('**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d\'information sur une commande');
+			}
+		} else {
+			msg.channel.send('**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d\'information sur une commande');
+		}
+		profil.newCommand(msg.author, '!help');
+	}
+
+	else if (txt === '!everyone') {
 		msg.reply('Et non tu seras le seul mentionné !');
 		profil.newCommand(msg.author, txt);
 	}
