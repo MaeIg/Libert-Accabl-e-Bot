@@ -214,6 +214,17 @@ var profil = function (salon, nom) {
 	});
 }
 
+var newRequest = function (user, nom, txt) {
+	client.query('INSERT INTO request(request_user, request_name, request_msg) VALUES($1, $2, $3)', [user.username, nom, txt], (err) => {
+		if (err) {
+			console.log(err.stack);
+			return 0;
+		} else {
+			console.log(user.username + " a ajouté une requête : [" + nom + "] " + txt);
+		}
+	});
+}
+
 
 // Export
 module.exports = {
@@ -222,5 +233,6 @@ module.exports = {
 	classement: classement,
 	classementCommandes: classementCommandes,
 	classementRichesse: classementRichesse,
-	profil: profil
+	profil: profil,
+	newRequest: newRequest
 };
