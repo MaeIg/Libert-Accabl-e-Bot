@@ -245,7 +245,7 @@ bot.on('message', function (msg) {
 	}
 	
 	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
-		if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x')) {
+		if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir')) {
 			msg.channel.send('Bah c\'est toi idiot ' + scalim);
 		} else {
 			var L = asw[txt.substr(1)];
