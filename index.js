@@ -14,7 +14,7 @@ function randInt(max) {
 var hll = new Date(2022,07,09,20,08,00);
 
 // Smileys
-const scalim = '<:calim:371258660489396225>';
+const scalim = '<:calim:637572971124359189>';
 const smat100 = '<:mat100:458140489485385780>';
 const sheart = '❤';
 const ssob = '😭';
@@ -244,13 +244,14 @@ bot.on('message', function (msg) {
 		profil.newCommand(msg.author, '!d + nbr');
 	}
 	
+	else if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir')) {
+		msg.channel.send('Bah c\'est toi idiot ' + scalim);
+	}
+	
 	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
-		if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir')) {
-			msg.channel.send('Bah c\'est toi idiot ' + scalim);
-		} else {
-			var L = asw[txt.substr(1)];
-			msg.channel.send(L[randInt(L.length)]);
-		}
+		var L = asw[txt.substr(1)];
+		msg.channel.send(L[randInt(L.length)]);
+		
 		profil.newCommand(msg.author, txt);
 	}
 });
