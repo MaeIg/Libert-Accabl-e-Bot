@@ -48,7 +48,7 @@ const asw = {
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Roventa pense encore à Sibaal', 'La méta a maintenant une coa de bannis dans son zoo', 'Golgoth est de retour et a trouvé une nouvelle baby-sitter : Lilith '+sfeu],
-	log: ['***Last update : 06/11/2019 17h17***\n\nAjout des commandes !Nathan, !Zomzom et !Pellaeon.\nMise à jour des commandes !Lilith, !Cleme et !Matsam.\n\n_!logs_ pour plus de logs'],
+	log: ['***Last update : 06/11/2019 20h51***\n\nAjout des commandes !Nathan, !Zomzom et !Pellaeon.\nMise à jour des commandes !Lilith, !Cleme et !Matsam.\n\n_!logs_ pour plus de logs'],
 	logs: ['https://bernard-site.herokuapp.com/logs'],
 	penis: ['8=D'],
 	oreoplz: [soreo],
