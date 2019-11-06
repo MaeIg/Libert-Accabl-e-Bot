@@ -74,7 +74,7 @@ const asw = {
 	Loko: ['On est des gentils ou des mechants ?', 'Bravo Hartyom t\'es le plus fort de la ville', 'Ça freine mes débuts de serial killer','allez violé moi', "Je viens de recompter tu m'as deja sauvé 3 fois donc la prochaine c'est bon tu peux me laisser mourir", 'Manque plus qu\'on me viole dans le désert et je suis au top', 'Shaggyz Cleme je vous love ' + sheart + ' ' + sheart + ' coeur sur vous'],
 	WassaW: ['J AI LU PENDANT 72 HEURES NON STOP AVEC UN SOIR DANS LA NUIT BLANCHE', 'Fais un pavé s\'il te plait', 'NEGATIF IL EST TOUJOURS SOUS PLASTIQUE ON Y TOUCHE PAS', 'AHAHAHAHAH'],
 	Nathan: ["@everyøne J'ai besoin de garants pour ma sortie de prison ! AIDEZ MOI"],
-	Zomzom: ["Je tiens ├á dire que \"" + sopression + "\" c'est opressant mais que le \"wesh\" a la fin de ta phrase m'a mis au fond", "C'est à force de lire les magouilles de Shaggyz, j'apprends", "Bah non a une soirée j'avais trop bu je l'ai embrassé, la boulette"],
+	Zomzom: ["Je tiens ├á dire que \"" + soppression + "\" c'est opressant mais que le \"wesh\" a la fin de ta phrase m'a mis au fond", "C'est à force de lire les magouilles de Shaggyz, j'apprends", "Bah non a une soirée j'avais trop bu je l'ai embrassé, la boulette"],
 	Pellaeon: ["\"caquelon\", c'est un poulet travesti qui caquette ?", "Sous word il y a deux \"espaces\", un avec \"espace\", un second généré automatique, comme quand tu met des \"guillements\" et qui se place tout seul", "Je tente de mettre en demeure sfr de revoir toutes les resiliations de l'ann├®e devant la repression des fraudes ? X)", "George Clone né ?"]
 };
 const helpInfo = {
