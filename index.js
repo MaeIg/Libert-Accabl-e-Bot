@@ -251,6 +251,7 @@ bot.on('message', function (msg) {
 	
 	else if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir')) {
 		msg.channel.send('Bah c\'est toi idiot ' + scalim);
+		profil.newCommand(msg.author, txt);
 	}
 	
 	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
