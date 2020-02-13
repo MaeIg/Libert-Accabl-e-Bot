@@ -49,7 +49,7 @@ const asw = {
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Golgoth est toujours privé d\'ordinateur', 'Hartyom n\'a toujours pas fini de se plaindre', 'Une TRAHISON a eu lieu dans la méta', 'Une deuxième TRAHISON a eu lieu dans la méta', "Il paraîtrait qu'un membre est impliqué dans les deux TRAHISONS récentes...\n||Je ne donnerai pas de nom mais écrivez !Zomzom pour plus de renseignements||"],
-	log: ['***Last update : 13/02/2020 22h11***\n\nAjout des commandes !Roystar, !Dikryl, !Cornet et !Ganapati.\nMise à jour des commandes !Pellaeon, !Zomzom, !WassaW, !Maelg, !Lilith, !Matsam et !actualité.\n\n_!logs_ pour plus de logs'],
+	log: ['***Last update : 13/02/2020 22h35***\n\nAjout des commandes !Roystar, !Dikryl, !Cornet et !Ganapati.\nMise à jour des commandes !Pellaeon, !Zomzom, !WassaW, !Maelg, !Lilith, !Matsam et !actualité.\n\n_!logs_ pour plus de logs'],
 	logs: ['https://bernard-site.herokuapp.com/logs'],
 	penis: ['8=D'],
 	oreoplz: [soreo],
