@@ -65,7 +65,7 @@ const asw = {
 	Khran: ['Un vrai ETListe abandonne son stuff dans le désert !', "Meurt dans le désert"],
 	Drac: ['+37 !', "J'ai disparu en 1937 !"],
 	Dragon: ['Coup critique !', 'Bon je vais me coucher, bonne journée !', 'Oh, j\'ai encore fait un 20 aux dés !'],
-	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart,'Smash Bros '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim, "Je vais en faire un meme"+smat100, "Pourquoi on est J2 ? On jump pas ce soir ?", soppression, "Perso j'ai deux manières de plier, une manière \"propre\" et une manière \"mi-propre\". Comme ça, quand je prends le vêtement, en fonction de la manière dont il est plié, je sais comment il est", "LES GENS QUI CRIE TOUS DES CON", "ALERTE CANDICE A APPORTÉ..."],
+	Matsam: ['Hartychou '+sheart, 'Paint '+sheart, 'Ragots '+sheart,'Smash Bros '+sheart, 'Maelg le dieu de l\'anti-picto', 'Jpp de ma vie '+scalim, "Je vais en faire un meme"+smat100, "Pourquoi on est J2 ? On jump pas ce soir ?", soppression, "Perso j'ai deux manières de plier, une manière \"propre\" et une manière \"mi-propre\". Comme ça, quand je prends le vêtement, en fonction de la manière dont il est plié, je sais comment il est", "LES GENS QUI CRIE TOUS DES CON", "ALERTE CANDICE A APPORTÉ...", "JE SUIS SUR MON ÎLE T'ES DANS TA BILE", "J'entends ça je tombe par terre sans vouloir être dramatique"],
 	Shaggyz: ["Quel fléau la canicule parisienne, heureusement que je suis dans ma piscine au soleil", "Je suis mort dehors J1 mais c'est pas ma faute je dormais chez ma copine", "Je suis mort dehors mais c'est pas ma faute c'était la finale"],
 	Uff: ['Force et honneur !'],
 	Hartyom: ['JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !'+scalim +scalim +scalim, 'VOUS CONNAISSEZ LE POINT COMMUN ENTRE UFF ET LE FROMAGE DE MACKAY ? ON EN ENTEND BEAUCOUP PARLER MAIS ON LES VOIT JAMAIS HAHAHAHAHAHAHAHHAAH', 'Y\'a moyen de pécho dans la méta alors ? Ptain c\'est de mieux en mieux', 'Il ne peut en rester AUCUN. Je ne laisserai aucune de ces racailles faire la loi dans cette ville. NOT UNDER MY WATCH', "Ger une revandication.", "JE VOUS BEZ", "GREVEGENERALE"],
@@ -78,7 +78,9 @@ const asw = {
 	Zomzom: ["Je tiens à dire que \"" + soppression + "\" c'est opressant mais que le \"wesh\" a la fin de ta phrase m'a mis au fond", "C'est à force de lire les magouilles de Shaggyz, j'apprends", "Bah non a une soirée j'avais trop bu je l'ai embrassé, la boulette", "Bonjour la méta, je suis à un hâle et malgré l'heure bon taudive, j'ai bu bien :D Désolé de ma mort de noob lors du précédent CM :'( ça m' artiste !", "Vous me faites trop rire je vous aime aussi haha.", "Je viens pas bourré ici okay", "Le masque c'est comme l'apres shampooing : c'est sous la douche"],
 	Pellaeon: ["\"caquelon\", c'est un poulet travesti qui caquette ?", "Sous word il y a deux \"espaces\", un avec \"espace\", un second généré automatique, comme quand tu met des \"guillements\" et qui se place tout seul", "Je tente de mettre en demeure sfr de revoir toutes les resiliations de l'année devant la repression des fraudes ? X)", "George Clone né ?", "Arf, je décrète officiellement la creation du pays des imaginaire alors clochette !", "Comme une expé : avec un fouet, de la volonté et des MSE !", "La logique et le bon sens n'ont pas de place dans cette maison.", "Plus de licornes et moins d'argent au quotidien ?", "Vous êtes Rabin en informations mademoiselle. Mais ça correspond au personne, j'apprécie la logique !"],
 	Roystar: ["Ptain j'ai mis mon caleçon à l'envers ce matin jme disais bien que c'était bizarre", "Ah mais la prochaine fois je ramène du champomy moi vous m'avez fait trop peur jme souviens pas de tout " + sscream],
-	Dikryl: ["Salutérus, ça vagin ?"]
+	Dikryl: ["Salutérus, ça vagin ?"],
+	Cornet: ["On a déjà vomi dans mon duvet et dans mes oreilles c'était vraiment pas super " + ssadcat, "Voulez vous écouter \"on va niquer ce soir\" ?"],
+	Ganapati: ["Merci Harty, n'oublions pas la \"recrue décence\", à l'heure où la recrudescence du molestage et du bizutage bat son plein ! xD"]
 };
 const helpInfo = {
 	help: "**Utilisation**\n```!help _Commande```\n**Description**\n```La commande help donne des informations sur l'utilisation de la commande spécifiée. Si aucune commande n'est spécifiée, elle donne la liste des commandes disponibles.```",
@@ -252,7 +254,7 @@ bot.on('message', function (msg) {
 		profil.newCommand(msg.author, '!d + nbr');
 	}
 	
-	else if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir') || (txt === '!Nathan' && msg.author.username === 'ッNnatto')) {
+	else if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir') || (txt === '!Nathan' && msg.author.username === 'ッNnatto') || (txt === '!Cornet' && msg.author.username === 'Alexis')) {
 		msg.channel.send('Bah c\'est toi idiot ' + scalim);
 		profil.newCommand(msg.author, txt);
 	}
