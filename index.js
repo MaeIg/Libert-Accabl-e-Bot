@@ -130,6 +130,10 @@ bot.on('message', function (msg) {
 		profil.newCommand(msg.author, '!help');
 	}
 	
+	else if (txt === 'Joyeux anniversaire Mad !') {
+		msg.channel.send("Joyeux anniversaire faniadre !");
+	}
+	
 	else if (txt.slice(0,8) === '!requete') {
 		let mots = txt.split(' ');
 
