@@ -14,7 +14,7 @@ function randInt(max) {
 var hll = new Date(2022,07,09,20,08,00);
 
 // Smileys
-const scalim = '<:calim:637572971124359189>';
+const scalim = '<:calim:669952959425019904>';
 const smat100 = '<:mat100:458140489485385780>';
 const ssadcat = '<:sadcat:543739550137188420>';
 const sheart = '❤';
