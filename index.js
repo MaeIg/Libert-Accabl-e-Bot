@@ -34,9 +34,6 @@ const sdrop = '💦';
 const sscream = '😱';
 const shumpf = "<:humpf:568317177741049856>";
 
-// Salons (chans)
-const ccinema = "<#514690268201746432>";
-
 // Commandes
 const commandes = ['!help', '!forum', '!trombi', '!site', '!requete', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!film', '!license'],
     cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko', "!WassaW", "!Nathan", "!Zomzom", "!Pellaeon", "!Roystar", "!Dikryl", "!Alexis", "!Ganapati", "!Mad", "!Mzboub", "!Freez"],
@@ -118,7 +115,7 @@ const helpInfo = {
 	classement: "**Utilisation**\n```!classement```\n**Description**\n```Donne la liste des personnes ayant le plus parlé sur ce discord. Qui arrivera à détrôner Cleme ?```",
 	requete: "**Utilisation**\n```!requete Nom Phrase```\n**Description**\n```Si vous voulez qu'une phrase dite par un joueur lui soit associée sur Bernard, vous pouvez utiliser cette commande. Si la communauté approuve, ces phrases seront ajoutées à Bernard. Comme ça les personnes qui ne sont pas dans les phrases de Bernard n'auront plus de raison de se plaindre !!```\n**Exemple**\n```!requete Khayrisill Tu me manques wawa```",
 	site: "**Utilisation**\n```!site```\n**Description**\n```Envoie un lien vers l'antre de Bernard. Qui sait ce que vous pourriez y trouver ?```",
-	film: "**Utilisation**\n```!film```\n**Description**\n```Envoie une citation aléatoire de l'un des films vu dans " + ccinema + "```"
+	film: "**Utilisation**\n```!film```\n**Description**\n```Envoie une citation aléatoire de l'un des films vu dans #cinema```"
 };
 var mat100 = 0;
 
