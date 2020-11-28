@@ -237,6 +237,7 @@ const checkAnniversaire = () => {
 
 				res.rows.forEach((row) => {
 					const age = row.annee - row.age;
+					console.log(age);
 					if (age > 0) {
 						const avatar = row.avatar;
 						if (avatar === "") {
