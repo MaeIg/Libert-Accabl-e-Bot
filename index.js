@@ -12,6 +12,8 @@ function randInt(max) {
 
 // Variables globales
 var hll = new Date(2022,07,09,20,08,00);
+let generalChan; // Objet contenant les réfs vers le canal #general
+const idGeneral = '464888621464551426';
 
 // Smileys
 const scalim = '<:calim:669952959425019904>';
@@ -53,7 +55,7 @@ const asw = {
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
 	actualité: ['Google est ton ami !', 'Hartyom n\'a toujours pas fini de se plaindre', "On est en guerre."],
-	log: ['***Last update : 13/02/2020 22h35***\n\nAjout des commandes !Roystar, !Dikryl, !Cornet et !Ganapati.\nMise à jour des commandes !Pellaeon, !Zomzom, !WassaW, !Maelg, !Lilith, !Matsam et !actualité.\n\n_!logs_ pour plus de logs'],
+	log: ['***Last update : 28/11/2020 19h00***\n\nBernard souhaite maintenant l\'anniversaire des actifs du discord !\nAjout des commandes !film, !Mzboub, !Mad, !Freez.\nMise à jour des commandes !Alexis, !Maelg, !WassaW, !Zomzom, !Roystar, !Uff, !Pellaeon, !Cleme, !Hartyom et !actualité.\n\n_!logs_ pour plus de logs'],
 	logs: ['https://bernard-site.herokuapp.com/logs'],
 	penis: ['8=D'],
 	oreoplz: [soreo],
@@ -120,9 +122,15 @@ const helpInfo = {
 };
 var mat100 = 0;
 
-// CRON
-setInterval(profil.checkAnniversaire, 1500);
 
+bot.on('ready', () => {
+	generalChan = bot.channels.get(idGeneral);
+	
+	// CRON
+	setInterval(() => {
+		profil.checkAnniversaire(generalChan);
+	}, 86400000);
+});
 
 bot.on('message', function (msg) {
 	profil.newMessage(msg);
