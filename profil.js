@@ -28,7 +28,7 @@ function lvlUp (msg, lvl) {
 	msg.channel.send({embed});
 }
 
-var newMessage = function (msg) {
+const newMessage = function (msg) {
 	var user = msg.author;
 	client.query('SELECT id FROM members WHERE id=$1', [user.id], (err, res) => {
 		if (err) {
@@ -69,9 +69,9 @@ var newMessage = function (msg) {
 							xp -= forLvl;
 							lvl++;
 							money += lvl*10;
-							/*if (lvl > 5 && lvl != 7) {
+							if (lvl == 100) {
 								lvlUp(msg, lvl);
-							}*/
+							}
 						}
 						// On met tout dans la bdd
 						client.query('UPDATE members SET lvl=$1 WHERE id=$2', [lvl, user.id], (err) => {
@@ -96,7 +96,7 @@ var newMessage = function (msg) {
 	});
 };
 
-var newCommand = function (user, command) {
+const newCommand = function (user, command) {
 	client.query('SELECT name FROM commands WHERE name=$1', [command], (err, res) => {
 		if (err) {
 			console.log(err.stack);
@@ -158,7 +158,7 @@ function printRichesse (res, salon) {
 	salon.send('***Membres les plus riches***```' + rank + '```');
 }
 
-var classement = function (salon) {
+const classement = function (salon) {
 	client.query('SELECT name, lvl, messages FROM members ORDER BY messages DESC LIMIT 10', (err, res) => {
 		if (err) {
 			console.log(err.stack);
@@ -168,7 +168,7 @@ var classement = function (salon) {
 	});
 }
 
-var classementCommandes = function (salon) {
+const classementCommandes = function (salon) {
 	client.query('SELECT name, nbruses FROM commands ORDER BY nbruses DESC LIMIT 10', (err, res) => {
 		if (err) {
 			console.log(err.stack);
@@ -178,7 +178,7 @@ var classementCommandes = function (salon) {
 	});
 }
 
-var classementRichesse = function (salon) {
+const classementRichesse = function (salon) {
 	client.query('SELECT name, lvl, money FROM members ORDER BY money DESC LIMIT 10', (err, res) => {
 		if (err) {
 			console.log(err.stack);
@@ -188,7 +188,7 @@ var classementRichesse = function (salon) {
 	});
 }
 
-var profil = function (salon, nom) {
+const profil = function (salon, nom) {
 	client.query('SELECT lvl, xp, messages, money, lastmsg, firstmsg, avatar FROM members WHERE name=$1', [nom], (err,res) => {
 		if (err) {
 			console.log(err.stack);
@@ -199,7 +199,7 @@ var profil = function (salon, nom) {
 				var val = res.rows[0];
 				var lvlup = Math.round((4*(Math.pow(val.lvl, 2)))/5);
 				var avatar = val.avatar;
-				if (avatar === undefined) {
+				if (avatar === "") {
 					avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
 				}
 				const embed = new Discord.RichEmbed()
@@ -214,13 +214,45 @@ var profil = function (salon, nom) {
 	});
 }
 
-var newRequest = function (user, nom, txt) {
+const newRequest = function (user, nom, txt) {
 	client.query('INSERT INTO request(request_user, request_name, request_msg) VALUES($1, $2, $3)', [user.username, nom, txt], (err) => {
 		if (err) {
 			console.log(err.stack);
 			return 0;
 		} else {
 			console.log(user.username + " a ajouté une requête : [" + nom + "] " + txt);
+		}
+	});
+}
+
+const checkAnniversaire = () => {
+	client.query('SELECT name, avatar, EXTRACT(YEAR FROM firstmsg) AS "premier", EXTRACT(YEAR FROM CURRENT_TIMESTAMP) AS "annee" FROM members WHERE EXTRACT(DAY FROM firstmsg) = EXTRACT(DAY FROM CURRENT_TIMESTAMP) AND EXTRACT(MONTH FROM firstmsg) = EXTRACT(MONTH FROM CURRENT_TIMESTAMP)', (err, res) => {
+		if (err) {
+			console.log(err.stack);
+		} else {
+			if (res.rows.length === 0) {
+				console.log("Il n'y a pas d'anniversaire aujourd'hui.");
+			} else {
+				console.log("Il y a peut être des anniversaires aujourd'hui !");
+
+				res.rows.forEach((row) => {
+					const age = row.annee - row.age;
+					if (age > 0) {
+						const avatar = row.avatar;
+						if (avatar === "") {
+							avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
+						}
+
+						const embed = new Discord.RichEmbed()
+							.setAuthor("Joyeux anniversaire " + row.name + " !", avatar)
+							.setColor(0xFF9900)
+							.setDescription("Déjà " + " sur le discord !")
+							.setThumbnail("https://www.drostatic.com/images/lemagfemmes/home/gateau_fusee.jpg");
+						
+						console.log("Nom : " + row.name + " ; Age : " + age);
+					}
+				});
+			}
 		}
 	});
 }
@@ -234,5 +266,6 @@ module.exports = {
 	classementCommandes: classementCommandes,
 	classementRichesse: classementRichesse,
 	profil: profil,
-	newRequest: newRequest
+	newRequest: newRequest,
+	checkAnniversaire: checkAnniversaire
 };
