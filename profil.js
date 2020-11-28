@@ -236,7 +236,7 @@ const checkAnniversaire = () => {
 				console.log("Il y a peut être des anniversaires aujourd'hui !");
 
 				res.rows.forEach((row) => {
-					const age = parseInt(row.annee) - parseInt(row.age);
+					const age = parseInt(row.annee) - parseInt(row.premier);
 					if (age > 0) {
 						const avatar = row.avatar;
 						if (avatar === "") {
