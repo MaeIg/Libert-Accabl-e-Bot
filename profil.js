@@ -225,8 +225,8 @@ const newRequest = function (user, nom, txt) {
 	});
 }
 
-const checkAnniversaire = () => {
-	client.query('SELECT name, avatar, EXTRACT(YEAR FROM firstmsg) AS "premier", EXTRACT(YEAR FROM CURRENT_TIMESTAMP) AS "annee" FROM members WHERE EXTRACT(DAY FROM firstmsg) = EXTRACT(DAY FROM CURRENT_TIMESTAMP) AND EXTRACT(MONTH FROM firstmsg) = EXTRACT(MONTH FROM CURRENT_TIMESTAMP)', (err, res) => {
+const checkAnniversaire = (general) => {
+	client.query('SELECT name, avatar, EXTRACT(YEAR FROM firstmsg) AS "premier", EXTRACT(YEAR FROM CURRENT_TIMESTAMP) AS "annee" FROM members WHERE EXTRACT(DAY FROM firstmsg) = EXTRACT(DAY FROM CURRENT_TIMESTAMP) AND EXTRACT(MONTH FROM firstmsg) = EXTRACT(MONTH FROM CURRENT_TIMESTAMP) AND EXTRACT(YEAR FROM lastmsg) > EXTRACT(YEAR FROM CURRENT_TIMESTAMP)-2', (err, res) => {
 		if (err) {
 			console.log(err.stack);
 		} else {
@@ -237,7 +237,10 @@ const checkAnniversaire = () => {
 
 				res.rows.forEach((row) => {
 					const age = parseInt(row.annee) - parseInt(row.premier);
+
 					if (age > 0) {
+						console.log("Nom : " + row.name + " ; Age : " + age);
+
 						const avatar = row.avatar;
 						if (avatar === "") {
 							avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
@@ -246,10 +249,10 @@ const checkAnniversaire = () => {
 						const embed = new Discord.RichEmbed()
 							.setAuthor("Joyeux anniversaire " + row.name + " !", avatar)
 							.setColor(0xFF9900)
-							.setDescription("Déjà " + " sur le discord !")
+							.setDescription(`Déjà ${age} ans sur le discord !`)
 							.setThumbnail("https://www.drostatic.com/images/lemagfemmes/home/gateau_fusee.jpg");
 						
-						console.log("Nom : " + row.name + " ; Age : " + age);
+						general.send(embed);
 					}
 				});
 			}
