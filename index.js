@@ -13,7 +13,7 @@ function randInt(max) {
 // Variables globales
 var hll = new Date(2022,07,09,20,08,00);
 let generalChan; // Objet contenant les réfs vers le canal #general
-const idGeneral = '464888621464551426';
+const idGeneral = '325144638447157249';
 
 // Smileys
 const scalim = '<:calim:669952959425019904>';
