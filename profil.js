@@ -199,7 +199,7 @@ const profil = function (salon, nom) {
 				var val = res.rows[0];
 				var lvlup = Math.round((4*(Math.pow(val.lvl, 2)))/5);
 				var avatar = val.avatar;
-				if (avatar === "") {
+				if (avatar == "") {
 					avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
 				}
 				const embed = new Discord.RichEmbed()
@@ -240,16 +240,23 @@ const checkAnniversaire = (general) => {
 
 					if (age > 0) {
 						console.log("Nom : " + row.name + " ; Age : " + age);
+						
+						let text = "";
+						if (age == 1) {
+							text = "Déjà 1 an sur le discord !";
+						} else {
+							text = `Déjà ${age} ans sur le discord !`;
+						}
 
 						const avatar = row.avatar;
-						if (avatar === "") {
+						if (avatar == "") {
 							avatar = 'http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg';
 						}
 
 						const embed = new Discord.RichEmbed()
 							.setAuthor("Joyeux anniversaire " + row.name + " !", avatar)
 							.setColor(0xFF9900)
-							.setDescription(`Déjà ${age} ans sur le discord !`)
+							.setDescription(text)
 							.setThumbnail("https://www.drostatic.com/images/lemagfemmes/home/gateau_fusee.jpg");
 						
 						general.send(embed);
