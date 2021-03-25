@@ -11,12 +11,14 @@ const [port, database] = connection2[2].split("/");
 
 // On connecte le bot à la bdd
 var client = new pg.Client(
-	user: user,
-    	password: password,
-    	database: database,
-    	port: port,
-    	host: host,
-    	ssl: true
+	{
+		user: user,
+    		password: password,
+    		database: database,
+    		port: port,
+    		host: host,
+    		ssl: true
+	}
 );
 client.connect((err) => {
 	if (err) {
