@@ -4,7 +4,7 @@ const pg = require('pg');
 const connection = process.env.DATABASE_URL;
 
 // On connecte le bot à la bdd
-var client = new pg.Client(connection);
+var client = new pg.Client(`${connection}?sslmode=require`);
 client.connect((err) => {
 	if (err) {
 		console.log('connection error : ' + err.stack);
