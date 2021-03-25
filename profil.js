@@ -5,11 +5,11 @@ const connection = process.env.DATABASE_URL;
 
 // On parse les credentials
 const connection2 = connection.split(":");
-const user = connection2[0].split("//")[1];
-const [password, host] = connection2[1].split("@");
-const [port, database] = connection2[2].split("/");
+const user = connection2[1].split("//")[1];
+const [password, host] = connection2[2].split("@");
+const [port, database] = connection2[3].split("/");
 
-console.log(`connection : ${connection} // connection2 : ${connection2} // user : ${user} // password : ${password} // host : ${host} // port : ${port} // database : ${database}`);
+console.log(`user : ${user} // password : ${password} // host : ${host} // port : ${port} // database : ${database}`);
 
 // On connecte le bot à la bdd
 var client = new pg.Client(
