@@ -9,6 +9,8 @@ const user = connection2[0].split("//")[1];
 const [password, host] = connection2[1].split("@");
 const [port, database] = connection2[2].split("/");
 
+console.log(`user : ${user} // password : ${password} // host : ${host} // port : ${port} // database : ${database}`);
+
 // On connecte le bot à la bdd
 var client = new pg.Client(
 	{
