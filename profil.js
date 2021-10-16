@@ -1,27 +1,18 @@
 // Init
 const Discord = require('discord.js');
 const pg = require('pg');
-const connection = process.env.DATABASE_URL;
-
-// On parse les credentials
-const connection2 = connection.split(":");
-const user = connection2[1].split("//")[1];
-const [password, host] = connection2[2].split("@");
-const [port, database] = connection2[3].split("/");
-
-console.log(`user : ${user} // password : ${password} // host : ${host} // port : ${port} // database : ${database}`);
 
 // On connecte le bot à la bdd
-var client = new pg.Client(
+const dbUserData = (process.env.environment === 'PROD') ? 
 	{
-		user: user,
-    		password: password,
-    		database: database,
-    		port: port,
-    		host: host,
-    		ssl: true
-	}
-);
+		connectionString: process.env.DATABASE_URL,
+		ssl: {
+				rejectUnauthorized: false
+			 }
+	} : { connectionString: process.env.DATABASE_URL }
+
+const client = new pg.Client(dbUserData);
+
 client.connect((err) => {
 	if (err) {
 		console.log('connection error : ' + err.stack);
