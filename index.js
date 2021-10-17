@@ -9,6 +9,7 @@ import {
   newRequest,
   checkAnniversaire,
 } from "./profil.js";
+import { smileys } from "./src/constantes/smileys.js";
 
 // Fonctions utiles
 function randInt(max) {
@@ -19,26 +20,8 @@ function randInt(max) {
 const hll = new Date("2022", "07", "09", "20", "08", "00");
 let generalChan; // Objet contenant les réfs vers le canal #general
 const idGeneral = "325144638447157249";
-
-// Smileys
-const scalim = "<:calim:669952959425019904>";
-const smat100 = "<:mat100:458140489485385780>";
-const ssadcat = "<:sadcat:543739550137188420>";
-const sheart = "❤";
-const ssob = "😭";
-const sfeu = "🔥";
-const soppression = "🙂";
-const ssmile = "😄";
-const sokhand = "👌";
-const chanBeauf = "<#418751341519962113>";
-const soreo =
-  "https://cdn.discordapp.com/attachments/481899683275603973/492331931170766849/oreo_2.png";
-const skoukou = "<:koukou:540206430993776641>";
-const smhh = "🍆";
-const sumbrella = "☔";
-const sdrop = "💦";
-const sscream = "😱";
-const shumpf = "<:humpf:568317177741049856>";
+const idBeauf = "418751341519962113";
+const chanBeauf = `<#${idBeauf}>`;
 
 // Commandes
 const commandes = [
@@ -124,7 +107,7 @@ const asw = {
   ],
   cui: ["Cui !", "Tu me prends pour un vulgaire moineau?"],
   nuclear: ["Alex The Autist vous détruira tous !"],
-  cyanure: [`J'attends toujours que Matsam me crée ${ssob}`],
+  cyanure: [`J'attends toujours que Matsam me crée ${smileys.sob}`],
   bleus: [
     "On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫",
     "Allez les bleus !",
@@ -141,11 +124,13 @@ const asw = {
   ],
   logs: ["https://bernard-site.herokuapp.com/logs"],
   penis: ["8=D"],
-  oreoplz: [soreo],
-  parapluie: [`||${skoukou}||||${smhh}||||${sdrop}||||${sumbrella}||`],
+  oreoplz: [smileys.oreo],
+  parapluie: [
+    `||${smileys.koukou}||||${smileys.mhh}||||${smileys.drop}||||${smileys.umbrella}||`,
+  ],
   film: [
     "You shit on my garden ?!",
-    `Ils sont entrain de manger ma maman${ssadcat}`,
+    `Ils sont entrain de manger ma maman${smileys.sadcat}`,
     "Don't piss on the hospitality",
     "Vous êtes un koala tout à fait décent",
     "La rivière de nos larmes coule après le koala",
@@ -192,7 +177,7 @@ const asw = {
     "Île-de-France? Tu veux dire Paris",
     "Y a que Paint de vrai",
     chanBeauf,
-    `Je préfère le gratin dauphinois à la bite ${sokhand}`,
+    `Je préfère le gratin dauphinois à la bite ${smileys.okhand}`,
     "CLIQUE SUR LES CHARIOTS SALE CON",
     "Tant mieux qu'elle soit morte ils devraient tous mourir ces sales americains du Sud",
   ],
@@ -207,15 +192,15 @@ const asw = {
     "Oh, j'ai encore fait un 20 aux dés !",
   ],
   Matsam: [
-    `Hartychou ${sheart}`,
-    `Paint ${sheart}`,
-    `Ragots ${sheart}`,
-    `Smash Bros ${sheart}`,
+    `Hartychou ${smileys.heart}`,
+    `Paint ${smileys.heart}`,
+    `Ragots ${smileys.heart}`,
+    `Smash Bros ${smileys.heart}`,
     "Maelg le dieu de l'anti-picto",
-    `Jpp de ma vie ${scalim}`,
-    `Je vais en faire un meme${smat100}`,
+    `Jpp de ma vie ${smileys.calim}`,
+    `Je vais en faire un meme${smileys.mat100}`,
     "Pourquoi on est J2 ? On jump pas ce soir ?",
-    soppression,
+    smileys.oppression,
     'Perso j\'ai deux manières de plier, une manière "propre" et une manière "mi-propre". Comme ça, quand je prends le vêtement, en fonction de la manière dont il est plié, je sais comment il est',
     "LES GENS QUI CRIE TOUS DES CON",
     "ALERTE CANDICE A APPORTÉ...",
@@ -231,7 +216,7 @@ const asw = {
   ],
   Uff: ["Force et honneur !", "Génial les smoothies au foutre !"],
   Hartyom: [
-    `JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !${scalim}${scalim}${scalim}`,
+    `JE SUIS PRISONNIER DU CANAL AUDIO, O SECOUR !${smileys.calim}${smileys.calim}${smileys.calim}`,
     "VOUS CONNAISSEZ LE POINT COMMUN ENTRE UFF ET LE FROMAGE DE MACKAY ? ON EN ENTEND BEAUCOUP PARLER MAIS ON LES VOIT JAMAIS HAHAHAHAHAHAHAHHAAH",
     "Y'a moyen de pécho dans la méta alors ? Ptain c'est de mieux en mieux",
     "Il ne peut en rester AUCUN. Je ne laisserai aucune de ces racailles faire la loi dans cette ville. NOT UNDER MY WATCH",
@@ -248,11 +233,11 @@ const asw = {
   ],
   Cerfpihier: ["Écoute petit..."],
   Lilith: [
-    `Je suis aussi douée avec ma langue, on peut bien s'entendre${sfeu}`,
-    `Je suis très flexible sur les horaires (pas que sur les horaires ${ssmile} )`,
+    `Je suis aussi douée avec ma langue, on peut bien s'entendre${smileys.feu}`,
+    `Je suis très flexible sur les horaires (pas que sur les horaires ${smileys.smile} )`,
     "J'étais bourrée xD",
     "Là où je passe, les PMV trépassent",
-    `Hordes va disparaître en 2020 et j'aurai pas de titre sm ${ssadcat}`,
+    `Hordes va disparaître en 2020 et j'aurai pas de titre sm ${smileys.sadcat}`,
     "Elle est bonne la coquine ?",
     "T'es plus mon crush",
     "Jcrois qu'ils ont parlé de moi en rujono hier\nEn ruinoln\nEn Réunion.",
@@ -264,7 +249,7 @@ const asw = {
     "allez violé moi",
     "Je viens de recompter tu m'as deja sauvé 3 fois donc la prochaine c'est bon tu peux me laisser mourir",
     "Manque plus qu'on me viole dans le désert et je suis au top",
-    `Shaggyz Cleme je vous love ${sheart} ${sheart} coeur sur vous`,
+    `Shaggyz Cleme je vous love ${smileys.heart} ${smileys.heart} coeur sur vous`,
   ],
   WassaW: [
     "J AI LU PENDANT 72 HEURES NON STOP AVEC UN SOIR DANS LA NUIT BLANCHE",
@@ -275,7 +260,7 @@ const asw = {
     "Il vaut mieux aller élever des escargots à Auxerre avec un doctorat plutôt que sans",
     "Je n'arrive pas à me concentrer de tomate",
     "Non je vote pas sur Allocine j'aime pas le jaune je deteste ce site",
-    `${sheart} Vous êtes mes petits gėnies du DiDi ${sheart}`,
+    `${smileys.heart} Vous êtes mes petits gėnies du DiDi ${smileys.heart}`,
     "Ils s'auto dépriment sans moi !",
     "Pour que deux Moi fassent un Nous il faut que les Moi soi soi",
     'Toujours quand je suis sérieux on me "dé-sérieux"',
@@ -286,7 +271,7 @@ const asw = {
     "@everyøne J'ai besoin de garants pour ma sortie de prison ! AIDEZ MOI",
   ],
   Zomzom: [
-    `Je tiens à dire que "${soppression}" c'est opressant mais que le "wesh" a la fin de ta phrase m'a mis au fond`,
+    `Je tiens à dire que "${smileys.oppression}" c'est opressant mais que le "wesh" a la fin de ta phrase m'a mis au fond`,
     "C'est à force de lire les magouilles de Shaggyz, j'apprends",
     "Bah non a une soirée j'avais trop bu je l'ai embrassé, la boulette",
     "Bonjour la méta, je suis à un hâle et malgré l'heure bon taudive, j'ai bu bien :D Désolé de ma mort de noob lors du précédent CM :'( ça m' artiste !",
@@ -314,19 +299,19 @@ const asw = {
   ],
   Roystar: [
     "Ptain j'ai mis mon caleçon à l'envers ce matin jme disais bien que c'était bizarre",
-    `Ah mais la prochaine fois je ramène du champomy moi vous m'avez fait trop peur jme souviens pas de tout ${sscream}`,
+    `Ah mais la prochaine fois je ramène du champomy moi vous m'avez fait trop peur jme souviens pas de tout ${smileys.scream}`,
     "t ban",
   ],
   Dikryl: ["Salutérus, ça vagin ?"],
   Alexis: [
-    `On a déjà vomi dans mon duvet et dans mes oreilles c'était vraiment pas super ${ssadcat}`,
+    `On a déjà vomi dans mon duvet et dans mes oreilles c'était vraiment pas super ${smileys.sadcat}`,
     'Voulez vous écouter "on va niquer ce soir" ?',
     "TU CROIS QUE TU COMPRENDS PAS MAIS EN FAIT TU COMPRENDS PAS ENCORE MOINS",
   ],
   Ganapati: [
     "Merci Harty, n'oublions pas la \"recrue décence\", à l'heure où la recrudescence du molestage et du bizutage bat son plein ! xD",
   ],
-  Mad: ["Personne ira visiter ton île.", shumpf],
+  Mad: ["Personne ira visiter ton île.", smileys.humpf],
   Mzboub: ["!menbre"],
   Freez: [
     "la sélection naturelle c'est le fait qu'un organisme survivre dans un milieu et pas un autre organisme, selon moi",
@@ -486,7 +471,7 @@ bot.on("message", (msg) => {
     }
 
     msg.channel.send(
-      `Notre ami Cerfpihier se vengera contre Shaggyz dans ${year} ans, ${month} mois, ${day} jours, ${hour} heures, ${min} minutes, et ${sec} secondes !\nBonne chance à lui dans sa croisade !`
+      `Notre ami Cerfpihier se vengera contre Shaggyz dans ${year} ans, ${month} mois, ${day} jours, ${hour} heures, ${min} minutes, et ${smileys.ec} secondes !\nBonne chance à lui dans sa croisade !`
     );
   } else if (txt.slice(0, 7) === "!profil") {
     if (txt.length > 8) {
@@ -500,10 +485,10 @@ bot.on("message", (msg) => {
       tts: true,
     });
     newCommand(msg.author, txt);
-  } else if (txt === smat100) {
+  } else if (txt === smileys.mat100) {
     if (mat100 === 1) {
       mat100 = -1;
-      msg.channel.send(smat100);
+      msg.channel.send(smileys.mat100);
     } else {
       mat100++;
     }
@@ -524,7 +509,7 @@ bot.on("message", (msg) => {
     (txt === "!Nathan" && msg.author.username === "ッNnatto") ||
     (txt === "!Cornet" && msg.author.username === "Alexis")
   ) {
-    msg.channel.send(`Bah c'est toi idiot ${scalim}`);
+    msg.channel.send(`Bah c'est toi idiot ${smileys.calim}`);
     newCommand(msg.author, txt);
   } else if (
     commandes.indexOf(txt) !== -1 ||
