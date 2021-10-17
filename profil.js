@@ -257,7 +257,7 @@ const profil = (salon, nom) => {
         const val = res.rows[0];
         const lvlup = Math.round((4 * val.lvl ** 2) / 5);
         let { avatar } = val;
-        if (avatar === "") {
+        if (avatar === null) {
           avatar =
             "http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg";
         }
@@ -317,7 +317,7 @@ const checkAnniversaire = (general) => {
             }
 
             let { avatar } = row;
-            if (avatar === "") {
+            if (avatar === null) {
               avatar =
                 "http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg";
             }
