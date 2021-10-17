@@ -1,37 +1,10 @@
-// Init
-import { config } from "dotenv";
-import Discord from "discord.js";
-import pg from "pg";
-
-config();
-
-// On connecte le bot à la bdd
-const dbUserData =
-  process.env.environment === "PROD"
-    ? {
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-          rejectUnauthorized: false,
-        },
-      }
-    : { connectionString: process.env.DATABASE_URL };
-
-const client = new pg.Client(dbUserData);
-
-client.connect((err) => {
-  if (err) {
-    console.log(`[BDD] Connection error : ${err.stack}`);
-    client.end();
-  } else {
-    console.log("[BDD] Connected!");
-  }
-});
+import { client, RichEmbed } from "./src/initConfig.js";
 
 // Fonctions
 function lvlUp(msg, lvl) {
   const user = msg.author;
 
-  const embed = new Discord.RichEmbed()
+  const embed = new RichEmbed()
     .setAuthor(
       "LVL UP",
       "https://www.dbarj.com.br/wp-content/uploads/2017/08/large1.png"
@@ -261,7 +234,7 @@ const profil = (salon, nom) => {
           avatar =
             "http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg";
         }
-        const embed = new Discord.RichEmbed()
+        const embed = new RichEmbed()
           .setAuthor(
             `Profil de ${nom}`,
             "https://i62.servimg.com/u/f62/17/86/50/40/bannie12.jpg"
@@ -322,7 +295,7 @@ const checkAnniversaire = (general) => {
                 "http://1.bp.blogspot.com/--W_nRn6KT7c/UZYb9qcs5yI/AAAAAAAAAN8/G20bdSrsba4/s1600/avatar-inconnu.jpg";
             }
 
-            const embed = new Discord.RichEmbed()
+            const embed = new RichEmbed()
               .setAuthor(`Joyeux anniversaire ${row.name} !`, avatar)
               .setColor(0xff9900)
               .setDescription(text)

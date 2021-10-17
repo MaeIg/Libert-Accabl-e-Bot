@@ -1,5 +1,4 @@
-// Initialisation
-import { Client } from "discord.js";
+import { bot } from "./src/initConfig.js";
 import {
   newMessage,
   newCommand,
@@ -10,9 +9,6 @@ import {
   newRequest,
   checkAnniversaire,
 } from "./profil.js";
-
-const bot = new Client();
-const key = process.env.token;
 
 // Fonctions utiles
 function randInt(max) {
@@ -541,6 +537,3 @@ bot.on("message", (msg) => {
     newCommand(msg.author, txt);
   }
 });
-
-// Login
-bot.login(key);
