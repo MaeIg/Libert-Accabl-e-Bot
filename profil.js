@@ -1,6 +1,8 @@
 // Init
-const Discord = require('discord.js');
-const pg = require('pg');
+import { config } from 'dotenv';
+config();
+import Discord from 'discord.js';
+import pg from 'pg';
 
 // On connecte le bot à la bdd
 const dbUserData = (process.env.environment === 'PROD') ? 
@@ -277,13 +279,13 @@ const checkAnniversaire = (general) => {
 
 
 // Export
-module.exports = {
-	newMessage: newMessage,
-	newCommand: newCommand,
-	classement: classement,
-	classementCommandes: classementCommandes,
-	classementRichesse: classementRichesse,
-	profil: profil,
-	newRequest: newRequest,
-	checkAnniversaire: checkAnniversaire
+export {
+	newMessage,
+	newCommand,
+	classement,
+	classementCommandes,
+	classementRichesse,
+	profil,
+	newRequest,
+	checkAnniversaire
 };

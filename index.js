@@ -1,10 +1,17 @@
 // Initialisation
-require('dotenv').config()
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+import { Client } from 'discord.js';
+const bot = new Client();
 const key = process.env.token;
-const profil = require('./profil.js');
-const pg = require('pg');
+import {
+	newMessage,
+	newCommand,
+	classement,
+	classementCommandes,
+	classementRichesse,
+	profil,
+	newRequest,
+	checkAnniversaire
+} from './profil.js';
 
 // Fonctions utiles
 function randInt(max) {
@@ -12,7 +19,7 @@ function randInt(max) {
 }
 
 // Variables globales
-var hll = new Date(2022,07,09,20,08,00);
+var hll = new Date('2022','07','09','20','08','00');
 let generalChan; // Objet contenant les réfs vers le canal #general
 const idGeneral = '325144638447157249';
 
@@ -110,7 +117,7 @@ const helpInfo = {
 	license: "**Utilisation**\n```!license```\n**Description**\n```Si vous voulez copier Bernard, citez l'original !```",
 	d: "**Utilisation**\n```!d_nbPositif```\n**Description**\n```Donne un nombre aléatoire entre 1 et ce nombre.```\n**Exemple**\n```!d100 pourra donner \"69\".```",
 	peage: "**Utilisation**\n```Indisponible```\n**Description**\n```Un jour cette commande existera !```",
-	profil: "**Utilisation**\n```!profil _nomDiscord```\n**Description**\n```Affiche le profil de la personne donnée. Si aucune personne n'a été donnée, affiche votre profil.```",
+	profil: "**Utilisation**\n```!profil _nomDiscord```\n**Description**\n```Affiche le profil de la personne donnée. Si aucune personne n'a été donnée, affiche votre ```",
 	rich: "**Utilisation**\n```!rich```\n**Description**\n```Donne la liste des personnes ayant le plus de Libcoins sur le discord. Mais à quoi peut bien servir cette monnaie ?```",
 	commandes: "**Utilisation**\n```!commandes```\n**Description**\n```Donne la liste des commandes les plus utilisées sur ce discord.```",
 	classement: "**Utilisation**\n```!classement```\n**Description**\n```Donne la liste des personnes ayant le plus parlé sur ce discord. Qui arrivera à détrôner Cleme ?```",
@@ -126,12 +133,12 @@ bot.on('ready', () => {
 	
 	// CRON
 	setInterval(() => {
-		profil.checkAnniversaire(generalChan);
+		checkAnniversaire(generalChan);
 	}, 86400000);
 });
 
 bot.on('message', function (msg) {
-	profil.newMessage(msg);
+	newMessage(msg);
 	
 	var txt = msg.content;
 	
@@ -146,7 +153,7 @@ bot.on('message', function (msg) {
 		} else {
 			msg.channel.send('**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d\'information sur une commande');
 		}
-		profil.newCommand(msg.author, '!help');
+		newCommand(msg.author, '!help');
 	}
 	
 	else if (txt.slice(0,8) === '!requete') {
@@ -155,36 +162,36 @@ bot.on('message', function (msg) {
 		if (mots.length < 3) {
 			msg.channel.send("**Utilisation**\n```!requete Nom message```");
 		} else {
-			profil.newRequest(msg.author, mots[1], mots.slice(2).join(' '));
+			newRequest(msg.author, mots[1], mots.slice(2).join(' '));
 			msg.channel.send("Requête enregistrée !");
 		}
 
-		profil.newCommand(msg.author, '!requete');
+		newCommand(msg.author, '!requete');
 	}
 
 	else if (txt === '!everyone') {
 		msg.reply('Et non tu seras le seul mentionné !');
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!cyanure') {
 		msg.channel.send("Ca spamme beaucoup trop sur ce canal, " + msg.author.username + " a donc décidé d'en finir avec cette communauté oppressante.");
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!classement') {
-		profil.classement(msg.channel);
-		profil.newCommand(msg.author, txt);
+		classement(msg.channel);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!commandes') {
-		profil.classementCommandes(msg.channel);
-		profil.newCommand(msg.author, txt);
+		classementCommandes(msg.channel);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!rich') {
-		profil.classementRichesse(msg.channel);
-		profil.newCommand(msg.author, txt);
+		classementRichesse(msg.channel);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!penis') {
@@ -199,7 +206,7 @@ bot.on('message', function (msg) {
 			penis += 'D';
 			msg.channel.send(penis);
 		}
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === '!Cerfpihier') {
@@ -238,18 +245,18 @@ bot.on('message', function (msg) {
 	
 	else if (txt.slice(0,7) === '!profil') {
 		if (txt.length > 8) {
-			profil.profil(msg.channel, txt.slice(8,txt.length));
+			profil(msg.channel, txt.slice(8,txt.length));
 		} else {
-			profil.profil(msg.channel, msg.author.username);
+			profil(msg.channel, msg.author.username);
 		}
-		profil.newCommand(msg.author, '!profil');
+		newCommand(msg.author, '!profil');
 	}
 	
 	else if (txt === '!echo') {
 		msg.channel.send('echo', {
 			tts: true
 		});
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt === smat100) {
@@ -259,7 +266,7 @@ bot.on('message', function (msg) {
 		} else {
 			mat100 ++;
 		}
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 	
 	else if (txt.slice(0, 2) === '!d' && !isNaN(txt.substr(2))) {
@@ -270,19 +277,19 @@ bot.on('message', function (msg) {
 		var des = randInt(txt.substr(2)) + 1;
 		msg.channel.send("d" + txt.substr(2) + " : ***" + des + "***");
 		}
-		profil.newCommand(msg.author, '!d + nbr');
+		newCommand(msg.author, '!d + nbr');
 	}
 	
 	else if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir') || (txt === '!Nathan' && msg.author.username === 'ッNnatto') || (txt === '!Cornet' && msg.author.username === 'Alexis')) {
 		msg.channel.send('Bah c\'est toi idiot ' + scalim);
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 	
 	else if ((commandes.indexOf(txt) != -1) || (cpseudo.indexOf(txt) != -1) || (cinvis.indexOf(txt) != -1)) {
 		var L = asw[txt.substr(1)];
 		msg.channel.send(L[randInt(L.length)]);
 		
-		profil.newCommand(msg.author, txt);
+		newCommand(msg.author, txt);
 	}
 });
 
