@@ -10,6 +10,7 @@ import {
   checkAnniversaire,
 } from "./profil.js";
 import { smileys } from "./src/constantes/smileys.js";
+import { chanIds } from "./src/constantes/chanIds.js";
 
 // Fonctions utiles
 function randInt(max) {
@@ -19,9 +20,7 @@ function randInt(max) {
 // Variables globales
 const hll = new Date("2022", "07", "09", "20", "08", "00");
 let generalChan; // Objet contenant les réfs vers le canal #general
-const idGeneral = "325144638447157249";
-const idBeauf = "418751341519962113";
-const chanBeauf = `<#${idBeauf}>`;
+const chanBeauf = `<#${chanIds.beauf}>`;
 
 // Commandes
 const commandes = [
@@ -365,7 +364,7 @@ const helpInfo = {
 let mat100 = 0;
 
 bot.on("ready", () => {
-  generalChan = bot.channels.get(idGeneral);
+  generalChan = bot.channels.get(chanIds.general);
 
   // CRON
   setInterval(() => {
