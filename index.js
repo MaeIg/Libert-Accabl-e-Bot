@@ -14,7 +14,11 @@ import {
 import { randInt } from "./src/utils/randInt.js";
 import { smileys } from "./src/constantes/smileys.js";
 import { chanIds } from "./src/constantes/chanIds.js";
-import { commandes, cpseudo, cinvis } from "./src/commandes/commandList.js";
+import {
+  commandList,
+  pseudoCommandList,
+  invisibleCommandList,
+} from "./src/commandes/commandList.js";
 import { basicCommands } from "./src/commandes/basicCommands.js";
 import { pseudoCommands } from "./src/commandes/pseudoCommands.js";
 
@@ -90,14 +94,14 @@ bot.on("message", (msg) => {
         msg.channel.send(L);
       } else {
         msg.channel.send(
-          `**Commandes disponibles :**\n\`\`\`${commandes.join(
+          `**Commandes disponibles :**\n\`\`\`${commandList.join(
             "\n"
           )}\`\`\`\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d'information sur une commande`
         );
       }
     } else {
       msg.channel.send(
-        `**Commandes disponibles :**\n\`\`\`${commandes.join(
+        `**Commandes disponibles :**\n\`\`\`${commandList.join(
           "\n"
         )}\`\`\`\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d'information sur une commande`
       );
@@ -216,12 +220,15 @@ bot.on("message", (msg) => {
   ) {
     msg.channel.send(`Bah c'est toi idiot ${smileys.calim}`);
     newCommand(msg.author, txt);
-  } else if (commandes.indexOf(txt) !== -1 || cinvis.indexOf(txt) !== -1) {
+  } else if (
+    commandList.indexOf(txt) !== -1 ||
+    invisibleCommandList.indexOf(txt) !== -1
+  ) {
     const L = basicCommands[txt.substr(1)];
     msg.channel.send(L[randInt(L.length)]);
 
     newCommand(msg.author, txt);
-  } else if (cpseudo.indexOf(txt) !== -1) {
+  } else if (pseudoCommandList.indexOf(txt) !== -1) {
     const L = pseudoCommands[txt.substr(1)];
     msg.channel.send(L[randInt(L.length)]);
 

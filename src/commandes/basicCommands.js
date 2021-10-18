@@ -1,16 +1,16 @@
 import { smileys } from "../constantes/smileys.js";
-import { commandes, cpseudo } from "./commandList.js";
+import { commandList, pseudoCommandList } from "./commandList.js";
 
 // All commands that only print text
 // Usage : Print a random string that is inside the array
 const basicCommands = {
   help: [
-    `**Commandes disponibles :**\n\`\`\`${commandes.join(
+    `**Commandes disponibles :**\n\`\`\`${commandList.join(
       "\n"
     )}\`\`\`\n_!membres_ pour plus de commandes\n_!help commande_ pour plus d'information sur une commande`,
   ],
   membres: [
-    `**Commandes disponibles :**\n\`\`\`${cpseudo.join(
+    `**Commandes disponibles :**\n\`\`\`${pseudoCommandList.join(
       "\n"
     )}\`\`\`\n_!help_ pour plus de commandes`,
   ],

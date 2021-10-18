@@ -2,7 +2,7 @@
 // pseudoCommandList => For commands linked to a user
 // invisibleCommandList => For commands that should not appear in !help
 
-const commandes = [
+const commandList = [
   "!help",
   "!forum",
   "!trombi",
@@ -27,7 +27,7 @@ const commandes = [
   "!film",
   "!license",
 ];
-const cpseudo = [
+const pseudoCommandList = [
   "!Bernard",
   "!Golgoth",
   "!Maelg",
@@ -58,6 +58,6 @@ const cpseudo = [
   "!Mzboub",
   "!Freez",
 ];
-const cinvis = ["!membres", "!logs"];
+const invisibleCommandList = ["!membres", "!logs"];
 
-export { commandes, cpseudo, cinvis };
+export { commandList, pseudoCommandList, invisibleCommandList };
