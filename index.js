@@ -1,4 +1,5 @@
 import { bot } from "./src/initConfig.js";
+
 import {
   newMessage,
   newCommand,
@@ -9,13 +10,10 @@ import {
   newRequest,
   checkAnniversaire,
 } from "./profil.js";
+
+import { randInt } from "./src/utils/randInt.js";
 import { smileys } from "./src/constantes/smileys.js";
 import { chanIds } from "./src/constantes/chanIds.js";
-
-// Fonctions utiles
-function randInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
 
 // Variables globales
 const hll = new Date("2022", "07", "09", "20", "08", "00");
