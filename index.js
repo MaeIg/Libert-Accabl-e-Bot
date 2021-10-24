@@ -12,6 +12,7 @@ import {
 import { basicCommands } from "./src/commands/basicCommands.js";
 import { pseudoCommands } from "./src/commands/pseudoCommands.js";
 import { helpInfo } from "./src/commands/helpInfo.js";
+import { everyone } from "./src/commands/specialCommands/everyone.js";
 
 import {
   newMessage,
@@ -76,7 +77,7 @@ bot.on("message", (msg) => {
 
     newCommand(msg.author, "!requete");
   } else if (txt === "!everyone") {
-    msg.reply("Et non tu seras le seul mentionné !");
+    everyone(msg);
     newCommand(msg.author, txt);
   } else if (txt === "!cyanure") {
     msg.channel.send(
