@@ -18,5 +18,13 @@
     "consistent-return": "warn",
     "no-shadow": "warn",
     "import/prefer-default-export": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.*"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
