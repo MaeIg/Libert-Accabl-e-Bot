@@ -13,6 +13,7 @@ import { basicCommands } from "./src/commands/basicCommands.js";
 import { pseudoCommands } from "./src/commands/pseudoCommands.js";
 import { helpInfo } from "./src/commands/helpInfo.js";
 import { everyone } from "./src/commands/specialCommands/everyone.js";
+import { cyanure } from "./src/commands/specialCommands/cyanure.js";
 
 import {
   newMessage,
@@ -80,9 +81,7 @@ bot.on("message", (msg) => {
     everyone(msg);
     newCommand(msg.author, txt);
   } else if (txt === "!cyanure") {
-    msg.channel.send(
-      `Ca spamme beaucoup trop sur ce canal, ${msg.author.username} a donc décidé d'en finir avec cette communauté oppressante.`
-    );
+    cyanure(msg);
     newCommand(msg.author, txt);
   } else if (txt === "!classement") {
     classement(msg.channel);
