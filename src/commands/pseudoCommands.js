@@ -1,5 +1,5 @@
-import { smileys } from "../constantes/smileys.js";
-import { chanIds } from "../constantes/chanIds.js";
+import { smileys } from "../constants/smileys.js";
+import { chanIds } from "../constants/chanIds.js";
 
 // All commands linked to a user
 // Usage : Print a random string that is inside the array

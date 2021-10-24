@@ -1,17 +1,17 @@
 import { bot } from "./src/initConfig.js";
 
-import { smileys } from "./src/constantes/smileys.js";
-import { chanIds } from "./src/constantes/chanIds.js";
+import { smileys } from "./src/constants/smileys.js";
+import { chanIds } from "./src/constants/chanIds.js";
 import { randInt } from "./src/utils/randInt.js";
 
 import {
   commandList,
   pseudoCommandList,
   invisibleCommandList,
-} from "./src/commandes/commandList.js";
-import { basicCommands } from "./src/commandes/basicCommands.js";
-import { pseudoCommands } from "./src/commandes/pseudoCommands.js";
-import { helpInfo } from "./src/commandes/helpInfo.js";
+} from "./src/commands/commandList.js";
+import { basicCommands } from "./src/commands/basicCommands.js";
+import { pseudoCommands } from "./src/commands/pseudoCommands.js";
+import { helpInfo } from "./src/commands/helpInfo.js";
 
 import {
   newMessage,

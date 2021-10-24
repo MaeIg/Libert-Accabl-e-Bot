@@ -1,4 +1,4 @@
-import { smileys } from "../constantes/smileys.js";
+import { smileys } from "../constants/smileys.js";
 import { pseudoCommandList } from "./commandList.js";
 
 // All commands that only print text
