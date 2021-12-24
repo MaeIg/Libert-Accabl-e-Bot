@@ -1,5 +1,3 @@
-function randInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+const randInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
 export { randInt };

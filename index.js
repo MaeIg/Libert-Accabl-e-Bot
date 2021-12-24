@@ -14,6 +14,7 @@ import { pseudoCommands } from "./src/commands/pseudoCommands.js";
 import { helpInfo } from "./src/commands/helpInfo.js";
 import { everyone } from "./src/commands/specialCommands/everyone.js";
 import { cyanure } from "./src/commands/specialCommands/cyanure.js";
+import { penis } from "./src/commands/specialCommands/penis.js";
 
 import {
   newMessage,
@@ -93,17 +94,7 @@ bot.on("message", (msg) => {
     classementRichesse(msg.channel);
     newCommand(msg.author, txt);
   } else if (txt === "!penis") {
-    if (msg.author.username === "Clémentine") {
-      msg.channel.send("8===============D");
-    } else {
-      const nbr = randInt(10) + 1;
-      let penis = "8";
-      for (let i = 0; i < nbr; i++) {
-        penis += "=";
-      }
-      penis += "D";
-      msg.channel.send(penis);
-    }
+    penis(msg);
     newCommand(msg.author, txt);
   } else if (txt === "!Cerfpihier") {
     const now = new Date();
