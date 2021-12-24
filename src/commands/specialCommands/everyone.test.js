@@ -1,4 +1,3 @@
-import { jest } from "@jest/globals";
 import { everyone } from "./everyone.js";
 import MockDiscord from "../../mocks/MockDiscord.js";
 

@@ -21,5 +21,11 @@ export default {
 
   testEnvironment: "jest-environment-node",
 
-  transform: {},
+  moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "json"],
+
+  transform: {
+    "^.+\\.(js|jsx)?$": "babel-jest",
+  },
+
+  transformIgnorePatterns: ["<rootDir>/node_modules/"],
 };

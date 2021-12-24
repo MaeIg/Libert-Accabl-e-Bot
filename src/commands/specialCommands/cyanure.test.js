@@ -1,4 +1,3 @@
-import { expect, it, jest } from "@jest/globals";
 import MockDiscord from "../../mocks/MockDiscord.js";
 import { cyanure } from "./cyanure.js";
 
