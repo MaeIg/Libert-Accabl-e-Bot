@@ -13,11 +13,15 @@ export default {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: ["/node_modules/", "/mocks/"],
 
-  // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
-
   // Indicates whether each individual test should be reported during the run
   verbose: true,
+
+  collectCoverageFrom: [
+    "**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/coverage/**",
+    "!*.config.*",
+  ],
 
   testEnvironment: "jest-environment-node",
 
