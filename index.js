@@ -11,6 +11,7 @@ import { echo } from "./src/commands/specialCommands/echo.js";
 import { mat100 } from "./src/commands/specialCommands/mat100.js";
 import { launchBasicOrPseudoCommand } from "./src/commands/launchBasicOrPseudoCommand.js";
 import { help } from "./src/commands/specialCommands/help.js";
+import { cerfpihier } from "./src/commands/specialCommands/cerfpihier.js";
 
 import {
   newMessage,
@@ -24,7 +25,6 @@ import {
 } from "./profil.js";
 
 // Variables globales
-const hll = new Date("2022", "07", "09", "20", "08", "00");
 let generalChan; // Objet contenant les réfs vers le canal #general
 
 bot.on("ready", () => {
@@ -74,40 +74,7 @@ bot.on("message", (message) => {
     penis(message);
     newCommand(message.author, messageText);
   } else if (messageText === "!Cerfpihier") {
-    const now = new Date();
-    let time = hll - now - 7200000;
-
-    time = Math.floor(time / 1000);
-    const sec = time % 60;
-
-    time = Math.floor((time - sec) / 60);
-    const min = time % 60;
-
-    time = Math.floor((time - min) / 60);
-    const hour = time % 24;
-
-    time = Math.floor((time - hour) / 24);
-    let day = time % 30;
-
-    time = Math.floor((time - day) / 30);
-    let month = time % 12;
-    day -= Math.floor(time / 2);
-    while (day < 0) {
-      month--;
-      day += 30;
-    }
-
-    time = Math.floor((time - month) / 12);
-    let year = time;
-    while (month < 0) {
-      month += 12;
-      year--;
-    }
-
-    message.channel.send(
-      `Notre ami Cerfpihier se vengera contre Shaggyz dans ${year} ans, ${month} mois, ${day} jours, ${hour} heures, ${min} minutes, et ${smileys.ec} secondes !\nBonne chance à lui dans sa croisade !`
-    );
-
+    cerfpihier(message);
     newCommand(message.author, messageText);
   } else if (messageText.slice(0, 7) === "!profil") {
     if (messageText.length > 8) {
