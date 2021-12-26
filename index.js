@@ -17,6 +17,7 @@ import { cyanure } from "./src/commands/specialCommands/cyanure.js";
 import { penis } from "./src/commands/specialCommands/penis.js";
 import { rollDice } from "./src/commands/specialCommands/rollDice.js";
 import { echo } from "./src/commands/specialCommands/echo.js";
+import { mat100 } from "./src/commands/specialCommands/mat100.js";
 
 import {
   newMessage,
@@ -32,8 +33,6 @@ import {
 // Variables globales
 const hll = new Date("2022", "07", "09", "20", "08", "00");
 let generalChan; // Objet contenant les réfs vers le canal #general
-
-let mat100 = 0;
 
 bot.on("ready", () => {
   generalChan = bot.channels.get(chanIds.general);
@@ -143,12 +142,7 @@ bot.on("message", (msg) => {
     echo(msg);
     newCommand(msg.author, txt);
   } else if (txt === smileys.mat100) {
-    if (mat100 === 1) {
-      mat100 = -1;
-      msg.channel.send(smileys.mat100);
-    } else {
-      mat100++;
-    }
+    mat100(msg);
     newCommand(msg.author, txt);
   } else if (txt.slice(0, 2) === "!d") {
     const diceValue = Number(txt.substring(2));
