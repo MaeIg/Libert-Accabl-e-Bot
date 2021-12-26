@@ -3,8 +3,6 @@ import { bot } from "./src/initConfig.js";
 import { smileys } from "./src/constants/smileys.js";
 import { chanIds } from "./src/constants/chanIds.js";
 
-import { commandList } from "./src/commands/commandList.js";
-import { helpInfo } from "./src/commands/helpInfo.js";
 import { everyone } from "./src/commands/specialCommands/everyone.js";
 import { cyanure } from "./src/commands/specialCommands/cyanure.js";
 import { penis } from "./src/commands/specialCommands/penis.js";
@@ -12,6 +10,7 @@ import { rollDice } from "./src/commands/specialCommands/rollDice.js";
 import { echo } from "./src/commands/specialCommands/echo.js";
 import { mat100 } from "./src/commands/specialCommands/mat100.js";
 import { launchBasicOrPseudoCommand } from "./src/commands/launchBasicOrPseudoCommand.js";
+import { help } from "./src/commands/specialCommands/help.js";
 
 import {
   newMessage,
@@ -43,24 +42,7 @@ bot.on("message", (message) => {
   const messageText = message.content;
 
   if (messageText.slice(0, 5) === "!help") {
-    if (messageText.length > 6) {
-      const L = helpInfo[messageText.slice(6)];
-      if (L !== undefined) {
-        message.channel.send(L);
-      } else {
-        message.channel.send(
-          `**Commandes disponibles :**\n\`\`\`${commandList.join(
-            "\n"
-          )}\`\`\`\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d'information sur une commande`
-        );
-      }
-    } else {
-      message.channel.send(
-        `**Commandes disponibles :**\n\`\`\`${commandList.join(
-          "\n"
-        )}\`\`\`\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d'information sur une commande`
-      );
-    }
+    help(message, messageText);
     newCommand(message.author, "!help");
   } else if (messageText.slice(0, 8) === "!requete") {
     const mots = messageText.split(" ");
