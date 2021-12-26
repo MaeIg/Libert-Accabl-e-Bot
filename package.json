@@ -1,23 +1,40 @@
 {
-  "name": "discord.js-heroku",
-  "version": "1.0.0",
+  "name": "bernard",
+  "version": "2.0.0",
   "description": "Miou !",
   "main": "./index.js",
+  "type": "module",
   "engines": {
-      "node": "8.11.3",
-      "npm": "5.6.0"
+    "node": "16.11.1",
+    "npm": "8.0.0"
   },
   "dependencies": {
     "discord.js": "^11.3.2",
-    "pg": "^7.4.3"
+    "dotenv": "^10.0.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "@jest/globals": "^27.3.1",
+    "babel-jest": "^27.4.5",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest",
+    "test-watch": "jest --watchAll",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaeIg/Discord-Bot.git"
+    "url": "git+https://github.com/MaeIg/Libert-Accabl-e-Bot.git"
   },
   "keywords": [
     "heroku",
@@ -27,8 +44,5 @@
   ],
   "author": "Maelg",
   "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "https://github.com/MaeIg/Discord-Bot"
+  "homepage": "https://bernard-site.herokuapp.com/"
 }
