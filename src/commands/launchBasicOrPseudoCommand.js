@@ -27,13 +27,13 @@ const launchBasicOrPseudoCommand = (message, command) => {
     commandList.indexOf(command) !== -1 ||
     invisibleCommandList.indexOf(command) !== -1
   ) {
-    const L = basicCommands[command.substring(1)];
-    message.channel.send(L[randInt(L.length)]);
+    const resultList = basicCommands[command.substring(1)];
+    message.channel.send(resultList[randInt(resultList.length)]);
 
     newCommand(message.author, command);
   } else if (pseudoCommandList.indexOf(command) !== -1) {
-    const L = pseudoCommands[command.substring(1)];
-    message.channel.send(L[randInt(L.length)]);
+    const resultList = pseudoCommands[command.substring(1)];
+    message.channel.send(resultList[randInt(resultList.length)]);
 
     newCommand(message.author, command);
   }
