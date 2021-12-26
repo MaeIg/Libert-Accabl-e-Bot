@@ -2,15 +2,8 @@ import { bot } from "./src/initConfig.js";
 
 import { smileys } from "./src/constants/smileys.js";
 import { chanIds } from "./src/constants/chanIds.js";
-import { randInt } from "./src/utils/randInt.js";
 
-import {
-  commandList,
-  pseudoCommandList,
-  invisibleCommandList,
-} from "./src/commands/commandList.js";
-import { basicCommands } from "./src/commands/basicCommands.js";
-import { pseudoCommands } from "./src/commands/pseudoCommands.js";
+import { commandList } from "./src/commands/commandList.js";
 import { helpInfo } from "./src/commands/helpInfo.js";
 import { everyone } from "./src/commands/specialCommands/everyone.js";
 import { cyanure } from "./src/commands/specialCommands/cyanure.js";
@@ -18,6 +11,7 @@ import { penis } from "./src/commands/specialCommands/penis.js";
 import { rollDice } from "./src/commands/specialCommands/rollDice.js";
 import { echo } from "./src/commands/specialCommands/echo.js";
 import { mat100 } from "./src/commands/specialCommands/mat100.js";
+import { launchBasicOrPseudoCommand } from "./src/commands/launchBasicOrPseudoCommand.js";
 
 import {
   newMessage,
@@ -150,28 +144,7 @@ bot.on("message", (msg) => {
       rollDice(msg, diceValue);
       newCommand(msg.author, "!d + nbr");
     }
-  } else if (
-    txt.substring(1) === msg.author.username ||
-    (txt === "!Cleme" && msg.author.username === "Clémentine") ||
-    (txt === "!Roventa" && msg.author.username === "m4x") ||
-    (txt === "!Shaggyz" && msg.author.username === "Siflomir") ||
-    (txt === "!Nathan" && msg.author.username === "ッNnatto") ||
-    (txt === "!Cornet" && msg.author.username === "Alexis")
-  ) {
-    msg.channel.send(`Bah c'est toi idiot ${smileys.calim}`);
-    newCommand(msg.author, txt);
-  } else if (
-    commandList.indexOf(txt) !== -1 ||
-    invisibleCommandList.indexOf(txt) !== -1
-  ) {
-    const L = basicCommands[txt.substring(1)];
-    msg.channel.send(L[randInt(L.length)]);
-
-    newCommand(msg.author, txt);
-  } else if (pseudoCommandList.indexOf(txt) !== -1) {
-    const L = pseudoCommands[txt.substring(1)];
-    msg.channel.send(L[randInt(L.length)]);
-
-    newCommand(msg.author, txt);
+  } else {
+    launchBasicOrPseudoCommand(msg, txt);
   }
 });
