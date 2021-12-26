@@ -15,6 +15,7 @@ import { helpInfo } from "./src/commands/helpInfo.js";
 import { everyone } from "./src/commands/specialCommands/everyone.js";
 import { cyanure } from "./src/commands/specialCommands/cyanure.js";
 import { penis } from "./src/commands/specialCommands/penis.js";
+import { rollDice } from "./src/commands/specialCommands/rollDice.js";
 
 import {
   newMessage,
@@ -150,14 +151,12 @@ bot.on("message", (msg) => {
       mat100++;
     }
     newCommand(msg.author, txt);
-  } else if (txt.slice(0, 2) === "!d" && !Number.isNaN(txt.substr(2))) {
-    if (txt.substr(2) === 0) {
-      msg.channel.send("Ca existe ce machin?");
-    } else {
-      const des = randInt(txt.substr(2)) + 1;
-      msg.channel.send(`d${txt.substr(2)} : ***${des}***`);
+  } else if (txt.slice(0, 2) === "!d") {
+    const diceValue = Number(txt.substring(2));
+    if (!Number.isNaN(diceValue)) {
+      rollDice(msg, diceValue);
+      newCommand(msg.author, "!d + nbr");
     }
-    newCommand(msg.author, "!d + nbr");
   } else if (
     txt.substr(1) === msg.author.username ||
     (txt === "!Cleme" && msg.author.username === "Clémentine") ||
