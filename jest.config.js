@@ -12,6 +12,7 @@ export default {
     "!**/node_modules/**",
     "!**/coverage/**",
     "!*.config.*",
+    "!*.setup.*",
   ],
 
   moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "json"],
@@ -23,6 +24,8 @@ export default {
   },
 
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
+
+  setupFiles: ["./src/jest.setup.js"],
 
   verbose: true,
 };
