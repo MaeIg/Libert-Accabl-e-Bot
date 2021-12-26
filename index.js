@@ -16,6 +16,7 @@ import { everyone } from "./src/commands/specialCommands/everyone.js";
 import { cyanure } from "./src/commands/specialCommands/cyanure.js";
 import { penis } from "./src/commands/specialCommands/penis.js";
 import { rollDice } from "./src/commands/specialCommands/rollDice.js";
+import { echo } from "./src/commands/specialCommands/echo.js";
 
 import {
   newMessage,
@@ -139,9 +140,7 @@ bot.on("message", (msg) => {
     }
     newCommand(msg.author, "!profil");
   } else if (txt === "!echo") {
-    msg.channel.send("echo", {
-      tts: true,
-    });
+    echo(msg);
     newCommand(msg.author, txt);
   } else if (txt === smileys.mat100) {
     if (mat100 === 1) {
