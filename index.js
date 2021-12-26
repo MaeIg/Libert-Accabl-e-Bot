@@ -157,7 +157,7 @@ bot.on("message", (msg) => {
       newCommand(msg.author, "!d + nbr");
     }
   } else if (
-    txt.substr(1) === msg.author.username ||
+    txt.substring(1) === msg.author.username ||
     (txt === "!Cleme" && msg.author.username === "Clémentine") ||
     (txt === "!Roventa" && msg.author.username === "m4x") ||
     (txt === "!Shaggyz" && msg.author.username === "Siflomir") ||
@@ -170,12 +170,12 @@ bot.on("message", (msg) => {
     commandList.indexOf(txt) !== -1 ||
     invisibleCommandList.indexOf(txt) !== -1
   ) {
-    const L = basicCommands[txt.substr(1)];
+    const L = basicCommands[txt.substring(1)];
     msg.channel.send(L[randInt(L.length)]);
 
     newCommand(msg.author, txt);
   } else if (pseudoCommandList.indexOf(txt) !== -1) {
-    const L = pseudoCommands[txt.substr(1)];
+    const L = pseudoCommands[txt.substring(1)];
     msg.channel.send(L[randInt(L.length)]);
 
     newCommand(msg.author, txt);
