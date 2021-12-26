@@ -12,14 +12,20 @@ import {
   pseudoCommandList,
 } from "./commandList.js";
 
+const pseudoMapping = {
+  Clémentine: "Cleme",
+  m4x: "Roventa",
+  Siflomir: "Shaggyz",
+  ッNnatto: "Nathan",
+  Alexis: "Cornet",
+};
+
 const launchBasicOrPseudoCommand = (message, command) => {
+  const commandeText = command.substring(1);
+
   if (
-    command.substring(1) === message.author.username ||
-    (command === "!Cleme" && message.author.username === "Clémentine") ||
-    (command === "!Roventa" && message.author.username === "m4x") ||
-    (command === "!Shaggyz" && message.author.username === "Siflomir") ||
-    (command === "!Nathan" && message.author.username === "ッNnatto") ||
-    (command === "!Cornet" && message.author.username === "Alexis")
+    commandeText === message.author.username ||
+    commandeText === pseudoMapping[message.author.username]
   ) {
     message.channel.send(`Bah c'est toi idiot ${smileys.calim}`);
     newCommand(message.author, command);
@@ -27,12 +33,12 @@ const launchBasicOrPseudoCommand = (message, command) => {
     commandList.indexOf(command) !== -1 ||
     invisibleCommandList.indexOf(command) !== -1
   ) {
-    const resultList = basicCommands[command.substring(1)];
+    const resultList = basicCommands[commandeText];
     message.channel.send(resultList[randInt(resultList.length)]);
 
     newCommand(message.author, command);
   } else if (pseudoCommandList.indexOf(command) !== -1) {
-    const resultList = pseudoCommands[command.substring(1)];
+    const resultList = pseudoCommands[commandeText];
     message.channel.send(resultList[randInt(resultList.length)]);
 
     newCommand(message.author, command);
