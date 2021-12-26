@@ -107,6 +107,8 @@ bot.on("message", (message) => {
     message.channel.send(
       `Notre ami Cerfpihier se vengera contre Shaggyz dans ${year} ans, ${month} mois, ${day} jours, ${hour} heures, ${min} minutes, et ${smileys.ec} secondes !\nBonne chance à lui dans sa croisade !`
     );
+
+    newCommand(message.author, messageText);
   } else if (messageText.slice(0, 7) === "!profil") {
     if (messageText.length > 8) {
       profil(message.channel, messageText.slice(8));
