@@ -37,61 +37,61 @@ bot.on("ready", () => {
   }, 86400000);
 });
 
-bot.on("message", (msg) => {
-  newMessage(msg);
+bot.on("message", (message) => {
+  newMessage(message);
 
-  const txt = msg.content;
+  const messageText = message.content;
 
-  if (txt.slice(0, 5) === "!help") {
-    if (txt.length > 6) {
-      const L = helpInfo[txt.slice(6, txt.length)];
+  if (messageText.slice(0, 5) === "!help") {
+    if (messageText.length > 6) {
+      const L = helpInfo[messageText.slice(6)];
       if (L !== undefined) {
-        msg.channel.send(L);
+        message.channel.send(L);
       } else {
-        msg.channel.send(
+        message.channel.send(
           `**Commandes disponibles :**\n\`\`\`${commandList.join(
             "\n"
           )}\`\`\`\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d'information sur une commande`
         );
       }
     } else {
-      msg.channel.send(
+      message.channel.send(
         `**Commandes disponibles :**\n\`\`\`${commandList.join(
           "\n"
         )}\`\`\`\n_!membres_ pour plus de commandes\n_!help Commande_ pour plus d'information sur une commande`
       );
     }
-    newCommand(msg.author, "!help");
-  } else if (txt.slice(0, 8) === "!requete") {
-    const mots = txt.split(" ");
+    newCommand(message.author, "!help");
+  } else if (messageText.slice(0, 8) === "!requete") {
+    const mots = messageText.split(" ");
 
     if (mots.length < 3) {
-      msg.channel.send("**Utilisation**\n```!requete Nom message```");
+      message.channel.send("**Utilisation**\n```!requete Nom message```");
     } else {
-      newRequest(msg.author, mots[1], mots.slice(2).join(" "));
-      msg.channel.send("Requête enregistrée !");
+      newRequest(message.author, mots[1], mots.slice(2).join(" "));
+      message.channel.send("Requête enregistrée !");
     }
 
-    newCommand(msg.author, "!requete");
-  } else if (txt === "!everyone") {
-    everyone(msg);
-    newCommand(msg.author, txt);
-  } else if (txt === "!cyanure") {
-    cyanure(msg);
-    newCommand(msg.author, txt);
-  } else if (txt === "!classement") {
-    classement(msg.channel);
-    newCommand(msg.author, txt);
-  } else if (txt === "!commandes") {
-    classementCommandes(msg.channel);
-    newCommand(msg.author, txt);
-  } else if (txt === "!rich") {
-    classementRichesse(msg.channel);
-    newCommand(msg.author, txt);
-  } else if (txt === "!penis") {
-    penis(msg);
-    newCommand(msg.author, txt);
-  } else if (txt === "!Cerfpihier") {
+    newCommand(message.author, "!requete");
+  } else if (messageText === "!everyone") {
+    everyone(message);
+    newCommand(message.author, messageText);
+  } else if (messageText === "!cyanure") {
+    cyanure(message);
+    newCommand(message.author, messageText);
+  } else if (messageText === "!classement") {
+    classement(message.channel);
+    newCommand(message.author, messageText);
+  } else if (messageText === "!commandes") {
+    classementCommandes(message.channel);
+    newCommand(message.author, messageText);
+  } else if (messageText === "!rich") {
+    classementRichesse(message.channel);
+    newCommand(message.author, messageText);
+  } else if (messageText === "!penis") {
+    penis(message);
+    newCommand(message.author, messageText);
+  } else if (messageText === "!Cerfpihier") {
     const now = new Date();
     let time = hll - now - 7200000;
 
@@ -122,29 +122,29 @@ bot.on("message", (msg) => {
       year--;
     }
 
-    msg.channel.send(
+    message.channel.send(
       `Notre ami Cerfpihier se vengera contre Shaggyz dans ${year} ans, ${month} mois, ${day} jours, ${hour} heures, ${min} minutes, et ${smileys.ec} secondes !\nBonne chance à lui dans sa croisade !`
     );
-  } else if (txt.slice(0, 7) === "!profil") {
-    if (txt.length > 8) {
-      profil(msg.channel, txt.slice(8, txt.length));
+  } else if (messageText.slice(0, 7) === "!profil") {
+    if (messageText.length > 8) {
+      profil(message.channel, messageText.slice(8));
     } else {
-      profil(msg.channel, msg.author.username);
+      profil(message.channel, message.author.username);
     }
-    newCommand(msg.author, "!profil");
-  } else if (txt === "!echo") {
-    echo(msg);
-    newCommand(msg.author, txt);
-  } else if (txt === smileys.mat100) {
-    mat100(msg);
-    newCommand(msg.author, txt);
-  } else if (txt.slice(0, 2) === "!d") {
-    const diceValue = Number(txt.substring(2));
+    newCommand(message.author, "!profil");
+  } else if (messageText === "!echo") {
+    echo(message);
+    newCommand(message.author, messageText);
+  } else if (messageText === smileys.mat100) {
+    mat100(message);
+    newCommand(message.author, messageText);
+  } else if (messageText.slice(0, 2) === "!d") {
+    const diceValue = Number(messageText.substring(2));
     if (!Number.isNaN(diceValue)) {
-      rollDice(msg, diceValue);
-      newCommand(msg.author, "!d + nbr");
+      rollDice(message, diceValue);
+      newCommand(message.author, "!d + nbr");
     }
   } else {
-    launchBasicOrPseudoCommand(msg, txt);
+    launchBasicOrPseudoCommand(message, messageText);
   }
 });
