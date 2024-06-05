@@ -2,10 +2,34 @@ services:
   db:
     image: postgres:16.3
     restart: always
+    env_file: ./.env
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=maelg
     ports:
-      - '5432:5432'
+      - '8001:5432'
     volumes:
       - /Users/mael/Documents/Perso/Programmation/MaeIg/Bernard/Libert-Accabl-e-Bot/Docker/postgres/data:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U maelg -d postgres
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  app:
+    depends_on:
+      db:
+        condition: service_healthy
+    build: .
+    restart: always
+    env_file: ./.env
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_NAME=${POSTGRES_NAME}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - token=${token}

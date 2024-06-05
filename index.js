@@ -132,7 +132,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', function (msg) {
-	console.log('Message de ' + msg.author.username + ' : ' + msg.content);
+	console.log('Message de ' + msg.author.username);
 	profil.newMessage(msg);
 	
 	var txt = msg.content;
