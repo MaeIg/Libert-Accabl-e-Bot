@@ -52,7 +52,7 @@ const asw = {
 	nuclear: ['Alex The Autist vous détruira tous !'],
 	cyanure: ["J'attends toujours que Matsam me crée " + ssob],
 	bleus: ['On est les champions ! On est les champions ! On est... on est... on est les champions ! ♫', 'Allez les bleus !', '1998-2018 !', 'Et 1... Et 2... Et 3... et 4-2 !'],
-	actualité: ['Google est ton ami !', 'Hartyom n\'a toujours pas fini de se plaindre', "On est en guerre."],
+	actualité: ['Google est ton ami !', 'La méta a 10 ans !', 'Vive Maelgie !'],
 	log: ['***Last update : 28/11/2020 19h00***\n\nBernard souhaite maintenant l\'anniversaire des actifs du discord !\nAjout des commandes !film, !Mzboub, !Mad, !Freez.\nMise à jour des commandes !Alexis, !Maelg, !WassaW, !Zomzom, !Roystar, !Uff, !Pellaeon, !Cleme, !Hartyom et !actualité.\n\n_!logs_ pour plus de logs'],
 	logs: ['https://bernard-site.herokuapp.com/logs'],
 	penis: ['8=D'],
