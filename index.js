@@ -1,4 +1,5 @@
 // Initialisation
+require("dotenv").config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const key = process.env.token;
@@ -121,6 +122,7 @@ var mat100 = 0;
 
 
 bot.on('ready', () => {
+	console.log('Je suis prêt !');
 	generalChan = bot.channels.get(idGeneral);
 	
 	// CRON
@@ -130,6 +132,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', function (msg) {
+	console.log('Message de ' + msg.author.username + ' : ' + msg.content);
 	profil.newMessage(msg);
 	
 	var txt = msg.content;

@@ -17,7 +17,7 @@ var client = new pg.Client(
 		database: database,
 		port: port,
 		host: host,
-		ssl: true
+		ssl: false
 	}
 );
 client.connect((err) => {
