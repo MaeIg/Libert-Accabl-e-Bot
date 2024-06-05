@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:16.3
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=maelg
+    ports:
+      - '5432:5432'
+    volumes:
+      - /Users/mael/Documents/Perso/Programmation/MaeIg/Bernard/Libert-Accabl-e-Bot/Docker/postgres/data:/var/lib/postgresql/data

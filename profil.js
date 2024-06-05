@@ -1,13 +1,11 @@
 // Init
 const Discord = require('discord.js');
 const pg = require('pg');
-const connection = process.env.DATABASE_URL;
-
-// On parse les credentials
-const connection2 = connection.split(":");
-const user = connection2[1].split("//")[1];
-const [password, host] = connection2[2].split("@");
-const [port, database] = connection2[3].split("/");
+const host = process.env.POSTGRES_HOST;
+const user = process.env.POSTGRES_USER;
+const password = process.env.POSTGRES_PASSWORD;
+const database = process.env.POSTGRES_NAME;
+const port = process.env.POSTGRES_PORT;
 
 console.log(`user : ${user} // password : ${password} // host : ${host} // port : ${port} // database : ${database}`);
 
@@ -15,11 +13,11 @@ console.log(`user : ${user} // password : ${password} // host : ${host} // port 
 var client = new pg.Client(
 	{
 		user: user,
-    		password: password,
-    		database: database,
-    		port: port,
-    		host: host,
-    		ssl: true
+		password: password,
+		database: database,
+		port: port,
+		host: host,
+		ssl: true
 	}
 );
 client.connect((err) => {
