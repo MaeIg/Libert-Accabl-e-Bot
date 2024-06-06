@@ -12,7 +12,7 @@ function randInt(max) {
 }
 
 // Variables globales
-var hll = new Date(2022,07,09,20,08,00);
+var hll = new Date(2022,7,9,20,8,0);
 let generalChan; // Objet contenant les réfs vers le canal #general
 const idGeneral = '325144638447157249';
 
