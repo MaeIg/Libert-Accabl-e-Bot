@@ -27,7 +27,7 @@ const shumpf = "<:humpf:568317177741049856>";
 
 // Commandes
 const commandes = ['!help', '!forum', '!trombi', '!site', '!requete', '!d + nombre', '!everyone', '!echo', '!cui', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!film', '!license'],
-    cpseudo = ['!Bernard', '!Maelg', '!Cleme', '!Drac', '!Matsam', '!Uff', '!Hartyom', '!Lilith', "!WassaW", "!Zomzom", "!Pellaeon", "!Roystar", "!Alexis", "!Mad"],
+    cpseudo = ['!Bernard', '!Maelg', '!Cleme', '!Drac', '!Matsam', '!Uff', '!Hartyom', '!Lilith', "!WassaW", "!Zomzom", "!Pellaeon", "!Roystar", "!Alexis", "!Mad", "!Glen", "!Yaken", "!Symfo"],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 const asw = {
@@ -244,7 +244,7 @@ bot.on('message', function (msg) {
 		profil.newCommand(msg.author, '!d + nbr');
 	}
 	
-	else if ((txt.substr(1) === msg.author.username) || (txt === '!Cleme' && msg.author.username === 'Clémentine') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir') || (txt === '!Nathan' && msg.author.username === 'ッNnatto') || (txt === '!Cornet' && msg.author.username === 'Alexis')) {
+	else if ((txt.substr(1).toLowerCase() === msg.author.username.toLowerCase()) || (txt === '!Cleme' && msg.author.username === 'cleme.') || (txt === '!Roventa' && msg.author.username === 'm4x') || (txt === '!Shaggyz' && msg.author.username === 'Siflomir') || (txt === '!Nathan' && msg.author.username === 'ッNnatto') || (txt === '!Cornet' && msg.author.username === 'Alexis') || (txt === '!Glen' && msg.author.username === 'llyx') || (txt === '!Symfo' && msg.author.username === 'symfony.')) {
 		msg.channel.send('Bah c\'est toi idiot ' + scalim);
 		profil.newCommand(msg.author, txt);
 	}
