@@ -41,7 +41,7 @@ const commandes = ['!help', '!forum', '!trombi', '!site', '!requete', '!d + nomb
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 const asw = {
-	help: ['**Commandes disponibles :**\n`                                   ``' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help commande_ pour plus d\'information sur une commande'],
+	help: ['**Commandes disponibles :**\n```' + commandes.join('\n') + '```\n_!membres_ pour plus de commandes\n_!help commande_ pour plus d\'information sur une commande'],
 	membres: ['**Commandes disponibles :**\n```' + cpseudo.join('\n') + '```\n_!help_ pour plus de commandes'],
 	forum: ['http://kirov-meta.forumactif.org/'],
 	trombi: ['Pour accéder au trombi, demandez l\'accès à Cleme et postez une photo !'],
