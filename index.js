@@ -36,8 +36,8 @@ const sscream = '😱';
 const shumpf = "<:humpf:568317177741049856>";
 
 // Commandes
-const commandes = ['!help', '!forum', '!trombi', '!site', '!requete', '!d + nombre', '!everyone', '!echo', '!cui', '!nuclear', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!oreoplz', '!parapluie', '!film', '!license'],
-    cpseudo = ['!Bernard', '!Golgoth', '!Maelg', '!MacKay', '!Roventa', '!Sibaal', '!Cleme', '!Khran', '!Drac', '!Dragon', '!Matsam', '!Shaggyz', '!Uff', '!Hartyom', '!Tephal', '!Cerfpihier', '!Lilith', '!Loko', "!WassaW", "!Nathan", "!Zomzom", "!Pellaeon", "!Roystar", "!Dikryl", "!Alexis", "!Ganapati", "!Mad", "!Mzboub", "!Freez"],
+const commandes = ['!help', '!forum', '!trombi', '!site', '!requete', '!d + nombre', '!everyone', '!echo', '!cui', '!cyanure', '!bleus', '!actualité', '!log', '!classement', '!commandes', '!rich', '!profil _nomDiscord', '!penis', '!film', '!license'],
+    cpseudo = ['!Bernard', '!Maelg', '!Cleme', '!Drac', '!Matsam', '!Uff', '!Hartyom', '!Lilith', "!WassaW", "!Zomzom", "!Pellaeon", "!Roystar", "!Alexis", "!Mad"],
     cinvis = ['!membres', '!logs'];
 // commandes => Pour les commandes basiques ; cpseudo => Pour les commandes liées au pseudo ; cinvis => Pour les commandes qui n'apparaissent pas dans le !help
 const asw = {
@@ -80,15 +80,12 @@ const helpInfo = {
 	everyone: "**Utilisation**\n```!everyone```\n**Description**\n```N'utilisez pas cette commande !!!```",
 	echo: "**Utilisation**\n```!echo```\n**Description**\n```Une commande tellement puissante que Cleme a dû en limiter l'effet...```",
 	cui: "**Utilisation**\n```!cui```\n**Description**\n```Un pile ou face créé par MacKay. Il y a donc deux réponses possibles : cui ou...```",
-	nuclear: "**Utilisation**\n```!nuclear```\n**Description**\n```Le saviez-vous ? Bernard s'est fait hacké et s'est fait contrôler par une méchante personne dans ses débuts. Maintenant sa protection a été revue à la hausse mais cette commande est là pour rappeler cet évennement plutôt spécial...```",
 	cyanure: "**Utilisation**\n```!cyanure```\n**Description**\n```A utiliser quand les gens spamment trop sur un canal.\n~ Commande créée par un poussin qui n'aime pas quand il y a trop de bruit```",
 	bleus: "**Utilisation**\n```!bleus```\n**Description**\n```Les plus grands suporters de l'équipe de France sont sur ce discord !```",
 	actualité: "**Utilisation**\n```!actualité```\n**Description**\n```Aussi à jour qu'internet explorer !```",
 	log: "**Utilisation**\n```!log```\n**Description**\n```Pour connaître les dernières nouveautés de Bernard.```",
 	logs: "**Utilisation**\n```!logs```\n**Description**\n```Historique des mises à jour de Bernard.```",
 	penis: "**Utilisation**\n```!penis```\n**Description**\n```Qui réussira à battre Cleme ?```",
-	oreoplz: "**Utilisation**\n```!oreoplz```\n**Description**\n```Je préfère ne pas en parler...```",
-	parapluie: "**Utilisation**\n```!parapluie```\n**Description**\n```Demandez à Harty !```",
 	license: "**Utilisation**\n```!license```\n**Description**\n```Si vous voulez copier Bernard, citez l'original !```",
 	d: "**Utilisation**\n```!d_nbPositif```\n**Description**\n```Donne un nombre aléatoire entre 1 et ce nombre.```\n**Exemple**\n```!d100 pourra donner \"69\".```",
 	peage: "**Utilisation**\n```Indisponible```\n**Description**\n```Un jour cette commande existera !```",
