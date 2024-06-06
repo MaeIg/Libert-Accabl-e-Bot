@@ -4,7 +4,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const key = process.env.token;
 const profil = require('./profil.js');
-const pg = require('pg');
 
 // Fonctions utiles
 function randInt(max) {
@@ -21,17 +20,8 @@ const scalim = '<:calim:669952959425019904>';
 const smat100 = '<:mat100:458140489485385780>';
 const ssadcat = '<:sadcat:543739550137188420>';
 const sheart = '❤';
-const ssob = '😭';
-const sfeu = '🔥';
 const soppression = '🙂';
-const ssmile = '😄';
-const sokhand = '👌';
 const chanBeauf = '<#418751341519962113>';
-const soreo = 'https://cdn.discordapp.com/attachments/481899683275603973/492331931170766849/oreo_2.png';
-const skoukou = '<:koukou:540206430993776641>';
-const smhh = '🍆';
-const sumbrella = '☔';
-const sdrop = '💦';
 const sscream = '😱';
 const shumpf = "<:humpf:568317177741049856>";
 
