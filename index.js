@@ -58,7 +58,7 @@ const asw = {
     "Charpi s'est marié !",
   ],
   log: [
-    "***Last update : 28/11/2020 19h00***\n\nBernard souhaite maintenant l'anniversaire des actifs du discord !\nAjout des commandes !film, !Mzboub, !Mad, !Freez.\nMise à jour des commandes !Alexis, !Maelg, !WassaW, !Zomzom, !Roystar, !Uff, !Pellaeon, !Cleme, !Hartyom et !actualité.\n\n_!logs_ pour plus de logs",
+    "***Last update : 06/06/2024***\n\nBernard se met à jour pour les 10 ans de la méta !\n\n_!logs_ pour plus de logs",
   ],
   logs: ["https://bernard-site.herokuapp.com/logs"],
   penis: ["8=D"],
