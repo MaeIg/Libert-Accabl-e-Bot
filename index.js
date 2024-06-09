@@ -56,7 +56,6 @@ const commandes = [
     "!Matsam",
     "!Uff",
     "!Hartyom",
-    "!Lilith",
     "!WassaW",
     "!Zomzom",
     "!Pellaeon",
