@@ -79,7 +79,7 @@ const asw = {
   ],
   forum: ["http://kirov-meta.forumactif.org/"],
   trombi: ["Pour accéder au trombi, demandez l'accès à Cleme et postez une photo !"],
-  site: ["https://bernard-site.herokuapp.com/"],
+  site: ["https://bernard.maelg.cloud/"],
   everyone: ["Normalement ce message n'est pas censé apparaître :calim:"],
   echo: ["Tu t'es cru dans une caverne ?!", "Syncope générale provoquée par tts imminente."],
   cui: ["Cui !", "Tu me prends pour un vulgaire moineau?"],
@@ -98,7 +98,7 @@ const asw = {
   log: [
     "***Last update : 06/06/2024***\n\nBernard se met à jour pour les 10 ans de la méta !\n\n_!logs_ pour plus de logs",
   ],
-  logs: ["https://bernard.maelg.cloud"],
+  logs: ["https://bernard.maelg.cloud/logs"],
   penis: ["8=D"],
   film: [
     "You shit on my garden ?!",
