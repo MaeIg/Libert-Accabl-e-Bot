@@ -447,6 +447,8 @@ bot.on("message", function (msg) {
     cinvis.indexOf(txt) != -1
   ) {
     var L = asw[txt.substr(1)];
+    if (L === undefined) return;
+
     msg.channel.send(L[randInt(L.length)]);
 
     profil.newCommand(msg.author, txt);
