@@ -13,7 +13,7 @@ function randInt(max) {
 // Variables globales
 var hll = new Date(2022, 7, 9, 20, 8, 0);
 let generalChan; // Objet contenant les réfs vers le canal #general
-const idGeneral = "325144638447157249";
+const idGeneral = "1059842994053853225";
 
 // Smileys
 const scalim = "<:calim:669952959425019904>";
@@ -21,7 +21,7 @@ const smat100 = "<:mat100:458140489485385780>";
 const ssadcat = "<:sadcat:543739550137188420>";
 const sheart = "❤";
 const soppression = "🙂";
-const chanBeauf = "<#418751341519962113>";
+const chanBeauf = "<#1059837702993887232>";
 const sscream = "😱";
 const shumpf = "<:humpf:568317177741049856>";
 
