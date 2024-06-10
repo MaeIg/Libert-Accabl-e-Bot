@@ -342,7 +342,7 @@ bot.on("message", function (msg) {
     profil.classementRichesse(msg.channel);
     profil.newCommand(msg.author, txt);
   } else if (txt === "!penis") {
-    if (msg.author.username === "Clémentine") {
+    if (msg.author.username === "cleme.") {
       msg.channel.send("8===============D");
     } else {
       let nbr = randInt(10) + 1;
