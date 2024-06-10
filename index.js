@@ -436,7 +436,10 @@ bot.on("message", function (msg) {
     (txt === "!Nathan" && msg.author.username === "ッNnatto") ||
     (txt === "!Cornet" && msg.author.username === "Alexis") ||
     (txt === "!Glen" && msg.author.username === "llyx") ||
-    (txt === "!Symfo" && msg.author.username === "symfony.")
+    (txt === "!Symfo" && msg.author.username === "symfony.") ||
+    (txt === "!Yaken" && msg.author.username === "yaken96") ||
+    (txt === "!Zomzom" && msg.author.username === "milhousette") ||
+    (txt === "!Khay" && msg.author.username === "khayrisill")
   ) {
     msg.channel.send("Bah c'est toi idiot " + scalim);
     profil.newCommand(msg.author, txt);
